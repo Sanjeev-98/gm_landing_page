@@ -1,0 +1,2504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GladMinds - Turning Downtime into Uptime</title>
+    <meta
+      name="description"
+      content="GladMinds helps turn downtime into uptime with always-on service and enhanced customer experience."
+    />
+    <meta
+      name="keywords"
+      content="GladMinds, uptime, downtime, customer experience, after-sales service, industry leaders"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="src/output.css" rel="stylesheet">
+    <style>
+      .font-dm-sans {
+        font-family: "DM Sans", sans-serif;
+      }
+      .font-reddit-sans {
+        font-family: "Reddit Sans", sans-serif;
+      }
+      .font-poppins {
+        font-family: "Poppins", sans-serif;
+      }
+      .font-arimo-sans {
+        font-family: "Arimo", sans-serif;
+      }
+      #dashboardImage {
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      }
+      .dashboard-nav-item {
+        transition: opacity 0.3s ease-in-out;
+        font-family: "DM Sans", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 26px; /* 144.444% */
+        margin-right: 28px;
+      }
+      /* For Webkit browsers (Chrome, Safari, Edge, Opera) */
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Optional: To hide the scrollbar track but keep the scroll functionality */
+      .hide-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      /* Optional: To hide the scrollbar thumb */
+      .hide-scrollbar::-webkit-scrollbar-thumb {
+        background: transparent;
+      }
+      .bg-gradient-1:before {
+        content: "";
+        position: absolute;
+        margin-left: 0;
+        margin-top: 0;
+        width: 100%;
+        height: 100px;
+        background: linear-gradient(180deg, #e7e8fe, transparent);
+      }
+      .tilted-elipse::before {
+        content: "";
+        position: absolute;
+        margin-left: -38px;
+        margin-top: 57px;
+        height: 66px;
+        width: auto;
+        aspect-ratio: 66 / 50;
+        border-radius: 50%;
+        background: #cfe1fd;
+        transform: rotate(45deg);
+        z-index: -1;
+      }
+
+      @media screen and (max-width: 768px) {
+        .tilted-elipse::before {
+          margin-left: -20px;
+          margin-top: 40px;
+          height: 40px;
+        }
+      }
+    </style>
+
+  </head>
+  <body class="font-sans antialiased text-gray-800">
+    <!-- Header Section -->
+    <header class="bg-whit shadow-md">
+      <div class="containe mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold text-blue-600 flex items-center">
+          <img src="assets/gm_logo.svg" alt="GladMinds Logo" class="h-8 mr-2" />
+        </a>
+        <div class="flex items-center space-x-4">
+          <a
+            href="https://aftersell.gladminds.co/auth/login"
+            target="_blank"
+            class="px-6 py-2 text-[#1868DB] rounded-lg font-reddit-sans font-bold hover:bg-blue-50 transition duration-300 hidden md:inline-block"
+            >Go To Dashboard</a
+          >
+          <a
+            href="#"
+            class="px-8 py-3 bg-[#1868DB] text-[#fff] font-[700] rounded-full font-reddit-sans content-center hover:bg-blue-700 transition duration-300 w-fit whitespace-nowrap text-[1.5vw] sm:text-[18px] md:text-[1.5vw] hidden md:inline-block"
+            >Request A Demo</a
+          >
+          <button
+            id="header-hamburger-menu"
+            class="text-gray-600 hover:text-blue-600 focus:outline-none md:hidden"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div
+      id="mobile-menu"
+      class="fixed top-0 left-0 w-full md:hidden hidden flex flex-col items-cente bg- py-4 z-99 max-w-[80vw] h-[100vh] top-0 left-0 gap-4 bg-gray-50 p-[12px] overflow-auto"
+    >
+      <div class="text-cente">
+        <a href="#" class="text-blue-600 font-semibold p-2">Home</a>
+      </div>
+      <span class="text-cente"
+        ><a href="#" class="text-gray-600 hover:text-blue-600 p-2"
+          >Pricing</a
+        ></span
+      >
+      <span class="relative group w-full text-cente">
+        <a
+          id="mobile-industries-toggle"
+          href="#"
+          class="text-gray-600 hover:text-blue-600 p-2 flex items-center"
+        >
+          Industries
+          <svg
+            class="w-3 h-3 ml-1 transform transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </a>
+        <div
+          id="mobile-industries-dropdown"
+          class="hidden flex-col items-center space-y-2 mt-2 ml-3 py-2 w-auto"
+        >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
+            >Automotive</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
+            >Home Appliances</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
+            >Construction & Mining</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
+            >Consumer Electronics</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
+            >Machinery</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
+            >Power Equipment</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
+            >Agriculture Equipment</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
+            >HVAC</a
+          >
+        </div>
+      </span>
+      <span class="relative group w-full text-cente">
+        <a
+          id="mobile-roi-toggle"
+          href="#"
+          class="text-gray-600 hover:text-blue-600 p-2 flex items-center justify-cente"
+        >
+          ROI Calculator
+          <svg
+            class="w-3 h-3 ml-1 transform transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </a>
+        <div
+          id="mobile-roi-dropdown"
+          class="hidden flex-col items-center space-y-2 mt-2 ml-3 py-2 w-auto"
+        >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
+            >Automotive</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
+            >Home Appliances</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] font-[24px] text-left w-full"
+            >Construction & Mining</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] font-[24px] text-left w-full"
+            >Consumer Electronics</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
+            >Machinery</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
+            >Power Equipment</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
+            >Agriculture Equipment</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
+            >HVAC</a
+          >
+        </div>
+      </span>
+      <span class="relative group w-full overflow-hidde">
+        <a
+          id="mobile-why-gladminds-toggle"
+          href="#"
+          class="text-gray-600 hover:text-blue-600 p-2 flex items-center"
+        >
+          Why Gladminds?
+          <svg
+            class="w-3 h-3 ml-1 transform transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </a>
+        <div
+          id="mobile-why-gladminds-dropdown"
+          class="hidden flex-col items-center space-y-2 mt-2 ml-3 py-2 w-auto"
+        >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
+            >Customer Experience</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
+            >Partner Management</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
+            >Field Engineers</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
+            >Reduced TAT</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
+            >Improve NPS score</a
+          >
+        </div>
+      </span>
+      <span class="relative group w-full text-cente">
+        <a
+          id="mobile-about-us-toggle"
+          href="#"
+          class="text-gray-600 hover:text-blue-600 p-2 flex items-center"
+        >
+          About Us
+          <svg
+            class="w-3 h-3 ml-1 transform transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </a>
+        <div
+          id="mobile-about-us-dropdown"
+          class="hidden flex-col items-center space-y-2 mt-2 ml-3 py-2 w-auto"
+        >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] \ leading-[24px] text-left w-full"
+            >Founder</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] leading-[24px] text-left w-full"
+            >Leadership Team</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] leading-[24px] text-left w-full"
+            >Vision</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] leading-[24px] text-left w-full"
+            >Mission</a
+          >
+        </div>
+      </span>
+      <span class="relative group w-full text-cente">
+        <a
+          id="mobile-media-toggle"
+          href="#"
+          class="text-gray-600 hover:text-blue-600 p-2 flex items-center"
+        >
+          Media
+          <svg
+            class="w-3 h-3 ml-1 transform transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </a>
+        <div
+          id="mobile-media-dropdown"
+          class="hidden flex-col items-center space-y-2 mt-2 ml-3 py-2 w-auto"
+        >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] leading-[24px] text-left w-full"
+            >Case Studies</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] leading-[24px] text-left w-full"
+            >Blogs</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] leading-[24px] text-left w-full"
+            >NewsLetter</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] leading-[24px] text-left w-full"
+            >Webinars</a
+          >
+          <a
+            href="#"
+            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] leading-[24px] text-left w-full"
+            >Testtimonials</a
+          >
+        </div>
+      </span>
+      <span class="text-cente">
+        <a href="#" class="text-gray-600 hover:text-blue-600 p-2">Contact Us</a>
+      </span>
+
+      <div class="pt-6 mt-2 border-t border-[#EEE] flex flex-col">
+        <a
+          href="#"
+          class="px-8 py-3 bg-[#1868DB] text-[#fff] font-[700] rounded-full font-reddit-sans content-center hover:bg-blue-700 transition duration-300 w-fit whitespace-nowrap sm:text-[18px] md:text-[1.5vw]"
+          >Request A Demo</a
+        >
+        <a
+          href="https://aftersell.gladminds.co/auth/login"
+          target="_blank"
+          class="mt-2 py-2 text-[#1868DB] rounded-lg font-reddit-sans font-bold hover:bg-blue-50 transition duration-300 md:inline-block"
+          >Go To Dashboard</a
+        >
+      </div>
+    </div>
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="bg-gradient-1 from-blue-50 to-white py-"
+        style="
+          background-image: url('assets/background/bg_1.svg');
+          background-position: center;
+        "
+      >
+        <div class="container mx-auto px-4 py-2 md:px-0 text-center">
+          <nav class="flex mb-9 md:mb-15 relative">
+            <div
+              class="mx-auto px-6 flex flex-wrap space-x-4 items-center rounded-full bg-gray-50 border border-[#CFE1FD] hidden md:flex p-1"
+            >
+              <a
+                href="#"
+                class="text-blue-600 font-semibold font-dm-sans border-b-2 border-blue-600 p-2 pb-1 sm:text-[1.2vw] xl:text-[18px]"
+                >Home</a
+              >
+              <a
+                href="#"
+                class="text-[#3B3D42] font-dm-sans text- flex items-center sm:text-[1.2vw] xl:text-[18px]"
+                >Pricing
+                <svg
+                  class="w-3 h-3 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="text-[#3B3D42] font-dm-sans flex items-center p-2 sm:text-[1.2vw] xl:text-[18px]"
+                >Industries
+                <svg
+                  class="w-3 h-3 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </a>
+              <div class="relative group">
+                <a
+                  href="#"
+                  class="text-[#3B3D42] font-dm-sans flex items-center p-2 group-hover:bg-[#E9F2FE] group-hover:rounded-lg group-hover:p-2 sm:text-[1.2vw] xl:text-[18px]"
+                >
+                  ROI Calculator
+                  <svg
+                    class="w-3 h-3 ml-1 transform group-hover:rotate-180 transition-transform duration-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </a>
+                <div
+                  class="absolute left-1/2 -translate-x-1/2 mt-2 bg-white rounded-md shadow-lg p-[4px] z-20 opacity-0 group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out invisible flex flex-col items-start gap-[4px] whitespace-nowrap shadow-[0_1px_6.6px_0_rgba(53,125,232,0.23)] border border-[#CFE1FD] rounded-xl"
+                >
+                  <a
+                    href="#"
+                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
+                    >Automotive</a
+                  >
+                  <a
+                    href="#"
+                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
+                    style="width: 100%"
+                    >Home Appliances</a
+                  >
+                  <a
+                    href="#"
+                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
+                    >Construction & Mining</a
+                  >
+                  <a
+                    href="#"
+                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
+                    >Consumer Electronics</a
+                  >
+                  <a
+                    href="#"
+                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
+                    >Machinery</a
+                  >
+                  <a
+                    href="#"
+                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
+                    >Power Equipment</a
+                  >
+                  <a
+                    href="#"
+                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
+                    >Agriculture Equipment</a
+                  >
+                  <a
+                    href="#"
+                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
+                    >HVAC</a
+                  >
+                </div>
+              </div>
+              <div class="relative group">
+                <a
+                  href="#"
+                  class="text-[#3B3D42] font-dm-sans flex items-center p-2 group-hover:bg-[#E9F2FE] group-hover:rounded-lg group-hover:p-2 sm:text-[1.2vw] xl:text-[18px]"
+                >
+                  Why Gladminds?
+                  <svg
+                    class="w-3 h-3 ml-1 transform group-hover:rotate-180 transition-transform duration-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </a>
+                <div
+                  class="absolute left-1/2 -translate-x-1/2 mt-2 bg-white rounded-md shadow-lg p-[4px] z-20 opacity-0 group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out invisible flex flex-col items-start gap-[4px] whitespace-nowrap shadow-[0_1px_6.6px_0_rgba(53,125,232,0.23)] border border-[#CFE1FD] rounded-xl"
+                >
+                  <a
+                    href="#"
+                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
+                    >Customer Experience</a
+                  >
+                  <a
+                    href="#"
+                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
+                    >Partner Management</a
+                  >
+                  <a
+                    href="#"
+                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
+                    >Field Engineers</a
+                  >
+                  <a
+                    href="#"
+                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
+                    >Reduced TAT</a
+                  >
+                  <a
+                    href="#"
+                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
+                    >Improve NPS score</a
+                  >
+                </div>
+              </div>
+              <div class="relative group">
+                <a
+                  href="#"
+                  class="text-[#3B3D42] font-dm-sans flex items-center p-2 group-hover:bg-[#E9F2FE] group-hover:rounded-lg group-hover:p-2 sm:text-[1.2vw] xl:text-[18px]"
+                >
+                  About Us
+                  <svg
+                    class="w-3 h-3 ml-1 transform group-hover:rotate-180 transition-transform duration-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </a>
+                <div
+                  class="absolute left-1/2 -translate-x-1/2 mt-2 bg-white rounded-md shadow-lg p-[4px] z-20 opacity-0 group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out invisible flex flex-col items-start gap-[4px] whitespace-nowrap shadow-[0_1px_6.6px_0_rgba(53,125,232,0.23)] border border-[#CFE1FD] rounded-xl"
+                >
+                  <a
+                    href="#"
+                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
+                    >Founder</a
+                  >
+                  <a
+                    href="#"
+                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
+                    >Leadership Team</a
+                  >
+                  <a
+                    href="#"
+                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
+                    >Vision</a
+                  >
+                  <a
+                    href="#"
+                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
+                    >Mission</a
+                  >
+                </div>
+              </div>
+              <div class="relative group">
+                <a
+                  href="#"
+                  class="text-[#3B3D42] font-dm-sans flex items-center p-2 group-hover:bg-[#E9F2FE] group-hover:rounded-lg group-hover:p-2 sm:text-[1.2vw] xl:text-[18px]"
+                >
+                  Media
+                  <svg
+                    class="w-3 h-3 ml-1 transform group-hover:rotate-180 transition-transform duration-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </a>
+                <div
+                  class="absolute left-1/2 -translate-x-1/2 mt-2 bg-white rounded-md shadow-lg p-[4px] z-20 opacity-0 group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out invisible flex flex-col items-start gap-[4px] whitespace-nowrap shadow-[0_1px_6.6px_0_rgba(53,125,232,0.23)] border border-[#CFE1FD] rounded-xl"
+                >
+                  <a
+                    href="#"
+                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
+                    >Case Studies</a
+                  >
+                  <a
+                    href="#"
+                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
+                    >Blogs</a
+                  >
+                  <a
+                    href="#"
+                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
+                    >NewsLetter</a
+                  >
+                  <a
+                    href="#"
+                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
+                    >Webinars</a
+                  >
+                  <a
+                    href="#"
+                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
+                    >Testtimonials</a
+                  >
+                </div>
+              </div>
+              <a
+                href="#"
+                class="text-[#3B3D42] font-dm-sans p-2 sm:text-[1.2vw] xl:text-[18px]"
+                >Contact Us</a
+              >
+            </div>
+          </nav>
+          <div
+            id="mobile-menu"
+            class="absolute top-full left-0 w-full md:hidden hidden flex-col items-center space-y-4 bg-gray-50 border border-[#CFE1FD] rounded-lg py-4 z-10"
+          >
+            <a href="#" class="text-blue-600 font-semibold p-2">Home</a>
+            <a href="#" class="text-gray-600 hover:text-blue-600 p-2"
+              >Pricing</a
+            >
+            <div class="relative group w-full text-center">
+              <a
+                id="mobile-industries-toggle"
+                href="#"
+                class="text-gray-600 hover:text-blue-600 p-2 flex items-center justify-center"
+              >
+                Industries
+                <svg
+                  class="w-3 h-3 ml-1 transform transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </a>
+              <div
+                id="mobile-industries-dropdown"
+                class="hidden flex-col items-center space-y-2 mt-2 bg-white rounded-lg shadow-lg py-2 w-full"
+              >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Automotive</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Home Appliances</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Construction & Mining</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Consumer Electronics</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Machinery</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Power Equipment</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Agriculture Equipment</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >HVAC</a
+                >
+              </div>
+            </div>
+            <div class="relative group w-full text-center">
+              <a
+                id="mobile-roi-toggle"
+                href="#"
+                class="text-gray-600 hover:text-blue-600 p-2 flex items-center justify-center hover"
+              >
+                ROI Calculator
+                <svg
+                  class="w-3 h-3 ml-1 transform transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </a>
+              <div
+                id="mobile-roi-dropdown"
+                class="hidden flex-col items-center space-y-2 mt-2 bg-white rounded-lg shadow-lg py-2 w-full"
+              >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Automotive</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Home Appliances</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-[24px] text-left w-full"
+                  >Construction & Mining</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-[24px] text-left w-full"
+                  >Consumer Electronics</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Machinery</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Power Equipment</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Agriculture Equipment</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >HVAC</a
+                >
+              </div>
+            </div>
+            <div class="relative group w-full text-center">
+              <a
+                id="mobile-why-gladminds-toggle"
+                href="#"
+                class="text-gray-600 hover:text-blue-600 p-2 flex items-center justify-center"
+              >
+                Why Gladminds?
+                <svg
+                  class="w-3 h-3 ml-1 transform transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </a>
+              <div
+                id="mobile-why-gladminds-dropdown"
+                class="hidden flex-col items-center space-y-2 mt-2 bg-white rounded-lg shadow-lg py-2 w-full"
+              >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Customer Experience</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Partner Management</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Field Engineers</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Reduced TAT</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Improve NPS score</a
+                >
+              </div>
+            </div>
+            <div class="relative group w-full text-center">
+              <a
+                id="mobile-about-us-toggle"
+                href="#"
+                class="text-gray-600 hover:text-blue-600 p-2 flex items-center justify-center"
+              >
+                About Us
+                <svg
+                  class="w-3 h-3 ml-1 transform transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </a>
+              <div
+                id="mobile-about-us-dropdown"
+                class="hidden flex-col items-center space-y-2 mt-2 bg-white rounded-lg shadow-lg py-2 w-full"
+              >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Founder</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Leadership Team</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Vision</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Mission</a
+                >
+              </div>
+            </div>
+            <div class="relative group w-full text-center">
+              <a
+                id="mobile-media-toggle"
+                href="#"
+                class="text-gray-600 hover:text-blue-600 p-2 flex items-center justify-center"
+              >
+                Media
+                <svg
+                  class="w-3 h-3 ml-1 transform transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </a>
+              <div
+                id="mobile-media-dropdown"
+                class="hidden flex-col items-center space-y-2 mt-2 bg-white rounded-lg shadow-lg py-2 w-full"
+              >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Case Studies</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Blogs</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >NewsLetter</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Webinars</a
+                >
+                <a
+                  href="#"
+                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
+                  >Testtimonials</a
+                >
+              </div>
+            </div>
+            <a href="#" class="text-gray-600 hover:text-blue-600 p-2"
+              >Contact Us</a
+            >
+          </div>
+          <div
+            class="inline-flex items-center bg-[#E9F2FE] text-[#1558BC] text-center text-[12px] md:text-[1.2vw] font-normal leading-[20px] md:leading-[1.5vw] px-4 py-4 mb-6 md:mb-10 md:w-[60vw] border border-[#4688EC] rounded-[24px] font-dm-sans"
+          >
+            <img src="assets/booster.svg" alt="Rocket Icon" class="w- mr-2" />
+            AI-driven Service OS built for industrial enterprises to accelerate
+            service flow, reduce turnaround time, and transform aftersales into
+            a high-speed, outcome-driven ecosystem.
+          </div>
+          <h1
+            class="text-[24px] md:text-[4.3vw] md:text-[#1E1F21] md:max-w-[60vw] mx-auto font-semibold sm:leading-tight mb-4 md:mb-10 tracking-[-1.2px]"
+          >
+            <span class="block sm:inline"> Turning </span>
+            <span
+              class="text-[#1558BC] bg-[linear-gradient(90deg,#e0ebfc,transparent)]"
+              >Downtime Into Uptime</span
+            >
+          </h1>
+          <p
+            class="text-[16px] md:text-[1.35vw] text-[#444] mb-6 md:mb-13 md:max-w-[60vw] mx-auto font-dm-sans"
+          >
+            From the shop floor to the service lane - GladMinds connects
+            machines, people, and decisions into one intelligent ecosystem.
+          </p>
+          <div class="flex flex-col md:flex-row justify-center space-x-8 gap-4">
+            <a
+              href="https://aftersell.gladminds.co/"
+              target="_blank"
+              class="py-3 bg-[#1868DB] text-[#fff] md:text-[1.5vw] font-[700] rounded-full font-reddit-sans content-center hover:bg-blue-700 transition duration-300 w-full md:w-[16vw]"
+              >Get Started</a
+            >
+            <a
+              href="https://aftersell.gladminds.co/auth/login"
+              target="_blank"
+              class="px-8 py-3 bg-[#FFFFFF33] text-[#505258] md:text-[1.5vw] font-[700] rounded-full border border-[#7D818A] font-reddit-sans content-center hover:bg-gray-50 transition duration-300 w-full md:w-[16vw]"
+              >Sign In</a
+            >
+          </div>
+
+          <!-- <hr class="md:hidden my-4 mt-8" style="color: #cfe1fd" /> -->
+          <!-- Dashboard Section -->
+          <div class="mt-8 md:mt-16 flex flex-col items-center">
+            <!-- Dashboard Navigation -->
+            <nav
+              class="flex justify-center items-center relative w-full max-w-6xl md:mb-8"
+            >
+              <div
+                class="flex space-x-6 mx-[-16px] md:mx-auto justify-between items-center md:rounded-full md:bg-gray-50 pt-2 pb-1 md:py-4 w-fit dashboard-nav-items-container relative overflow-hidden shadow-[0_1px_5.7px_0_rgba(53,125,232,0.15)] border-b border-t md:border border-[#CFE1FD]"
+              >
+                <button
+                  id="prevDashboard"
+                  class="hidden md:inline-block w-[56px] h-[56px] min-w-[56px] left-0 p-3 md:ml-2 rounded-full bg-white shadow-lg hover:text-blue-600 z-10 focus:outline-none border cursor-pointer"
+                  style="border-color: #b7b9be"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="28"
+                    viewBox="0 0 18 28"
+                    fill="none"
+                    class="mx-auto"
+                  >
+                    <path
+                      d="M14 0L17.29 3.29L6.60337 14L17.29 24.71L14 28L4.00074e-05 14L14 0Z"
+                      fill="#B7B9BE"
+                    />
+                  </svg>
+                </button>
+                <div class="px-4 flex overflow-auto hide-scrollbar">
+                  <div
+                    id="dashboardNavItemsWrapper"
+                    class="flex flex-nowrap transition-transform duration-300 ease-out mx-auto hide-scrollbar"
+                  >
+                    <a
+                      href="#"
+                      class="dashboard-nav-item text-blue-600 font-semibold border-b-2 border-blue-600 pb-2 flex-shrink-0 text-[14px] md:text-lg"
+                      data-image="dashboard.svg"
+                      data-mobile-image="module_tab/dashboard_mobile.png"
+                      >My Dashboard</a
+                    >
+                    <a
+                      href="#"
+                      class="dashboard-nav-item text-gray-600 hover:text-blue-600 flex-shrink-0 text-[14px] md:text-lg"
+                      data-image="module_tab/product.png"
+                      data-mobile-image="module_tab/product_mobile.png"
+                      >Product Information</a
+                    >
+                    <a
+                      href="#"
+                      class="dashboard-nav-item text-gray-600 hover:text-blue-600 flex-shrink-0 text-[14px] md:text-lg"
+                      data-image="module_tab/stock_management.png"
+                      data-mobile-image="module_tab/stock_management_mobile.png"
+                      >Stock Management</a
+                    >
+                    <a
+                      href="#"
+                      class="dashboard-nav-item text-gray-600 hover:text-blue-600 flex-shrink-0 text-[14px] md:text-lg"
+                      data-image="module_tab/engineer_inventory.png"
+                      data-mobile-image="module_tab/engineer_inventory_mobile.png"
+                      >Engineering Inventory</a
+                    >
+                  </div>
+                </div>
+                <button
+                  id="nextDashboard"
+                  class="bsolute w-[56px] h-[56px] min-w-[56px] right-0 p-3 mr-2 rounded-full bg-white shadow-lg hover:text-blue-600 z-10 focus:outline-none border cursor-pointer"
+                  style="border-color: #b7b9be"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="28"
+                    viewBox="0 0 18 28"
+                    fill="none"
+                    class="mx-auto"
+                  >
+                    <path
+                      d="M4 28L0.71 24.71L11.3966 14L0.71 3.29L4 0L18 14L4 28Z"
+                      fill="#B7B9BE"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </nav>
+
+            <!-- Dashboard Image -->
+            <div class="mt-8 relative w-full min-h-[170px] md:max-w-[65vw]">
+              <img
+                id="dashboardImage"
+                src="assets/dashboard.svg"
+                alt="Dashboard Mockup"
+                class="mx-auto rounded-lg border border-3 md:border-8 border-[#E9F2FE] w-full transition-opacity duration-300 ease-in-out"
+              />
+            </div>
+
+            <!-- Desktop/Mobile Switch -->
+            <div
+              class="mb-10 md:mb-0 mt-8 flex justify-center space-x-2 p-1 bg-gray-100 rounded-full border border-gray-200 
+              shadow-[0_4px_4px_0_rgba(0,0,0,0.14)]"
+            >
+              <button
+                id="desktopView"
+                class="px-8 py-2 rounded-full bg-blue-600 text-white font-semibold text-base focus:outline-none"
+              >
+                Desktop
+              </button>
+              <button
+                id="mobileView"
+                class="px-8 py-2 rounded-full text-gray-600 font-semibold text-base hover:bg-gray-200 focus:outline-none"
+              >
+                Mobile
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- New Section: Because Service Is The New Frontline Of Growth -->
+      <section class="py-10 md:mt-20 bg-gray-50">
+        <div
+          class="md:max-w-[65vw] mx-auto px-4 md:px-0 flex flex-col md:flex-row md:items-center justify-between md:gap-12"
+        >
+          <div class="mobile-view lg:w-1/2 md:hidden">
+            <h2
+              class="font-reddit-sans text-[24px] font-semibold leading-[32px] tracking-[-0.48px] mb-4"
+            >
+              Because Service Is <br /><span class="text-[#1558BC]"
+                >The New Frontline Of Growth
+              </span>
+            </h2>
+          </div>
+          <div class="lg:w-1/2 text-left">
+            <p
+              class="text-[#6B6B6B] md:text-[18px] mb-[1vw] leading-[1.8] font-poppins"
+            >
+              Industrial enterprises are transforming, from selling machines to
+              delivering uptime. <br />
+              GladMinds enables this shift with a unified AI platform that
+              integrates data, people, and workflows — turning complex service
+              operations into measurable business outcomes.
+            </p>
+            <a
+              href="#"
+              class="hidden md:inline-block py-3 px-4 bg-[#1868DB] text-[1.2vw] text-white font-bold rounded-full hover:bg-blue-700 transition duration-300 font-reddit-sans"
+            >
+              Explore How It Works
+            </a>
+            <img
+              src="assets/frontline_growth.svg"
+              alt="Building Mockup"
+              class="rounded-lg mt-12 w-full h-auto"
+            />
+          </div>
+          <div class="lg:w-1/2">
+            <h2
+              class="hidden md:inline font-reddit-sans text-[2vw] font-semibold text-[3.7vw] leading-[1.2] mb-13 tracking-[-1.12px]"
+            >
+              Because Service Is <br /><span class="text-[#1558BC]"
+                >The New Frontline Of Growth
+              </span>
+            </h2>
+            <ul class="space-y-6 mt-4 md:mt-0">
+              <li class="flex items-star">
+                <span
+                  class="tilted-elipse flex-shrink-0 flex items-center justify-center text-[52px] md:text-[72px] text-[#1558BC] font-semibold mr-12 font-reddit-sans z-1"
+                  >01</span
+                >
+                <div class="content-center">
+                  <h3
+                    class="md:text-[24px] text-[#6B6B6B] font-reddit-sans font-bold leading-[1.2] mb-2"
+                  >
+                    AI Visibility
+                  </h3>
+                  <p
+                    class="text-[14px] md:text-[18px] text-[#6B6B6B] font-poppins font-normal leading-[1.8]"
+                  >
+                    Real-time view of every asset and action
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-star">
+                <span
+                  class="tilted-elipse flex-shrink-0 flex items-center justify-center text-[52px] md:text-[72px] text-[#1558BC] font-semibold mr-12 font-reddit-sans z-1"
+                  >02</span
+                >
+                <div class="content-center">
+                  <h3
+                    class="md:text-[24px] text-[#6B6B6B] font-reddit-sans font-bold leading-[1.2] mb-2"
+                  >
+                    Smart Sync
+                  </h3>
+                  <p
+                    class="md:text-[14px] md:text-[18px] text-[#6B6B6B] font-poppins font-normal leading-[1.8]"
+                  >
+                    OEMs, dealers, and technicians working as one
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-star">
+                <span
+                  class="tilted-elipse flex-shrink-0 flex items-center justify-center text-[52px] md:text-[72px] text-[#1558BC] font-semibold mr-12 font-reddit-sans z-1"
+                  >03</span
+                >
+                <div class="content-center">
+                  <h3
+                    class="md:text-[24px] text-[#6B6B6B] font-reddit-sans font-bold leading-[1.2] mb-2"
+                  >
+                    Predictive Insight
+                  </h3>
+                  <p
+                    class="text-[14px] md:text-[18px] text-[#6B6B6B] font-poppins font-normal leading-[1.8]"
+                  >
+                    See failures before they occur
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-star">
+                <span
+                  class="tilted-elipse flex-shrink-0 flex items-center justify-center text-[52px] md:text-[72px] text-[#1558BC] font-semibold mr-12 font-reddit-sans z-1"
+                  >04</span
+                >
+                <div class="content-center">
+                  <h3
+                    class="md:text-[24px] text-[#6B6B6B] font-reddit-sans font-bold leading-[1.2] mb-2"
+                  >
+                    Faster Turnaround
+                  </h3>
+                  <p
+                    class="text-[14px] md:text-[18px] text-[#6B6B6B] font-poppins font-normal leading-[1.8]"
+                  >
+                    AI-led tasking and collaboration
+                  </p>
+                </div>
+              </li>
+              <li class="flex">
+                <span
+                  class="tilted-elipse flex-shrink-0 flex items-center justify-center text-[52px] md:text-[72px] text-[#1558BC] font-semibold mr-12 font-reddit-sans z-1"
+                  >05</span
+                >
+                <div class="content-center">
+                  <h3
+                    class="md:text-[24px] text-[#6B6B6B] font-reddit-sans font-bold leading-[1.2] mb-2"
+                  >
+                    From Data to Impact
+                  </h3>
+                  <p
+                    class="text-[14px] :text-[18px] text-[#6B6B6B] font-poppins font-normal leading-[1.8]"
+                  >
+                    Service that performs — and proves it
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <a
+            href="#"
+            class="mobile-only mt-8 inline-block md:hidden py-3 bg-[#1868DB] text-white text-center font-bold rounded-full hover:bg-blue-700 transition duration-300 font-reddit-sans"
+          >
+            Explore How It Works
+          </a>
+        </div>
+      </section>
+
+      <!-- Features Section 2 -->
+      <section class="py-6 md:py-20">
+        <div class="container mx-auto px-4 md:px-6 text-center">
+          <div class="main-wrapper md:max-w-[60vw] md:mx-auto">
+            <h2
+              class="text-[#1E1F21] text-[24px] md:text-[56px] font-semibold leading-[1.3] tracking-[-1.12px] mx-auto mb-4 md:mb-10 text-left md:text-center"
+            >
+              Where After-Sales Becomes <br />
+              <span class="text-[#1558BC]"> Always-On Service </span>
+            </h2>
+            <p
+              class="md:text-[18px] text-[#444] text-left md:text-center leading-[1.8] font-dm-sans mb-8 md:mb-10"
+            >
+              GladMinds redefines aftersales with an AI-powered Service OS that
+              manages every aspect of post-sale operations, from technician
+              dispatch to predictive maintenance, ensuring uptime, efficiency,
+              and customer satisfaction.
+            </p>
+            <div>
+              <a
+                href="#"
+                class="px-5 py-3 mb-10 md:mb-20 bg-[#1868DB] md:text-[20px] text-white w-full font-bold rounded-full hover:bg-blue-700 transition duration-300 inline-block font-reddit-sans"
+              >
+                See the After-Sell Suite
+              </a>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-4 md:gap-8 justify-between">
+            <div
+              class="p-2 rounded-lg w-[calc(50%-8px)] md:[w-fit] md:max-w-[280px]"
+            >
+              <div class="relative flex justify-between mb-4">
+                <div class="">
+                  <img
+                    src="assets/truck.svg"
+                    class="mb-1 md:mb-6 z-10 relative"
+                    alt="truck"
+                  />
+                  <h3
+                    class="z-10 text-[#505258] md:text-[24px] font-bold leading-[1.2] font-reddit-sans text-left leading-[1.2] md:leading-[1.5] relative"
+                  >
+                    Smart <br />
+                    Dispatch
+                  </h3>
+                </div>
+                <div
+                  class="absolute right-0 top-0 md:relative text-[#F0F1F2] text-[124px] md:text-[200px] font-reddit-sans font-extrabold leading-[0.75]"
+                >
+                  1
+                </div>
+              </div>
+
+              <p
+                class="text-[#6B6B6B] text-[14px] md:text-[18px] font-poppins font-normal leading-[1.5] text-left"
+              >
+                Assign the right technician, <br />
+                instantly
+              </p>
+            </div>
+            <div
+              class="p-2 rounded-lg w-[calc(50%-8px)] md:[w-fit] md:max-w-[280px]"
+            >
+              <div class="relative flex justify-between mb-4">
+                <div class="">
+                  <img
+                    src="assets/mobile_with_plug.svg"
+                    class="mb-1 md:mb-1 z-10 relative"
+                    alt="truck"
+                  />
+                  <h3
+                    class="text-[#505258] md:text-[24px] font-bold leading-[1.2] font-reddit-sans text-left leading-[1.2] md:leading-[1.5] z-10 relative"
+                  >
+                    Technician <br />
+                    App
+                  </h3>
+                </div>
+                <div
+                  class="absolute right-0 top-0 md:relative text-[124px] text-[#F0F1F2] md:text-[200px] font-reddit-sans font-extrabold leading-[0.75]"
+                >
+                  2
+                </div>
+              </div>
+
+              <p
+                class="text-[#6B6B6B] text-[14px] md:text-[18px] font-poppins font-normal leading-[1.5] text-left"
+              >
+                Digital tools, offline sync, and rewards
+              </p>
+            </div>
+            <div
+              class="p-2 rounded-lg w-[calc(50%-8px)] md:[w-fit] md:max-w-[280px]"
+            >
+              <div class="relative flex justify-between mb-4">
+                <div class="">
+                  <img
+                    src="assets/intelligence.svg"
+                    class="mb-6 z-10 relative"
+                    alt="truck"
+                  />
+                  <h3
+                    class="text-[#505258] md:text-[24px] font-bold leading-[1.2] font-reddit-sans text-left leading-[1.2] md:leading-[1.5] z-10 relative"
+                  >
+                    Part <br />
+                    Intelligence
+                  </h3>
+                </div>
+                <div
+                  class="absolute right-0 top-0 md:relative text-[#F0F1F2] text-[124px] md:text-[200px] font-reddit-sans font-extrabold leading-[0.75]"
+                >
+                  3
+                </div>
+              </div>
+
+              <p
+                class="text-[#6B6B6B] text-[14px] md:text-[18px] font-poppins font-normal leading-[1.5] text-left"
+              >
+                Predict demand and cut downtime
+              </p>
+            </div>
+
+            <div
+              class="p-2 rounded-lg w-[calc(50%-8px)] md:[w-fit] max-w-[280px]"
+            >
+              <div class="relative flex justify-between mb-4">
+                <div class="">
+                  <img
+                    src="assets/check_shield.svg"
+                    class="mb-6 z-10 relative"
+                    alt="truck"
+                  />
+                  <h3
+                    class="text-[#505258] md:text-[24px] font-bold leading-[1.2] font-reddit-sans text-left leading-[1.2] md:leading-[1.5] z-10 relative"
+                  >
+                    Warranty <br />
+                    & Quality
+                  </h3>
+                </div>
+                <div
+                  class="absolute right-0 top-0 md:relative text-[#F0F1F2] text-[124px] md:text-[200px] font-reddit-sans font-extrabold leading-[0.75]"
+                >
+                  4
+                </div>
+              </div>
+
+              <p
+                class="text-[#6B6B6B] text-[14px] md:text-[18px] font-poppins font-normal leading-[1.5] text-left"
+              >
+                Link field data to faster fixes
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Customer Experience Section -->
+      <section
+        class="relative pt-8 pb-4 md:pb-[250px] bg-[#E9F2FE] overflow-hidden"
+      >
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="mx-auto text-left lg:text-left">
+            <p
+              class="text-[#1558BC] text-md md:text-[24px] md:[tracking--0.48px] font-reddit-sans font-semibold mb-2"
+            >
+              Key Capabilities
+            </p>
+            <h2
+              class="font-reddit-sans text-[24px] md:text-[56px] font-semibold text-[#1A202C] leading-tight mb-4"
+            >
+              Powering The <br /><span class="text-[#1558BC]"
+                >Customer Experience Beyond Purchase</span
+              >
+            </h2>
+            <p
+              class="text-md md:text-lg text-[#6B6B6B] font-poppins leading-relaxed md:mb-8"
+            >
+              GladMinds connects OEMs directly with their customers through
+              intelligent service and engagement layers – ensuring every
+              interaction adds value and builds loyalty
+            </p>
+            <button
+              class="hidden md:inline-block py-3 px-4 bg-[#1868DB] text-[16px] md:text-[20px] text-white font-bold rounded-full hover:bg-blue-700 transition duration-300 font-reddit-sans w-full md:w-auto"
+            >
+              Discover After-Buy Intelligence
+            </button>
+          </div>
+          <div class="mt-7 md:mt-0 relative space-y-3 md: space-y-0">
+            <img
+              class="w-full hidden md:block"
+              src="assets/background/curve_line.svg"
+              alt="Curve line"
+            />
+            <div
+              class="md:absolute md:max-w-[220px] md:ml-0 md:mt-[-1vw] p-3 md:p-0 bg-white md:bg-transparent rounded-[12px] md:rounded-0"
+            >
+              <h3
+                class="text-[16px] md:text-xl font-reddit-sans font-bold text-[#505258] mb-2"
+              >
+                Customer Connect Apps
+              </h3>
+              <p
+                class="text-[14px] md:text-lg text-[#6B6B6B] font-poppins leading-[1.55]"
+              >
+                Personalized dashboards for service history, maintenance
+                schedules, and support.
+              </p>
+            </div>
+            <div
+              class="md:absolute md:max-w-[220px] md:ml-[50%] md:translate-x-[-50%] md:mt-[-3vw] p-3 md:p-0 bg-white md:bg-transparent rounded-[12px] md:rounded-0"
+            >
+              <h3
+                class="text-[16px] md:text-xl font-reddit-sans font-bold text-[#505258] mb-2"
+              >
+                Predictive Service Alerts
+              </h3>
+              <p
+                class="text-[14px] md:text-lg text-[#6B6B6B] font-poppins leading-[1.55]"
+              >
+                Notify customers before a breakdown occurs
+              </p>
+            </div>
+            <div
+              class="md:absolute md:max-w-[220px] md:right-0 md:mt-[-12vw] p-3 md:p-0 bg-white md:bg-transparent rounded-[12px] md:rounded-0"
+            >
+              <h3
+                class="text-[16px] md:text-xl font-reddit-sans font-bold text-[#505258] mb-2"
+              >
+                Feedback & Analytics
+              </h3>
+              <p
+                class="text-[14px] md:text-lg text-[#6B6B6B] font-poppins leading-[1.55]"
+              >
+                Turn customer insights into continuous improvement
+              </p>
+            </div>
+
+            <!-- <div
+              class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left"
+            >
+              <div class="flex flex-col items-center md:items-start">
+                <h3 class="text-xl font-semibold text-[#1A202C] mb-2">
+                  Customer Connect Apps
+                </h3>
+                <p class="text-[#4A5568] leading-relaxed">
+                  Personalized dashboards for service history, maintenance
+                  schedules, and support.
+                </p>
+              </div>
+
+              <div class="flex flex-col items-center md:items-start">
+                <h3 class="text-xl font-semibold text-[#1A202C] mb-2">
+                  Predictive Service Alerts
+                </h3>
+                <p class="text-[#4A5568] leading-relaxed">
+                  Notify customers before a breakdown occurs
+                </p>
+              </div>
+
+              <div class="flex flex-col items-center md:items-start">
+                <h3 class="text-xl font-semibold text-[#1A202C] mb-2">
+                  Feedback & Analytics
+                </h3>
+                <p class="text-[#4A5568] leading-relaxed">
+                  Turn customer insights into continuous improvement
+                </p>
+              </div>
+            </div> -->
+          </div>
+          <button
+            class="md:hidden mt-10 md:mt-0 py-3 px-4 bg-[#1868DB] text-[16px] md:text-[20px] text-white font-bold rounded-full hover:bg-blue-700 transition duration-300 font-reddit-sans w-full md:w-auto"
+          >
+            Discover After-Buy Intelligence
+          </button>
+        </div>
+        <!-- Simplified wave line as requested, without complex SVG for now -->
+        <div
+          class="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-white to-transparent"
+        ></div>
+      </section>
+
+      <!-- Key Capabilities -->
+
+      <!-- New Section Before FAQ -->
+      <section class="py-4 md:py-20 bg-[#1558BC] text-center">
+        <div class="container mx-auto px-4 md:px-20">
+          <p
+            class="text-[#E9F2FE] text-left md:text-center font-reddit-sans md:text-[24px] font-medium leading-[1.5] md:leading-[40px] tracking-[-0.48px] capitalize"
+          >
+            GladMinds' QMS Enables OEMs To Monitor, Analyze, And Act On Quality
+            Issues Faster Than Ever. By Connecting Field Data, Service Reports,
+            And Parts Performance, It Transforms Every Incident Into Actionable
+            Intelligence, Strengthening Reliability Across The Value Chain.
+          </p>
+          <div
+            class="flex flex-wrap md:justify-center items-start md:space-x-8 my-10 md:my-12 gap-6 md:gap-14"
+          >
+            <!-- Block 1 -->
+            <div class="flex flex-wrap items-center gap-5">
+              <img
+                src="assets/truck_2.svg"
+                class="h-12 w-auto md:h-auto md:w-auto"
+                alt="truck"
+              />
+              <p
+                class="text-[#CFE1FD] font-reddit-sans text-[16px] text-left font-bold leading-[24px] tracking-[-0.48px]"
+              >
+                Real-time defect tracking &
+                <br />
+                root cause analysis
+              </p>
+            </div>
+            <!-- Block 2 -->
+            <div class="flex flex-wrap items-center gap-5">
+              <img
+                src="assets/truck_2.svg"
+                class="h-12 w-auto md:h-auto md:w-auto"
+                alt="truck"
+              />
+              <p
+                class="text-[#CFE1FD] font-reddit-sans text-[16px] text-left font-bold leading-[24px] tracking-[-0.48px]"
+              >
+                Closed-loop feedback to design
+                <br />
+                and manufacturing
+              </p>
+            </div>
+            <!-- Block 3 -->
+            <div class="flex flex-wrap items-center gap-5">
+              <img
+                src="assets/truck_2.svg"
+                class="h-12 w-auto md:h-auto md:w-auto"
+                alt="truck"
+              />
+              <p
+                class="text-[#CFE1FD] font-reddit-sans text-[16px] text-left font-bold leading-[24px] tracking-[-0.48px]"
+              >
+                Automated quality dashboards
+                <br />
+                for management insight
+              </p>
+            </div>
+          </div>
+          <a
+            href="#"
+            class="px-8 py-3 bg-white text-[#1868DB] font-semibold rounded-full hover:bg-gray-200 transition duration-300 inline-block font-reddit-sans w-full md:w-fit"
+          >
+            Explore Quality Intelligence
+          </a>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="py-4 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6 text-center max-w-5xl">
+          <div>
+            <h2
+              class="mb-4 md:mb-6 font-reddit-sans text-[24px] md:text-[56px] font-semibold leading-[1.4] tracking-[-1.12px] text-left md:text-center"
+            >
+              Got Questions? <br /><span class="text-[#1558BC]"
+                >We've Got Answers.</span
+              >
+            </h2>
+            <p
+              class="text-lg text-[#444444] font-dm-sans text-[16px] md:text-[18px] leading-[1.8] mx-auto md:mb-12 text-left md:text-center"
+            >
+              We have these in the form of drop down for each answer
+            </p>
+          </div>
+          <div class="mx-auto mt-8 md:mt-10">
+            <!-- Accordion Item 1 -->
+            <div
+              class="border border-[#0000001A] rounded-[10px] mb-4 overflow-hidden"
+            >
+              <button
+                class="flex justify-between items-center w-full p-4 text-left md:text-[18px] md:text-lg focus:outline-none hover:bg-gray-100 transition-colors duration-300 font-dm-sans text-[#3B3D42] cursor-pointer"
+                onclick="toggleAccordion(this)"
+              >
+                What is the GladMinds Service OS?
+                <svg
+                  class="w-5 h-5 transition-transform duration-300 transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="#717182"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                class="max-h-0 overflow-hidden transition-max-height duration-500 ease-in-out"
+              >
+                <div
+                  class="p-4 text-[14px] md:text-[16px] text-left border-t border-gray-200 font-dm-sans"
+                >
+                  You can reset your password by clicking on the "Forgot
+                  Password" link on the login page. Follow the instructions sent
+                  to your email address.
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Item 2 -->
+            <div
+              class="border border-[#0000001A] rounded-[10px] mb-4 overflow-hidden"
+            >
+              <button
+                class="flex justify-between items-center w-full p-4 text-left text-[16px] md:text-[18px] md:text-lg text-lg focus:outline-none hover:bg-gray-100 transition-colors duration-300 font-dm-sans text-[#3B3D42] cursor-pointer"
+                onclick="toggleAccordion(this)"
+              >
+                Which industries does GladMinds serve?
+                <svg
+                  class="w-5 h-5 transition-transform duration-300 transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="#717182"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                class="max-h-0 overflow-hidden transition-max-height duration-500 ease-in-out"
+              >
+                <div
+                  class="p-4 text-[14px] md:text-[16px] text-left border-t border-gray-200 font-dm-sans"
+                >
+                  You can reset your password by clicking on the "Forgot
+                  Password" link on the login page. Follow the instructions sent
+                  to your email address.
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Item 3 -->
+            <div
+              class="border border-[#0000001A] rounded-[10px] mb-4 overflow-hidden"
+            >
+              <button
+                class="flex justify-between items-center w-full p-4 text-left text-[16px] md:text-[18px] text-lg focus:outline-none hover:bg-gray-100 transition-colors duration-300 font-dm-sans text-[#3B3D42] cursor-pointer"
+                onclick="toggleAccordion(this)"
+              >
+                Can it integrate with our existing ERP or CRM?
+                <svg
+                  class="w-5 h-5 transition-transform duration-300 transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="#717182"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                class="max-h-0 overflow-hidden transition-max-height duration-500 ease-in-out"
+              >
+                <div
+                  class="p-4 text-[14px] md:text-[16px] text-left border-t border-gray-200 font-dm-sans"
+                >
+                  You can reset your password by clicking on the "Forgot
+                  Password" link on the login page. Follow the instructions sent
+                  to your email address.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <a
+              href="#"
+              class="px-8 py-3 mt-4 md:mt-10 bg-[#1868DB] md:text-[20px] text-white w-full md:w-fit font-bold rounded-full hover:bg-blue-700 transition duration-300 inline-block font-reddit-sans"
+            >
+              View All FAQs
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section: Trusted By Industry Leaders -->
+      <section class="pt-4 pb-10 md:py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6 text-center">
+          <h2
+            class="mb-4 md:mb-6 font-reddit-sans text-[24px] md:text-[56px] text-left md:text-center font-semibold leading-[1.4] tracking-[-0.48px] md:tracking-[-1.12px]"
+          >
+            Trusted By <br /><span class="text-[#1558BC]"
+              >Industry Leaders</span
+            >
+          </h2>
+          <p
+            class="text-lg text-[#444444] font-dm-sans text-[16px] md:text-[18px] leading-[1.8] mx-auto mb-4 text-left md:text-center"
+          >
+            From global OEMs to regional dealers – partners across industries
+            trust GladMinds to transform <br />
+            their service ecosystem.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div
+              class="p-8 bg-white rounded-[45px] shadow-lg border border-gray-200 text-left flex flex-col justify-between"
+            >
+              <div>
+                <div class="flex mb-4">
+                  <img src="assets/rating.svg" alt="rating" />
+                </div>
+                <p
+                  class="font-dm-sans md:text-[18px] text-[#2F2A2A] leading-[1.5] mb-8"
+                >
+                  GladMinds helped us reduce warranty claims by 30% within six
+                  months.
+                </p>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 bg-[#2F2A2A] rounded-full flex items-center justify-center font-semibold bg-[#2F2A2A] text-[#EBEFF8] mr-4"
+                >
+                  RW
+                </div>
+                <div>
+                  <p
+                    class="text-[#2F2A2A] text-[18px] font-bold font-reddit-sans leading-[1.5]"
+                  >
+                    Rahul Das
+                  </p>
+                  <p class="text-[18px] leading-[1.5] text-[#302A2A99]">
+                    Industry Leader
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="p-8 bg-white rounded-[45px] shadow-lg border border-gray-200 text-left flex flex-col justify-between"
+            >
+              <div>
+                <div class="flex mb-4">
+                  <img src="assets/rating.svg" alt="rating" />
+                </div>
+                <p
+                  class="font-dm-sans md:text-[18px] text-[#2F2A2A] leading-[1.5] mb-8"
+                >
+                  The AI dispatch module improved our field efficiency and
+                  customer satisfaction scores dramatically.
+                </p>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 bg-[#2F2A2A] rounded-full flex items-center justify-center font-semibold text-[#EBEFF8] mr-4"
+                >
+                  RD
+                </div>
+                <div>
+                  <p
+                    class="text-[#2F2A2A] text-[18px] font-bold font-reddit-sans leading-[1.5]"
+                  >
+                    Rahul Das
+                  </p>
+                  <p class="text-[18px] leading-[1.5] text-[#302A2A99]">
+                    Industry Leader
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="p-8 bg-white rounded-[45px] shadow-lg border border-gray-200 text-left flex flex-col justify-between"
+            >
+              <div class="">
+                <div class="flex mb-4">
+                  <img src="assets/rating.svg" alt="rating" />
+                </div>
+                <p
+                  class="font-dm-sans md:text-[18px] text-[#2F2A2A] leading-[1.5] mb-8"
+                >
+                  It's not just a platform — it's a mindset shift for service
+                  excellence.
+                </p>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 bg-[#2F2A2A] rounded-full flex items-center justify-center font-semibold bg-[#2F2A2A] text-[#EBEFF8] mr-4"
+                >
+                  RD
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-900">Rahul Das</p>
+                  <p class="text-gray-600 text-sm">Industry Leader</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a
+            href="#"
+            class="px-8 py-3 mb-6 bg-[#1868DB] text-[#fff] md:text-[1.5vw] font-[700] w-full md:w-[16vw] rounded-full font-reddit-sans content-center hover:bg-blue-700 transition duration-300"
+          >
+            See More Success Stories
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-[#1C2B42] text-[#A0A2A7] py-8 md:py-20 px-4 md:px-6">
+      <div
+        class="container mx-auto flex flex-col md:flex-row md:justify-between flex-wrap md:gap-12 gap-8"
+      >
+        <div class="flex flex-col items-start min-w-[250px]">
+          <img
+            src="assets/gm_logo_dark_mode.svg"
+            alt="GladMinds Logo"
+            class="h-10 mb-4"
+          />
+          <p
+            class="text-[14px] md:text-[16px] md:text-md text-[#E9F2FE] font-reddit-sans mb-9"
+          >
+            AI-Driven Service OS Built For Industrial Enterprises
+          </p>
+          <a
+            href="#"
+            class="px-8 py-3 bg-[#EBEFF8] text-[#1868DB] text-[16px] md:text-[1.2vw] font-bold rounded-full text-center hover:bg-gray-200 transition duration-300 inline-block font-reddit-sans w-full md:w-fit"
+          >
+            Request a Demo
+          </a>
+        </div>
+        <div class="min-w-[150px]">
+          <h3 class="text-white text-md md:text-lg mb-4 font-arimo-sans">
+            Quick Links
+          </h3>
+          <ul class="space-y-3">
+            <li class="mb-4">
+              <a
+                href="#"
+                class="text-[#E9F2FE] hover:text-white text-sm md:text-[16px] font-dm-sans"
+                >Solutions</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-[#E9F2FE] hover:text-white text-sm md:text-[16px] font-dm-sans"
+                >Industries</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-[#E9F2FE] hover:text-white text-sm md:text-[16px] font-dm-sans"
+                >Partners</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-[#E9F2FE] hover:text-white text-sm font-dm-sans"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="min-w-[150px]">
+          <h3 class="text-white text-lg mb-4 font-arimo-sans">Follow-Us On</h3>
+          <div class="flex space-x-4">
+            <a href="#" class="text-[#A0A2A7] hover:text-white">
+              <img src="assets/facebook_icon.svg" alt="facebook" />
+            </a>
+            <a href="#" class="text-[#A0A2A7] hover:text-white">
+              <img src="assets/insta_icon.svg" alt="instagram" />
+            </a>
+            <a href="#" class="text-[#A0A2A7] hover:text-white">
+              <img src="assets/youtube.svg" alt="youtube" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-8" style="color: #ffffff1a" />
+      <div
+        class="md:mt-20 text-center text-white font-dm-sans text-[12px] md:text-[16px]"
+      >
+        &copy; <span id="current-year"></span> GladMinds. All rights reserved. |
+        <a href="#" class="hover:text-white">Privacy Policy</a> |
+        <a href="#" class="hover:text-white">Terms of Service</a>
+      </div>
+    </footer>
+    <script>
+      const dashboardNavItems = document.querySelectorAll(
+        ".dashboard-nav-item"
+      );
+      const dashboardImage = document.getElementById("dashboardImage");
+      const desktopViewButton = document.getElementById("desktopView");
+      const mobileViewButton = document.getElementById("mobileView");
+      const prevDashboardButton = document.getElementById("prevDashboard");
+      const nextDashboardButton = document.getElementById("nextDashboard");
+      const dashboardNavContainer = document.querySelector(
+        ".dashboard-nav-items-container"
+      ); // New selector for the container
+      const dashboardNavItemsWrapper = document.getElementById(
+        "dashboardNavItemsWrapper"
+      ); // New selector for the wrapper
+      const headerHamburgerMenu = document.getElementById(
+        "header-hamburger-menu"
+      );
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      let currentActiveIndex = 0;
+      let isDesktopView = true;
+      let firstVisibleItemIndex = 0; // New variable to track the first visible item
+      let itemsPerPage; // This will be calculated dynamically
+      let itemFullWidthForTranslation = 0;
+
+      function calculateItemsPerPage() {
+        if (
+          !dashboardNavItems ||
+          dashboardNavItems.length === 0 ||
+          !dashboardNavContainer ||
+          !dashboardNavItemsWrapper
+        )
+          return;
+
+        const containerStyle = window.getComputedStyle(dashboardNavContainer);
+        const paddingLeft = parseFloat(containerStyle.paddingLeft);
+        const paddingRight = parseFloat(containerStyle.paddingRight);
+        const availableWidthForItems =
+          dashboardNavContainer.offsetWidth - paddingLeft - paddingRight;
+
+        const firstItem = dashboardNavItems[0];
+        if (!firstItem) {
+          itemsPerPage = 1;
+          return;
+        }
+
+        const firstItemRect = firstItem.getBoundingClientRect();
+        const firstItemWidth = firstItemRect.width; // Actual width of the first item
+
+        let itemGap = 0;
+        if (dashboardNavItems.length > 1) {
+          // Get the actual margin-left applied by space-x-6 to the second item
+          const secondItem = dashboardNavItems[1];
+          const secondItemStyle = window.getComputedStyle(secondItem);
+          itemGap = parseFloat(secondItemStyle.marginLeft);
+        }
+
+        itemFullWidthForTranslation = firstItemWidth + itemGap;
+
+        if (itemFullWidthForTranslation === 0) {
+          itemsPerPage = 1;
+        } else {
+          // Calculate how many items fit. Add itemGap to availableWidthForItems
+          // because the *last* item in a visible segment doesn't have an external margin-left affecting its fit.
+          itemsPerPage = Math.max(
+            1,
+            Math.floor(
+              (availableWidthForItems + itemGap) / itemFullWidthForTranslation
+            )
+          );
+        }
+
+        if (currentActiveIndex >= firstVisibleItemIndex + itemsPerPage) {
+          firstVisibleItemIndex = currentActiveIndex - itemsPerPage + 1;
+        } else if (currentActiveIndex < firstVisibleItemIndex) {
+          firstVisibleItemIndex = currentActiveIndex;
+        }
+        if (firstVisibleItemIndex + itemsPerPage > dashboardNavItems.length) {
+          firstVisibleItemIndex = Math.max(
+            0,
+            dashboardNavItems.length - itemsPerPage
+          );
+        }
+      }
+
+      function updateDashboardImage() {
+        const activeNavItem = dashboardNavItems[currentActiveIndex];
+        const newImageUrl = isDesktopView
+          ? activeNavItem.dataset.image
+          : activeNavItem.dataset.mobileImage;
+
+        // Fade out
+        dashboardImage.style.opacity = 0;
+
+        setTimeout(() => {
+          dashboardImage.src = `assets/${newImageUrl}`;
+          // Fade in
+          dashboardImage.style.opacity = 1;
+        }, 300); // Duration of the fade-out transition
+      }
+
+      // Function to center the clicked navigation item
+      function centerNavItem(item) {
+        const itemWidth = item.offsetWidth;
+        const itemOffsetLeft = item.offsetLeft;
+        const wrapperWidth = dashboardNavItemsWrapper.offsetWidth;
+
+        // Calculate scroll position to center the item
+        const scrollLeft = itemOffsetLeft - wrapperWidth / 2 + itemWidth / 2;
+        dashboardNavItemsWrapper.scrollTo({
+          left: scrollLeft,
+          behavior: "smooth",
+        });
+      }
+
+      function updateActiveClass() {
+        dashboardNavItems.forEach((item, index) => {
+          if (index === currentActiveIndex) {
+            item.classList.remove(
+              "text-blue-600",
+              "border-blue-600",
+              "hover:text-blue-600",
+              "font-semibold"
+            ); // Remove existing color and font-weight classes
+            item.classList.add("border-b-2", "pb-2");
+            item.style.color = "#5A60F9"; // Set active tab text color
+            item.style.borderColor = "#5A60F9"; // Set active tab underline color
+            item.style.opacity = "1"; // Active tab is fully opaque
+            item.style.fontWeight = "700"; // Set active tab font-weight to 700
+          } else {
+            item.classList.remove(
+              "text-blue-600",
+              "font-semibold",
+              "border-b-2",
+              "border-blue-600",
+              "pb-2"
+            );
+            item.classList.remove("text-gray-600", "hover:text-blue-600"); // Remove existing color classes
+            item.style.color = "#6B6B6B"; // Set inactive tab color
+            item.style.opacity = "0.6"; // Inactive tabs are semi-transparent
+          }
+        });
+
+        // Only apply translation for desktop view (md breakpoint is 768px), or if itemsPerPage is less than total items
+        if (
+          window.innerWidth >= 768 ||
+          itemsPerPage < dashboardNavItems.length
+        ) {
+          let translateXValue = -(
+            firstVisibleItemIndex * itemFullWidthForTranslation
+          );
+          // If all items fit, reset translation to 0 to center/align them naturally
+          if (itemsPerPage >= dashboardNavItems.length) {
+            translateXValue = 0;
+          }
+
+          dashboardNavItemsWrapper.style.transform = `translateX(${translateXValue}px)`;
+        } else {
+          dashboardNavItemsWrapper.style.transform = `translateX(0)`; // Reset transform for mobile, handled by scrolling
+        }
+
+        updateNavigationButtons();
+      }
+
+      function updateDeviceViewButtons() {
+        if (isDesktopView) {
+          desktopViewButton.classList.add("bg-blue-600", "text-white");
+          desktopViewButton.classList.remove(
+            "text-gray-600",
+            "hover:bg-gray-200"
+          );
+          mobileViewButton.classList.remove("bg-blue-600", "text-white");
+          mobileViewButton.classList.add("text-gray-600", "hover:bg-gray-200");
+        } else {
+          mobileViewButton.classList.add("bg-blue-600", "text-white");
+          mobileViewButton.classList.remove(
+            "text-gray-600",
+            "hover:bg-gray-200"
+          );
+          desktopViewButton.classList.remove("bg-blue-600", "text-white");
+          desktopViewButton.classList.add("text-gray-600", "hover:bg-gray-200");
+        }
+      }
+
+      function updateNavigationButtons() {
+        const isMobile = window.innerWidth < 768; // md breakpoint is 768px
+
+        if (isMobile) {
+          prevDashboardButton.classList.add("hidden");
+          nextDashboardButton.classList.add("hidden");
+        } else {
+          prevDashboardButton.classList.remove("hidden");
+          nextDashboardButton.classList.remove("hidden");
+
+          const canScrollLeft = firstVisibleItemIndex > 0;
+          const canScrollRight =
+            firstVisibleItemIndex + itemsPerPage < dashboardNavItems.length;
+          const canSelectPrevTab = currentActiveIndex > 0;
+          const canSelectNextTab =
+            currentActiveIndex < dashboardNavItems.length - 1;
+
+          prevDashboardButton.disabled = !(
+            canScrollLeft ||
+            (itemsPerPage >= dashboardNavItems.length && canSelectPrevTab)
+          );
+          nextDashboardButton.disabled = !(
+            canScrollRight ||
+            (itemsPerPage >= dashboardNavItems.length && canSelectNextTab)
+          );
+
+          // Visually disable buttons
+          if (prevDashboardButton.disabled) {
+            prevDashboardButton.classList.add(
+              "opacity-50",
+              "cursor-not-allowed"
+            );
+          } else {
+            prevDashboardButton.classList.remove(
+              "opacity-50",
+              "cursor-not-allowed"
+            );
+          }
+          if (nextDashboardButton.disabled) {
+            nextDashboardButton.classList.add(
+              "opacity-50",
+              "cursor-not-allowed"
+            );
+          } else {
+            nextDashboardButton.classList.remove(
+              "opacity-50",
+              "cursor-not-allowed"
+            );
+          }
+        }
+      }
+
+      function applyResponsiveNavigation() {
+        const isMobile = window.innerWidth < 768; // Tailwind's 'md' breakpoint is 768px
+
+        if (isMobile) {
+          dashboardNavItemsWrapper.classList.add(
+            "overflow-x-auto",
+            "snap-x",
+            "snap-mandatory",
+            "scroll-smooth"
+          );
+          dashboardNavItemsWrapper.classList.remove("mx-auto", "md:mx-auto");
+        } else {
+          dashboardNavItemsWrapper.classList.remove(
+            "overflow-x-auto",
+            "snap-x",
+            "snap-mandatory",
+            "scroll-smooth"
+          );
+          dashboardNavItemsWrapper.classList.add("mx-auto"); // Re-add mx-auto for desktop
+        }
+        updateNavigationButtons(); // Update button visibility based on screen size
+      }
+
+      dashboardNavItems.forEach((item, index) => {
+        item.addEventListener("click", (e) => {
+          e.preventDefault();
+          currentActiveIndex = index;
+
+          const isMobile = window.innerWidth < 768;
+          if (isMobile) {
+            centerNavItem(item);
+          } else {
+            // Adjust firstVisibleItemIndex if the clicked item is outside the current view
+            if (index < firstVisibleItemIndex) {
+              firstVisibleItemIndex = index;
+            } else if (index >= firstVisibleItemIndex + itemsPerPage) {
+              firstVisibleItemIndex = index - itemsPerPage + 1;
+            }
+          }
+          updateActiveClass();
+          updateDashboardImage();
+        });
+      });
+
+      desktopViewButton.addEventListener("click", () => {
+        isDesktopView = true;
+        updateDeviceViewButtons();
+        updateDashboardImage();
+      });
+
+      mobileViewButton.addEventListener("click", () => {
+        isDesktopView = false;
+        updateDeviceViewButtons();
+        updateDashboardImage();
+      });
+
+      prevDashboardButton.addEventListener("click", () => {
+        // Only scroll if there's more to scroll to the left
+        if (firstVisibleItemIndex > 0) {
+          firstVisibleItemIndex = Math.max(0, firstVisibleItemIndex - 1);
+        }
+        // Always try to select the previous tab if possible
+        if (currentActiveIndex > 0) {
+          currentActiveIndex = Math.max(0, currentActiveIndex - 1);
+        }
+        // Ensure active item is visible after a potential scroll
+        if (currentActiveIndex < firstVisibleItemIndex) {
+          firstVisibleItemIndex = currentActiveIndex;
+        }
+        updateActiveClass();
+        updateDashboardImage();
+      });
+
+      nextDashboardButton.addEventListener("click", () => {
+        // Only scroll if there's more to scroll to the right
+        if (firstVisibleItemIndex + itemsPerPage < dashboardNavItems.length) {
+          firstVisibleItemIndex = Math.min(
+            dashboardNavItems.length - itemsPerPage,
+            firstVisibleItemIndex + 1
+          );
+        }
+        // Always try to select the next tab if possible
+        if (currentActiveIndex < dashboardNavItems.length - 1) {
+          currentActiveIndex = Math.min(
+            dashboardNavItems.length - 1,
+            currentActiveIndex + 1
+          );
+        }
+        // Ensure active item is visible after a potential scroll
+        if (currentActiveIndex >= firstVisibleItemIndex + itemsPerPage) {
+          firstVisibleItemIndex = currentActiveIndex - itemsPerPage + 1;
+        }
+        updateActiveClass();
+        updateDashboardImage();
+      });
+
+      // Initial setup
+      calculateItemsPerPage(); // Calculate initial itemsPerPage
+      updateActiveClass();
+      updateDashboardImage();
+      updateDeviceViewButtons();
+      // Call responsive navigation setup on load
+      applyResponsiveNavigation();
+
+      headerHamburgerMenu.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Mobile Dropdown Toggles
+      const mobileIndustriesToggle = document.getElementById(
+        "mobile-industries-toggle"
+      );
+      const mobileIndustriesDropdown = document.getElementById(
+        "mobile-industries-dropdown"
+      );
+
+      if (mobileIndustriesToggle && mobileIndustriesDropdown) {
+        mobileIndustriesToggle.addEventListener("click", (e) => {
+          e.preventDefault();
+          mobileIndustriesDropdown.classList.toggle("hidden");
+          mobileIndustriesToggle
+            .querySelector("svg")
+            .classList.toggle("rotate-180");
+        });
+      }
+
+      const mobileROIToggle = document.getElementById("mobile-roi-toggle");
+      const mobileROIDropdown = document.getElementById("mobile-roi-dropdown");
+
+      if (mobileROIToggle && mobileROIDropdown) {
+        mobileROIToggle.addEventListener("click", (e) => {
+          e.preventDefault();
+          mobileROIDropdown.classList.toggle("hidden");
+          mobileROIToggle.querySelector("svg").classList.toggle("rotate-180");
+        });
+      }
+
+      const mobileWhyGladmindsToggle = document.getElementById(
+        "mobile-why-gladminds-toggle"
+      );
+      const mobileWhyGladmindsDropdown = document.getElementById(
+        "mobile-why-gladminds-dropdown"
+      );
+
+      if (mobileWhyGladmindsToggle && mobileWhyGladmindsDropdown) {
+        mobileWhyGladmindsToggle.addEventListener("click", (e) => {
+          e.preventDefault();
+          mobileWhyGladmindsDropdown.classList.toggle("hidden");
+          mobileWhyGladmindsToggle
+            .querySelector("svg")
+            .classList.toggle("rotate-180");
+        });
+      }
+
+      const mobileAboutUsToggle = document.getElementById(
+        "mobile-about-us-toggle"
+      );
+      const mobileAboutUsDropdown = document.getElementById(
+        "mobile-about-us-dropdown"
+      );
+
+      if (mobileAboutUsToggle && mobileAboutUsDropdown) {
+        mobileAboutUsToggle.addEventListener("click", (e) => {
+          e.preventDefault();
+          mobileAboutUsDropdown.classList.toggle("hidden");
+          mobileAboutUsToggle
+            .querySelector("svg")
+            .classList.toggle("rotate-180");
+        });
+      }
+
+      const mobileMediaToggle = document.getElementById("mobile-media-toggle");
+      const mobileMediaDropdown = document.getElementById(
+        "mobile-media-dropdown"
+      );
+
+      if (mobileMediaToggle && mobileMediaDropdown) {
+        mobileMediaToggle.addEventListener("click", (e) => {
+          e.preventDefault();
+          mobileMediaDropdown.classList.toggle("hidden");
+          mobileMediaToggle.querySelector("svg").classList.toggle("rotate-180");
+        });
+      }
+
+      // Recalculate and update on window resize
+      window.addEventListener("resize", () => {
+        calculateItemsPerPage();
+        updateActiveClass(); // Re-render visibility based on new itemsPerPage
+        applyResponsiveNavigation(); // Call responsive navigation setup on resize
+      });
+
+      function toggleAccordion(button) {
+        const content = button.nextElementSibling;
+        const svg = button.querySelector("svg");
+
+        // Check if the content is currently hidden (max-h-0 means it's collapsed)
+        const isCollapsed =
+          content.style.maxHeight === "0px" ||
+          content.classList.contains("max-h-0");
+
+        if (isCollapsed) {
+          // Prepare for opening
+          content.classList.remove("max-h-0"); // Remove the Tailwind utility that sets max-height: 0
+          content.style.maxHeight = "0px"; // Explicitly set to 0 to ensure transition starts from here
+
+          // Force a reflow to ensure the browser registers the max-height: 0 before setting the new value
+          // This is a common technique to make CSS transitions work when an element
+          // is initially hidden or its dimensions are changed programmatically.
+          void content.offsetWidth; // Trigger reflow
+
+          // Now set the max-height to its scrollHeight for the animation
+          content.style.maxHeight = content.scrollHeight + "px";
+          svg.classList.add("rotate-180");
+        } else {
+          // Prepare for closing
+          content.style.maxHeight = content.scrollHeight + "px"; // Set to current height before collapsing
+
+          // Force a reflow (optional, but good practice for collapsing too)
+          void content.offsetWidth;
+
+          // Now set max-height to 0 to collapse
+          content.style.maxHeight = "0px";
+          svg.classList.remove("rotate-180");
+        }
+      }
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", (event) => {
+        if (
+          !mobileMenu.contains(event.target) &&
+          !headerHamburgerMenu.contains(event.target)
+        ) {
+          mobileMenu.classList.add("hidden");
+        }
+      });
+
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>
