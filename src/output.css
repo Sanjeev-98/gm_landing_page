@@ -220,11 +220,17 @@
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
+  .top-4 {
+    top: calc(var(--spacing) * 4);
+  }
   .top-full {
     top: 100%;
   }
   .right-0 {
     right: calc(var(--spacing) * 0);
+  }
+  .right-4 {
+    right: calc(var(--spacing) * 4);
   }
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
@@ -502,6 +508,12 @@
   .max-w-\[280px\] {
     max-width: 280px;
   }
+  .max-w-\[340px\] {
+    max-width: 340px;
+  }
+  .max-w-\[700px\] {
+    max-width: 700px;
+  }
   .max-w-\[800px\] {
     max-width: 800px;
   }
@@ -510,6 +522,9 @@
   }
   .max-w-\[1000px\] {
     max-width: 1000px;
+  }
+  .max-w-\[1224px\] {
+    max-width: 1224px;
   }
   .max-w-max {
     max-width: max-content;
@@ -624,6 +639,9 @@
   .gap-12 {
     gap: calc(var(--spacing) * 12);
   }
+  .gap-16 {
+    gap: calc(var(--spacing) * 16);
+  }
   .gap-19 {
     gap: calc(var(--spacing) * 19);
   }
@@ -711,6 +729,9 @@
   .rounded-\[12px\] {
     border-radius: 12px;
   }
+  .rounded-\[16px\] {
+    border-radius: 16px;
+  }
   .rounded-\[24px\] {
     border-radius: 24px;
   }
@@ -788,6 +809,9 @@
   }
   .border-\[\#4688EC\] {
     border-color: #4688EC;
+  }
+  .border-\[\#CBD5E1\] {
+    border-color: #CBD5E1;
   }
   .border-\[\#CFE1FD\] {
     border-color: #CFE1FD;
@@ -976,6 +1000,15 @@
   }
   .pr-2 {
     padding-right: calc(var(--spacing) * 2);
+  }
+  .pr-10 {
+    padding-right: calc(var(--spacing) * 10);
+  }
+  .pr-20 {
+    padding-right: calc(var(--spacing) * 20);
+  }
+  .pr-\[100px\] {
+    padding-right: 100px;
   }
   .pb-1 {
     padding-bottom: calc(var(--spacing) * 1);
@@ -1854,6 +1887,11 @@
       flex-direction: row;
     }
   }
+  .md\:flex-wrap {
+    @media (width >= 48rem) {
+      flex-wrap: wrap;
+    }
+  }
   .md\:items-center {
     @media (width >= 48rem) {
       align-items: center;
@@ -1950,6 +1988,11 @@
       padding: calc(var(--spacing) * 2);
     }
   }
+  .md\:p-6 {
+    @media (width >= 48rem) {
+      padding: calc(var(--spacing) * 6);
+    }
+  }
   .md\:p-8 {
     @media (width >= 48rem) {
       padding: calc(var(--spacing) * 8);
@@ -2003,6 +2046,11 @@
   .md\:pt-20 {
     @media (width >= 48rem) {
       padding-top: calc(var(--spacing) * 20);
+    }
+  }
+  .md\:pr-20 {
+    @media (width >= 48rem) {
+      padding-right: calc(var(--spacing) * 20);
     }
   }
   .md\:pb-6 {
@@ -2180,6 +2228,12 @@
     @media (width >= 48rem) {
       --tw-tracking: -1.12px;
       letter-spacing: -1.12px;
+    }
+  }
+  .md\:tracking-\[0\.05px\] {
+    @media (width >= 48rem) {
+      --tw-tracking: 0.05px;
+      letter-spacing: 0.05px;
     }
   }
   .md\:tracking-normal {
