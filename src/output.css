@@ -846,6 +846,9 @@
   .bg-\[\#2F2A2A\] {
     background-color: #2F2A2A;
   }
+  .bg-\[\#3F51B5\] {
+    background-color: #3F51B5;
+  }
   .bg-\[\#0400C8\] {
     background-color: #0400C8;
   }
@@ -864,6 +867,9 @@
   .bg-\[\#EBEFF8\] {
     background-color: #EBEFF8;
   }
+  .bg-\[\#F4FAFE\] {
+    background-color: #F4FAFE;
+  }
   .bg-\[\#F5FAFF\] {
     background-color: #F5FAFF;
   }
@@ -872,6 +878,9 @@
   }
   .bg-\[\#FFFFFF33\] {
     background-color: #FFFFFF33;
+  }
+  .bg-\[\#FFFFFF\] {
+    background-color: #FFFFFF;
   }
   .bg-blue-50 {
     background-color: var(--color-blue-50);
@@ -1166,9 +1175,17 @@
     --tw-leading: 20px;
     line-height: 20px;
   }
+  .leading-\[22px\] {
+    --tw-leading: 22px;
+    line-height: 22px;
+  }
   .leading-\[24px\] {
     --tw-leading: 24px;
     line-height: 24px;
+  }
+  .leading-\[28px\] {
+    --tw-leading: 28px;
+    line-height: 28px;
   }
   .leading-\[32px\] {
     --tw-leading: 32px;
@@ -1226,6 +1243,10 @@
     --tw-tracking: -1.12px;
     letter-spacing: -1.12px;
   }
+  .tracking-\[0\.014px\] {
+    --tw-tracking: 0.014px;
+    letter-spacing: 0.014px;
+  }
   .tracking-\[0\.024px\] {
     --tw-tracking: 0.024px;
     letter-spacing: 0.024px;
@@ -1246,6 +1267,9 @@
   }
   .text-\[\#0D47A1\] {
     color: #0D47A1;
+  }
+  .text-\[\#000000DE\] {
+    color: #000000DE;
   }
   .text-\[\#1A202C\] {
     color: #1A202C;
@@ -1288,6 +1312,9 @@
   }
   .text-\[\#212121\] {
     color: #212121;
+  }
+  .text-\[\#424242\] {
+    color: #424242;
   }
   .text-\[\#444444\] {
     color: #444444;
@@ -1815,6 +1842,11 @@
       display: inline-block;
     }
   }
+  .md\:inline-flex {
+    @media (width >= 48rem) {
+      display: inline-flex;
+    }
+  }
   .md\:h-auto {
     @media (width >= 48rem) {
       height: auto;
@@ -1939,6 +1971,11 @@
   .md\:gap-8 {
     @media (width >= 48rem) {
       gap: calc(var(--spacing) * 8);
+    }
+  }
+  .md\:gap-10 {
+    @media (width >= 48rem) {
+      gap: calc(var(--spacing) * 10);
     }
   }
   .md\:gap-12 {
@@ -2225,6 +2262,12 @@
       line-height: 1.5vw;
     }
   }
+  .md\:leading-\[28px\] {
+    @media (width >= 48rem) {
+      --tw-leading: 28px;
+      line-height: 28px;
+    }
+  }
   .md\:leading-\[40px\] {
     @media (width >= 48rem) {
       --tw-leading: 40px;
@@ -2253,6 +2296,18 @@
     @media (width >= 48rem) {
       --tw-tracking: 0.05px;
       letter-spacing: 0.05px;
+    }
+  }
+  .md\:tracking-\[0\.014px\] {
+    @media (width >= 48rem) {
+      --tw-tracking: 0.014px;
+      letter-spacing: 0.014px;
+    }
+  }
+  .md\:tracking-\[0\.024px\] {
+    @media (width >= 48rem) {
+      --tw-tracking: 0.024px;
+      letter-spacing: 0.024px;
     }
   }
   .md\:tracking-normal {
