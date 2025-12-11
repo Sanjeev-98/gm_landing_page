@@ -900,6 +900,9 @@
   .bg-\[\#F8F8F8\] {
     background-color: #F8F8F8;
   }
+  .bg-\[\#F8FAFC\] {
+    background-color: #F8FAFC;
+  }
   .bg-\[\#FFFFFF33\] {
     background-color: #FFFFFF33;
   }
@@ -2196,6 +2199,12 @@
       text-align: left;
     }
   }
+  .md\:text-base {
+    @media (width >= 48rem) {
+      font-size: var(--text-base);
+      line-height: var(--tw-leading, var(--text-base--line-height));
+    }
+  }
   .md\:text-lg {
     @media (width >= 48rem) {
       font-size: var(--text-lg);
@@ -2286,6 +2295,12 @@
   .md\:text-\[200px\] {
     @media (width >= 48rem) {
       font-size: 200px;
+    }
+  }
+  .md\:leading-7 {
+    @media (width >= 48rem) {
+      --tw-leading: calc(var(--spacing) * 7);
+      line-height: calc(var(--spacing) * 7);
     }
   }
   .md\:leading-8 {
