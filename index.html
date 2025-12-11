@@ -26,6 +26,9 @@
       .font-inter-sans {
         font-family: "Inter", "Sans-serif", sans-serif;
       }
+      .font-roboto-sans {
+        font-family: "Roboto", "Sans-serif", sans-serif;
+      }
       .main-header-text-gradiant {
         background: linear-gradient(90deg, #0400c8 0%, #cecdff 70%);
         background-clip: text;
@@ -54,7 +57,7 @@
       }
     </style>
   </head>
-  <body class="font-inter-sans antialiase" data-page="home">
+  <body class="font-roboto-sans antialiase" data-page="home">
     <div id="navigation-placeholder" class="md:hidden"></div>
     <section class="bg-[#01022F] mx-2 mt-2 rounded-lg">
       <div class="container mx-auto pt-20 md:pt-4 px-3">
@@ -408,7 +411,9 @@
             </div>
           </div>
         </div>
-        <div class="bottom-content-wrapper grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+        <div
+          class="bottom-content-wrapper grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6"
+        >
           <div
             class="rounded-[12px] border border-[#0000001A] bg-[#FFFFFF] p-4 md:p-6 flex flex-col justify-between"
           >
@@ -483,7 +488,7 @@
       >
         <div class="max-w-[670px]">
           <h3
-            class="text-[24px] md:text-[48px] font-medium md:font-bold leading-8 md:leading-[50px] md:max-w-[800px] mb-4 md:mb-7"
+            class="text-[#424242] text-[24px] md:text-[48px] font-medium md:font-bold leading-8 md:leading-[50px] md:max-w-[800px] mb-4 md:mb-7"
           >
             Defect Tracking to Design Improvement
           </h3>
@@ -596,6 +601,99 @@
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="py-6 md:py-20 md:py-20 bg-[#F4FAFE]">
+      <div class="container mx-auto px-4 md:px-6 text-center max-w-5xl">
+        <div>
+          <h2
+            class="text-center text-[24px] md:text-[48px] text-[#424242] font-medium md:font-bold md:leading-12 leading-8 mb-3 md:mb-7"
+          >
+            Got Questions? <br /><span class="">We've Got Answers.</span>
+          </h2>
+        </div>
+        <div class="mx-auto mt-8 md:mt-10">
+          <div
+            class="border border-[#0000001A] rounded-md bg-white mb-4 overflow-hidden"
+          >
+            <button
+              class="flex justify-between items-center w-full px-4 md:px-8 py-4 text-left text-[14px] md:text-[24px] font-medium leading-7 md:leading-8 focus:outline-none hover:bg-gray-100 transition-colors duration-300 text-[#616161] cursor-pointer"
+              onclick="toggleAccordion(this)"
+            >
+              What is the GladMinds Service OS?
+              <svg
+                class="w-5 h-5 transition-transform duration-300 transform"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="#717182"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              class="max-h-0 overflow-hidden transition-max-height duration-500 ease-in-out"
+            >
+              <div
+                class="text-[#616161] text-[16px] md:text-[24px] text-left leading-7 md:leading-8 border-t border-gray-200 px-2 py-4 md:px-4 md:mx-4 mx-2"
+              >
+                An AI-powered operating system that unifies service, parts, and
+                quality workflows for industrial enterprises, turning scattered
+                data into unified intelligence.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <a
+            href="#"
+            class="px-8 py-3 mt-4 md:mt-10 bg-[#1868DB] md:text-[20px] text-white w-full md:w-fit font-bold rounded-full hover:bg-blue-700 transition duration-300 inline-block font-reddit-sans"
+          >
+            View All FAQs
+          </a>
+        </div>
+      </div>
+    </section>
+
     <script src="./src/navigation.js"></script>
+    <script>
+      function toggleAccordion(button) {
+        const content = button.nextElementSibling;
+        const svg = button.querySelector("svg");
+
+        // Check if the content is currently hidden (max-h-0 means it's collapsed)
+        const isCollapsed =
+          content.style.maxHeight === "0px" ||
+          content.classList.contains("max-h-0");
+
+        if (isCollapsed) {
+          // Prepare for opening
+          content.classList.remove("max-h-0"); // Remove the Tailwind utility that sets max-height: 0
+          content.style.maxHeight = "0px"; // Explicitly set to 0 to ensure transition starts from here
+
+          // Force a reflow to ensure the browser registers the max-height: 0 before setting the new value
+          // This is a common technique to make CSS transitions work when an element
+          // is initially hidden or its dimensions are changed programmatically.
+          void content.offsetWidth; // Trigger reflow
+
+          // Now set the max-height to its scrollHeight for the animation
+          content.style.maxHeight = content.scrollHeight + "px";
+          svg.classList.add("rotate-180");
+        } else {
+          // Prepare for closing
+          content.style.maxHeight = content.scrollHeight + "px"; // Set to current height before collapsing
+
+          // Force a reflow (optional, but good practice for collapsing too)
+          void content.offsetWidth;
+
+          // Now set max-height to 0 to collapse
+          content.style.maxHeight = "0px";
+          svg.classList.remove("rotate-180");
+        }
+      }
+    </script>
   </body>
 </html>

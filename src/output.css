@@ -1385,6 +1385,12 @@
   .text-\[\#fff\] {
     color: #fff;
   }
+  .text-\[616161\] {
+    color: 616161;
+  }
+  .text-\[font-roboto-sans\] {
+    color: font-roboto-sans;
+  }
   .text-blue-600 {
     color: var(--color-blue-600);
   }
@@ -1682,6 +1688,11 @@
   .md\:mx-2 {
     @media (width >= 48rem) {
       margin-inline: calc(var(--spacing) * 2);
+    }
+  }
+  .md\:mx-4 {
+    @media (width >= 48rem) {
+      margin-inline: calc(var(--spacing) * 4);
     }
   }
   .md\:mx-auto {
@@ -2103,6 +2114,11 @@
   .md\:px-0 {
     @media (width >= 48rem) {
       padding-inline: calc(var(--spacing) * 0);
+    }
+  }
+  .md\:px-4 {
+    @media (width >= 48rem) {
+      padding-inline: calc(var(--spacing) * 4);
     }
   }
   .md\:px-6 {
