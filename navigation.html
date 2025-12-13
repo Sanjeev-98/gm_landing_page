@@ -3,46 +3,106 @@
   <!-- Mobile Navigation -->
   <nav class="md:hidden flex items-center justify-between px-6 py-4">
     <div class="flex items-center">
-      <img src="assets/logo/light_theme.svg" alt="GladMinds" class="h-8" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-      <div class="text-white text-xl font-bold" style="display:none;">GLADMINDS</div>
+      <img
+        src="assets/logo/light_theme.svg"
+        alt="GladMinds"
+        class="h-8"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+      />
+      <div class="text-white text-xl font-bold" style="display: none">
+        GLADMINDS
+      </div>
     </div>
     <button id="hamburger-btn" class="text-white focus:outline-none">
-      <img src="assets/icons/hamburger_icon.svg" alt="Menu" class="w-8 h-8">
+      <img src="assets/icons/hamburger_icon.svg" alt="Menu" class="w-8 h-8" />
     </button>
   </nav>
-  
+
   <!-- Desktop Navigation -->
-  <nav id="desktop-only-nav" class="container hidden md:inline-block glass-effect max-w-max mx-auto">
-    <div class="flex justify-between gap-19 max-w-max items-center pl-5 pr-2 h-16 border border-white rounded-full">
+  <nav
+    id="desktop-only-nav"
+    class="container hidden md:inline-block glass-effect max-w-max mx-auto rounded-full md:overfow-hidden"
+  >
+    <div
+      class="flex justify-between gap-4 max-w-max items-center pl-5 pr-2 h-16 border border-white rounded-full"
+    >
       <!-- Logo -->
       <div class="flex items-center">
-        <img src="assets/logo/dark_theme.svg" alt="GladMinds" class="mt-2" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <div class="text-white text-2xl font-bold" style="display:none;">GLADMINDS</div>
+        <img
+          src="assets/logo/dark_theme.svg"
+          alt="GladMinds"
+          class="mt-2"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+        />
+        <div class="text-white text-2xl font-bold" style="display: none">
+          GLADMINDS
+        </div>
       </div>
-      
+
       <!-- Navigation Items -->
       <div class="flex items-center space-x-8">
         <!-- Home -->
-        <a href="index.html" data-page="home" class="nav-link text-white hover:text-gray-200 font-bold transition">
+        <a
+          href="index.html"
+          data-page="home"
+          class="nav-link text-white hover:text-gray-200 font-bold transition"
+        >
           Home
         </a>
-        
+
         <!-- About Us (Direct Route) -->
-        <a href="index.html" data-page="about" class="nav-link text-white hover:text-gray-200 font-bold transition">
+        <a
+          href="index.html"
+          data-page="about"
+          class="nav-link text-white hover:text-gray-200 font-bold transition"
+        >
           About Us
         </a>
 
-                <!-- Why GM (Direct Route) -->
-        <a href="why_gm.html" data-page="why_gm" class="nav-link text-white hover:text-gray-200 font-bold transition">
+        <!-- Why GM (Direct Route) -->
+        <a
+          href="why_gm.html"
+          data-page="why_gm"
+          class="nav-link text-white hover:text-gray-200 font-bold transition"
+        >
           Why GladMinds
         </a>
-        
+
+        <!-- After Market (Direct Route) -->
+        <a
+          href="aftermarket.html"
+          data-page="aftermarket"
+          class="nav-link text-white hover:text-gray-200 font-bold transition"
+        >
+          After-Market
+        </a>
+
+        <a
+          href="aftersell.html"
+          data-page="aftersell"
+          class="nav-link text-white hover:text-gray-200 font-bold transition"
+        >
+          After-Sell
+        </a>
+
         <!-- Option-2 (Dropdown) -->
         <div class="relative dropdown">
-          <button class="text-white hover:text-gray-200 font-bold transition flex items-center">
+          <button
+            class="text-white hover:text-gray-200 font-bold transition flex items-center"
+          >
             Option-2
-            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            <svg
+              class="w-4 h-4 ml-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
             </svg>
           </button>
           <div class="dropdown-menu overflow-hidden">
@@ -51,71 +111,118 @@
             <a href="#option2-3" class="m-1 rounded-md">Sub Option 2.3</a>
           </div>
         </div>
-        
-        <!-- Option-3 (Dropdown) -->
-        <div class="relative dropdown">
-          <button class="text-white hover:text-gray-200 font-bold transition flex items-center">
-            Option-3
-            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="dropdown-menu overflow-hidden">
-            <a href="#option3-1" class="m-1 rounded-md">Sub Option 3.1</a>
-            <a href="#option3-2" class="m-1 rounded-md">Sub Option 3.2</a>
-            <a href="#option3-3" class="m-1 rounded-md">Sub Option 3.3</a>
-          </div>
-        </div>
       </div>
-      
+
       <!-- Buttons -->
       <div class="flex items-center space-x-4">
-        <button class="text-white font-bold leading-[0.143px] h-13 border border-[1.5px] border-white px-6 py-2 rounded-full hover:bg-white hover:text-blue-900 transition">
+        <button
+          class="text-white font-bold leading-[0.143px] h-13 border border-[1.5px] border-white px-6 py-2 rounded-full hover:bg-white hover:text-blue-900 transition"
+        >
           SIGN IN
         </button>
-        <button class="bg-white text-[#3F51B5] font-bold leading-[0.143px] h-13  px-6 py-2 rounded-full hover:bg-gray-100 transition">
+        <button
+          class="bg-white text-[#3F51B5] font-bold leading-[0.143px] h-13 px-6 py-2 rounded-full hover:bg-gray-100 transition"
+        >
           SIGN IN
         </button>
       </div>
     </div>
   </nav>
-  
+
   <!-- Mobile Menu Overlay -->
   <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
   <div id="mobile-menu" class="mobile-menu">
     <div>
-      <!-- Home -->
-      <a href="index.html" data-page="home" class="mobile-menu-item">
-        Home
+      <a href="index.html" data-page="home" class="mobile-menu-item"> Home </a>
+      <a href="about.html" data-page="about" class="mobile-menu-item">
+        About
       </a>
-      
+      <a href="why_gm.html" data-page="why_gm" class="mobile-menu-item">
+        Why GladMinds
+      </a>
+      <a
+        href="aftermarket.html"
+        data-page="aftermarket"
+        class="mobile-menu-item"
+      >
+        After-Market
+      </a>
+
       <!-- Option-1 -->
-      <a href="option1.html" data-page="option1" class="mobile-menu-item">
-        Option-1
+      <a href="aftersell.html" data-page="aftersell" class="mobile-menu-item">
+        After-Sell
       </a>
-      
+
       <!-- Option-2 Dropdown -->
       <div>
-        <button class="mobile-dropdown-btn mobile-menu-item w-full text-left" data-target="mobile-dropdown-2">
-          Option-2 <svg class="inline" style="width: 12px; height: 12px; vertical-align: middle; margin-left: 4px; transition: transform 0.3s;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        <button
+          class="mobile-dropdown-btn mobile-menu-item w-full text-left"
+          data-target="mobile-dropdown-2"
+        >
+          Option-2
+          <svg
+            class="inline"
+            style="
+              width: 12px;
+              height: 12px;
+              vertical-align: middle;
+              margin-left: 4px;
+              transition: transform 0.3s;
+            "
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            ></path>
           </svg>
         </button>
-        <div id="mobile-dropdown-2" class="mobile-dropdown-content border-b border-gray-200">
+        <div
+          id="mobile-dropdown-2"
+          class="mobile-dropdown-content border-b border-gray-200"
+        >
           <a href="#option2-1">Sub Option 2.1</a>
           <a href="#option2-2">Sub Option 2.2</a>
           <a href="#option2-3">Sub Option 2.3</a>
         </div>
       </div>
-      
+
       <!-- Option-3 Dropdown -->
       <div>
-        <button class="mobile-dropdown-btn mobile-menu-item w-full text-left" data-target="mobile-dropdown-3">
-          Option-3 <svg class="inline" style="width: 12px; height: 12px; vertical-align: middle; margin-left: 4px; transition: transform 0.3s;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        <button
+          class="mobile-dropdown-btn mobile-menu-item w-full text-left"
+          data-target="mobile-dropdown-3"
+        >
+          Option-3
+          <svg
+            class="inline"
+            style="
+              width: 12px;
+              height: 12px;
+              vertical-align: middle;
+              margin-left: 4px;
+              transition: transform 0.3s;
+            "
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            ></path>
           </svg>
         </button>
-        <div id="mobile-dropdown-3" class="mobile-dropdown-content border-b border-gray-200">
+        <div
+          id="mobile-dropdown-3"
+          class="mobile-dropdown-content border-b border-gray-200"
+        >
           <a href="#option3-1">Sub Option 3.1</a>
           <a href="#option3-2">Sub Option 3.2</a>
           <a href="#option3-3">Sub Option 3.3</a>
