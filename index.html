@@ -14,10 +14,8 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lekton:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
     <link href="src/output.css" rel="stylesheet" />
@@ -28,6 +26,9 @@
       }
       .font-roboto-sans {
         font-family: "Roboto", "Sans-serif", sans-serif;
+      }
+      .font-lekton-sans {
+        font-family: "Lekton", monospace;
       }
       .main-header-text-gradiant {
         background: linear-gradient(90deg, #0400c8 0%, #cecdff 70%);
@@ -87,13 +88,33 @@
           </a>
         </div>
 
-        <div class="pb-5">
+        <div class="pb-5 md:mb-16">
           <p
             class="custom-gradient-desc text-[12px] text-white text-center md:text-[16px] md:font-medium leading-5 tracking-[0.048px] md:tracking-regular"
           >
             From the shop floor to the service lane — GladMinds connects
             machines, people, and decisions into one intelligent ecosystem.
           </p>
+        </div>
+
+        <div class="relative flex justify-center">
+          <div
+            class=" border border-l-5 border-t-5 border-r-5 rounded-tl-[20px] rounded-tr-[20px] border-[#F4DFFF1A] w-fit px-4 pt-4"
+          >
+            <div class="flex justify-cente md:mt-[-28px] mt-[-6px]  absolute top-0 left-1/2 -translate-x-1/2">
+              <img src="assets/home/bg/blur_bg.svg" alt="Blur background" />
+            </div>
+            <div class="flex justify-center">
+              <div
+                class="text-[8px] md:text-[25px] bg-[#0C0725] w-fit font-lekton-sans text-white leading-[10px] md:leading-9 md:px-9 md:py-1 mb-4 rounded-[8px] border border-[#0C0725]"
+              >
+                gladminds.co/dashboard
+              </div>
+            </div>
+            <div class="w-fit">
+              <img src="assets/home/header_bottom.svg" alt="Header bottom" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
