@@ -14,2458 +14,795 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- <link
-      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap"
-      rel="stylesheet"
-    /> -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lekton:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
     <link href="src/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/navigation.css" />
     <style>
-      .font-dm-sans {
-        font-family: "DM Sans", sans-serif;
-      }
-      .font-reddit-sans {
-        font-family: "Reddit Sans", sans-serif;
-      }
-      .font-poppins {
-        font-family: "Poppins", sans-serif;
-      }
-      .font-arimo-sans {
-        font-family: "Arimo", sans-serif;
+      .font-inter-sans {
+        font-family: "Inter", "Sans-serif", sans-serif;
       }
       .font-roboto-sans {
-        font-family: "Roboto", sans-serif;
+        font-family: "Roboto", "Sans-serif", sans-serif;
       }
-      #dashboardImage {
-        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      .font-lekton-sans {
+        font-family: "Lekton", monospace;
       }
-      .dashboard-nav-item {
-        transition: opacity 0.3s ease-in-out;
-        font-family: "DM Sans", sans-serif;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 26px; /* 144.444% */
-        margin-right: 28px;
+      .main-header-text-gradiant {
+        background: linear-gradient(90deg, #0400c8 0%, #cecdff 70%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
-      /* For Webkit browsers (Chrome, Safari, Edge, Opera) */
-      .hide-scrollbar::-webkit-scrollbar {
-        display: none;
+      .custom-gradient-desc {
+        background: linear-gradient(
+          90deg,
+          #231233 -20%,
+          #f8ebff 40%,
+          #231233 130%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
-
-      /* Optional: To hide the scrollbar track but keep the scroll functionality */
-      .hide-scrollbar::-webkit-scrollbar-track {
-        background: transparent;
-      }
-
-      /* Optional: To hide the scrollbar thumb */
-      .hide-scrollbar::-webkit-scrollbar-thumb {
-        background: transparent;
-      }
-      .bg-gradient-1:before {
-        content: "";
-        position: absolute;
-        margin-left: 0;
-        margin-top: 0;
-        width: 100%;
-        height: 100px;
-        background: linear-gradient(180deg, #e7e8fe, transparent);
-      }
-      .tilted-elipse::before {
-        content: "";
-        position: absolute;
-        margin-left: -38px;
-        margin-top: 57px;
-        height: 66px;
-        width: auto;
-        aspect-ratio: 66 / 50;
-        border-radius: 50%;
-        background: #cfe1fd;
-        transform: rotate(45deg);
-        z-index: -1;
-      }
-
-      @media screen and (max-width: 768px) {
-        .tilted-elipse::before {
-          margin-left: -20px;
-          margin-top: 40px;
-          height: 40px;
-        }
+      .btn-primary-gradient {
+        background: radial-gradient(
+            41.38% 44.27% at 47.7% 50%,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.1) 50%,
+            rgba(255, 255, 255, 0.2) 100%
+          ),
+          #0400c8;
       }
     </style>
   </head>
-  <body class="font-sans antialiased text-gray-800">
-    <!-- Header Section -->
-    <header class="bg-whit shadow-md">
-      <div class="containe mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="#" class="text-2xl font-bold text-blue-600 flex items-center">
-          <img src="assets/gm_logo.svg" alt="GladMinds Logo" class="h-8 mr-2" />
-        </a>
-        <div class="flex items-center space-x-4">
-          <a
-            href="https://aftersell.gladminds.co/auth/login"
-            target="_blank"
-            class="px-6 py-2 text-[#1868DB] rounded-lg font-reddit-sans font-bold hover:bg-blue-50 transition duration-300 hidden md:inline-block"
-            >Go To Dashboard</a
-          >
-          <a
-            href="#"
-            class="px-8 py-3 bg-[#1868DB] text-[#fff] font-[700] rounded-full font-reddit-sans content-center hover:bg-blue-700 transition duration-300 w-fit whitespace-nowrap text-[1.5vw] sm:text-[18px] md:text-[1.5vw] hidden md:inline-block"
-            >Request A Demo</a
-          >
-          <button
-            id="header-hamburger-menu"
-            class="text-gray-600 hover:text-blue-600 focus:outline-none md:hidden"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </header>
+  <body class="font-roboto-sans antialiase" data-page="home">
+    <div id="navigation-placeholder" class="md:hidden"></div>
+    <section class="bg-[#01022F] mx-2 mt-2 rounded-lg">
+      <div class="container mx-auto pt-20 md:pt-4 px-3">
+        <div id="navigation-placeholder" class="hidden md:block"></div>
+        <h1
+          class="font-inter-sans main-header-text-gradiant text-center text-[24px] md:text-[64px] text-[#F4DFFF] font-medium leading-8 md:leading-19 mb-3 md:mb-6"
+        >
+          Turning Downtime into <br />
+          Uptime
+        </h1>
 
-    <div
-      id="mobile-menu"
-      class="fixed top-0 left-0 w-full md:hidden hidden flex flex-col items-cente bg- py-4 z-99 max-w-[80vw] h-[100vh] top-0 left-0 gap-4 bg-gray-50 p-[12px] overflow-auto"
-    >
-      <div class="text-cente">
-        <a href="#" class="text-blue-600 font-semibold p-2">Home</a>
-      </div>
-      <span class="text-cente"
-        ><a href="#" class="text-gray-600 hover:text-blue-600 p-2"
-          >Pricing</a
-        ></span
-      >
-      <span class="relative group w-full text-cente">
-        <a
-          id="mobile-industries-toggle"
-          href="#"
-          class="text-gray-600 hover:text-blue-600 p-2 flex items-center"
-        >
-          Industries
-          <svg
-            class="w-3 h-3 ml-1 transform transition-transform duration-200"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M19 9l-7 7-7-7"
-            ></path>
-          </svg>
-        </a>
-        <div
-          id="mobile-industries-dropdown"
-          class="hidden flex-col items-center space-y-2 mt-2 ml-3 py-2 w-auto"
-        >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
-            >Automotive</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
-            >Home Appliances</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
-            >Construction & Mining</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
-            >Consumer Electronics</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
-            >Machinery</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
-            >Power Equipment</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
-            >Agriculture Equipment</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
-            >HVAC</a
-          >
-        </div>
-      </span>
-      <span class="relative group w-full text-cente">
-        <a
-          id="mobile-roi-toggle"
-          href="#"
-          class="text-gray-600 hover:text-blue-600 p-2 flex items-center justify-cente"
-        >
-          ROI Calculator
-          <svg
-            class="w-3 h-3 ml-1 transform transition-transform duration-200"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M19 9l-7 7-7-7"
-            ></path>
-          </svg>
-        </a>
-        <div
-          id="mobile-roi-dropdown"
-          class="hidden flex-col items-center space-y-2 mt-2 ml-3 py-2 w-auto"
-        >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
-            >Automotive</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
-            >Home Appliances</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] font-[24px] text-left w-full"
-            >Construction & Mining</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] font-[24px] text-left w-full"
-            >Consumer Electronics</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
-            >Machinery</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
-            >Power Equipment</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
-            >Agriculture Equipment</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
-            >HVAC</a
-          >
-        </div>
-      </span>
-      <span class="relative group w-full overflow-hidde">
-        <a
-          id="mobile-why-gladminds-toggle"
-          href="#"
-          class="text-gray-600 hover:text-blue-600 p-2 flex items-center"
-        >
-          Why Gladminds?
-          <svg
-            class="w-3 h-3 ml-1 transform transition-transform duration-200"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M19 9l-7 7-7-7"
-            ></path>
-          </svg>
-        </a>
-        <div
-          id="mobile-why-gladminds-dropdown"
-          class="hidden flex-col items-center space-y-2 mt-2 ml-3 py-2 w-auto"
-        >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
-            >Customer Experience</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
-            >Partner Management</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
-            >Field Engineers</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
-            >Reduced TAT</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[14px] leading-[24px] text-left w-full"
-            >Improve NPS score</a
-          >
-        </div>
-      </span>
-      <span class="relative group w-full text-cente">
-        <a
-          id="mobile-about-us-toggle"
-          href="#"
-          class="text-gray-600 hover:text-blue-600 p-2 flex items-center"
-        >
-          About Us
-          <svg
-            class="w-3 h-3 ml-1 transform transition-transform duration-200"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M19 9l-7 7-7-7"
-            ></path>
-          </svg>
-        </a>
-        <div
-          id="mobile-about-us-dropdown"
-          class="hidden flex-col items-center space-y-2 mt-2 ml-3 py-2 w-auto"
-        >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] \ leading-[24px] text-left w-full"
-            >Founder</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] leading-[24px] text-left w-full"
-            >Leadership Team</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] leading-[24px] text-left w-full"
-            >Vision</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] leading-[24px] text-left w-full"
-            >Mission</a
-          >
-        </div>
-      </span>
-      <span class="relative group w-full text-cente">
-        <a
-          id="mobile-media-toggle"
-          href="#"
-          class="text-gray-600 hover:text-blue-600 p-2 flex items-center"
-        >
-          Media
-          <svg
-            class="w-3 h-3 ml-1 transform transition-transform duration-200"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M19 9l-7 7-7-7"
-            ></path>
-          </svg>
-        </a>
-        <div
-          id="mobile-media-dropdown"
-          class="hidden flex-col items-center space-y-2 mt-2 ml-3 py-2 w-auto"
-        >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] leading-[24px] text-left w-full"
-            >Case Studies</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] leading-[24px] text-left w-full"
-            >Blogs</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] leading-[24px] text-left w-full"
-            >NewsLetter</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] leading-[24px] text-left w-full"
-            >Webinars</a
-          >
-          <a
-            href="#"
-            class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] leading-[24px] text-left w-full"
-            >Testtimonials</a
-          >
-        </div>
-      </span>
-      <span class="text-cente">
-        <a href="#" class="text-gray-600 hover:text-blue-600 p-2">Contact Us</a>
-      </span>
-
-      <div class="pt-6 mt-2 border-t border-[#EEE] flex flex-col">
-        <a
-          href="#"
-          class="px-8 py-3 bg-[#1868DB] text-[#fff] font-[700] rounded-full font-reddit-sans content-center hover:bg-blue-700 transition duration-300 w-fit whitespace-nowrap sm:text-[18px] md:text-[1.5vw]"
-          >Request A Demo</a
-        >
-        <a
-          href="https://aftersell.gladminds.co/auth/login"
-          target="_blank"
-          class="mt-2 py-2 text-[#1868DB] rounded-lg font-reddit-sans font-bold hover:bg-blue-50 transition duration-300 md:inline-block"
-          >Go To Dashboard</a
-        >
-      </div>
-    </div>
-    <main>
-      <!-- Hero Section -->
-      <section
-        class="bg-gradient-1 from-blue-50 to-white py-"
-        style="
-          background-image: url('assets/background/bg_1.svg');
-          background-position: center;
-        "
-      >
-        <div class="container mx-auto px-4 py-2 md:px-0 text-center">
-          <nav class="flex mb-9 md:mb-15 relative">
-            <div
-              class="mx-auto px-6 flex flex-wrap space-x-4 items-center rounded-full bg-gray-50 border border-[#CFE1FD] hidden md:flex p-1"
-            >
-              <a
-                href="#"
-                class="text-blue-600 font-semibold font-dm-sans border-b-2 border-blue-600 p-2 pb-1 sm:text-[1.2vw] xl:text-[18px]"
-                >Home</a
-              >
-              <a
-                href="#"
-                class="text-[#3B3D42] font-dm-sans text- flex items-center sm:text-[1.2vw] xl:text-[18px]"
-                >Pricing
-                <svg
-                  class="w-3 h-3 ml-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 9l-7 7-7-7"
-                  ></path>
-                </svg>
-              </a>
-              <a
-                href="#"
-                class="text-[#3B3D42] font-dm-sans flex items-center p-2 sm:text-[1.2vw] xl:text-[18px]"
-                >Industries
-                <svg
-                  class="w-3 h-3 ml-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 9l-7 7-7-7"
-                  ></path>
-                </svg>
-              </a>
-              <div class="relative group">
-                <a
-                  href="#"
-                  class="text-[#3B3D42] font-dm-sans flex items-center p-2 group-hover:bg-[#E9F2FE] group-hover:rounded-lg group-hover:p-2 sm:text-[1.2vw] xl:text-[18px]"
-                >
-                  ROI Calculator
-                  <svg
-                    class="w-3 h-3 ml-1 transform group-hover:rotate-180 transition-transform duration-200"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M19 9l-7 7-7-7"
-                    ></path>
-                  </svg>
-                </a>
-                <div
-                  class="absolute left-1/2 -translate-x-1/2 mt-2 bg-white rounded-md shadow-lg p-[4px] z-20 opacity-0 group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out invisible flex flex-col items-start gap-[4px] whitespace-nowrap shadow-[0_1px_6.6px_0_rgba(53,125,232,0.23)] border border-[#CFE1FD] rounded-xl"
-                >
-                  <a
-                    href="#"
-                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
-                    >Automotive</a
-                  >
-                  <a
-                    href="#"
-                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
-                    style="width: 100%"
-                    >Home Appliances</a
-                  >
-                  <a
-                    href="#"
-                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
-                    >Construction & Mining</a
-                  >
-                  <a
-                    href="#"
-                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
-                    >Consumer Electronics</a
-                  >
-                  <a
-                    href="#"
-                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
-                    >Machinery</a
-                  >
-                  <a
-                    href="#"
-                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
-                    >Power Equipment</a
-                  >
-                  <a
-                    href="#"
-                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
-                    >Agriculture Equipment</a
-                  >
-                  <a
-                    href="#"
-                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
-                    >HVAC</a
-                  >
-                </div>
-              </div>
-              <div class="relative group">
-                <a
-                  href="#"
-                  class="text-[#3B3D42] font-dm-sans flex items-center p-2 group-hover:bg-[#E9F2FE] group-hover:rounded-lg group-hover:p-2 sm:text-[1.2vw] xl:text-[18px]"
-                >
-                  Why Gladminds?
-                  <svg
-                    class="w-3 h-3 ml-1 transform group-hover:rotate-180 transition-transform duration-200"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M19 9l-7 7-7-7"
-                    ></path>
-                  </svg>
-                </a>
-                <div
-                  class="absolute left-1/2 -translate-x-1/2 mt-2 bg-white rounded-md shadow-lg p-[4px] z-20 opacity-0 group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out invisible flex flex-col items-start gap-[4px] whitespace-nowrap shadow-[0_1px_6.6px_0_rgba(53,125,232,0.23)] border border-[#CFE1FD] rounded-xl"
-                >
-                  <a
-                    href="#"
-                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
-                    >Customer Experience</a
-                  >
-                  <a
-                    href="#"
-                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
-                    >Partner Management</a
-                  >
-                  <a
-                    href="#"
-                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
-                    >Field Engineers</a
-                  >
-                  <a
-                    href="#"
-                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
-                    >Reduced TAT</a
-                  >
-                  <a
-                    href="#"
-                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
-                    >Improve NPS score</a
-                  >
-                </div>
-              </div>
-              <div class="relative group">
-                <a
-                  href="#"
-                  class="text-[#3B3D42] font-dm-sans flex items-center p-2 group-hover:bg-[#E9F2FE] group-hover:rounded-lg group-hover:p-2 sm:text-[1.2vw] xl:text-[18px]"
-                >
-                  About Us
-                  <svg
-                    class="w-3 h-3 ml-1 transform group-hover:rotate-180 transition-transform duration-200"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M19 9l-7 7-7-7"
-                    ></path>
-                  </svg>
-                </a>
-                <div
-                  class="absolute left-1/2 -translate-x-1/2 mt-2 bg-white rounded-md shadow-lg p-[4px] z-20 opacity-0 group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out invisible flex flex-col items-start gap-[4px] whitespace-nowrap shadow-[0_1px_6.6px_0_rgba(53,125,232,0.23)] border border-[#CFE1FD] rounded-xl"
-                >
-                  <a
-                    href="#"
-                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
-                    >Founder</a
-                  >
-                  <a
-                    href="#"
-                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
-                    >Leadership Team</a
-                  >
-                  <a
-                    href="#"
-                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
-                    >Vision</a
-                  >
-                  <a
-                    href="#"
-                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
-                    >Mission</a
-                  >
-                </div>
-              </div>
-              <div class="relative group">
-                <a
-                  href="#"
-                  class="text-[#3B3D42] font-dm-sans flex items-center p-2 group-hover:bg-[#E9F2FE] group-hover:rounded-lg group-hover:p-2 sm:text-[1.2vw] xl:text-[18px]"
-                >
-                  Media
-                  <svg
-                    class="w-3 h-3 ml-1 transform group-hover:rotate-180 transition-transform duration-200"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M19 9l-7 7-7-7"
-                    ></path>
-                  </svg>
-                </a>
-                <div
-                  class="absolute left-1/2 -translate-x-1/2 mt-2 bg-white rounded-md shadow-lg p-[4px] z-20 opacity-0 group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out invisible flex flex-col items-start gap-[4px] whitespace-nowrap shadow-[0_1px_6.6px_0_rgba(53,125,232,0.23)] border border-[#CFE1FD] rounded-xl"
-                >
-                  <a
-                    href="#"
-                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
-                    >Case Studies</a
-                  >
-                  <a
-                    href="#"
-                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
-                    >Blogs</a
-                  >
-                  <a
-                    href="#"
-                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
-                    >NewsLetter</a
-                  >
-                  <a
-                    href="#"
-                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
-                    >Webinars</a
-                  >
-                  <a
-                    href="#"
-                    class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full sm:text-[1.1vw] xl:text-[16px] hover:rounded-lg"
-                    >Testtimonials</a
-                  >
-                </div>
-              </div>
-              <a
-                href="#"
-                class="text-[#3B3D42] font-dm-sans p-2 sm:text-[1.2vw] xl:text-[18px]"
-                >Contact Us</a
-              >
-            </div>
-          </nav>
-          <div
-            id="mobile-menu"
-            class="absolute top-full left-0 w-full md:hidden hidden flex-col items-center space-y-4 bg-gray-50 border border-[#CFE1FD] rounded-lg py-4 z-10"
-          >
-            <a href="#" class="text-blue-600 font-semibold p-2">Home</a>
-            <a href="#" class="text-gray-600 hover:text-blue-600 p-2"
-              >Pricing</a
-            >
-            <div class="relative group w-full text-center">
-              <a
-                id="mobile-industries-toggle"
-                href="#"
-                class="text-gray-600 hover:text-blue-600 p-2 flex items-center justify-center"
-              >
-                Industries
-                <svg
-                  class="w-3 h-3 ml-1 transform transition-transform duration-200"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 9l-7 7-7-7"
-                  ></path>
-                </svg>
-              </a>
-              <div
-                id="mobile-industries-dropdown"
-                class="hidden flex-col items-center space-y-2 mt-2 bg-white rounded-lg shadow-lg py-2 w-full"
-              >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Automotive</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Home Appliances</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Construction & Mining</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Consumer Electronics</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Machinery</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Power Equipment</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Agriculture Equipment</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >HVAC</a
-                >
-              </div>
-            </div>
-            <div class="relative group w-full text-center">
-              <a
-                id="mobile-roi-toggle"
-                href="#"
-                class="text-gray-600 hover:text-blue-600 p-2 flex items-center justify-center hover"
-              >
-                ROI Calculator
-                <svg
-                  class="w-3 h-3 ml-1 transform transition-transform duration-200"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 9l-7 7-7-7"
-                  ></path>
-                </svg>
-              </a>
-              <div
-                id="mobile-roi-dropdown"
-                class="hidden flex-col items-center space-y-2 mt-2 bg-white rounded-lg shadow-lg py-2 w-full"
-              >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Automotive</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Home Appliances</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-[24px] text-left w-full"
-                  >Construction & Mining</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-[24px] text-left w-full"
-                  >Consumer Electronics</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Machinery</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Power Equipment</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Agriculture Equipment</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >HVAC</a
-                >
-              </div>
-            </div>
-            <div class="relative group w-full text-center">
-              <a
-                id="mobile-why-gladminds-toggle"
-                href="#"
-                class="text-gray-600 hover:text-blue-600 p-2 flex items-center justify-center"
-              >
-                Why Gladminds?
-                <svg
-                  class="w-3 h-3 ml-1 transform transition-transform duration-200"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 9l-7 7-7-7"
-                  ></path>
-                </svg>
-              </a>
-              <div
-                id="mobile-why-gladminds-dropdown"
-                class="hidden flex-col items-center space-y-2 mt-2 bg-white rounded-lg shadow-lg py-2 w-full"
-              >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Customer Experience</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Partner Management</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Field Engineers</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Reduced TAT</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Improve NPS score</a
-                >
-              </div>
-            </div>
-            <div class="relative group w-full text-center">
-              <a
-                id="mobile-about-us-toggle"
-                href="#"
-                class="text-gray-600 hover:text-blue-600 p-2 flex items-center justify-center"
-              >
-                About Us
-                <svg
-                  class="w-3 h-3 ml-1 transform transition-transform duration-200"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 9l-7 7-7-7"
-                  ></path>
-                </svg>
-              </a>
-              <div
-                id="mobile-about-us-dropdown"
-                class="hidden flex-col items-center space-y-2 mt-2 bg-white rounded-lg shadow-lg py-2 w-full"
-              >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Founder</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Leadership Team</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Vision</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Mission</a
-                >
-              </div>
-            </div>
-            <div class="relative group w-full text-center">
-              <a
-                id="mobile-media-toggle"
-                href="#"
-                class="text-gray-600 hover:text-blue-600 p-2 flex items-center justify-center"
-              >
-                Media
-                <svg
-                  class="w-3 h-3 ml-1 transform transition-transform duration-200"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 9l-7 7-7-7"
-                  ></path>
-                </svg>
-              </a>
-              <div
-                id="mobile-media-dropdown"
-                class="hidden flex-col items-center space-y-2 mt-2 bg-white rounded-lg shadow-lg py-2 w-full"
-              >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Case Studies</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Blogs</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >NewsLetter</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Webinars</a
-                >
-                <a
-                  href="#"
-                  class="block p-2 hover:bg-[#E9F2FE] text-[#3B3D42] font-dm-sans text-[16px] font-medium leading-[24px] text-left w-full"
-                  >Testtimonials</a
-                >
-              </div>
-            </div>
-            <a href="#" class="text-gray-600 hover:text-blue-600 p-2"
-              >Contact Us</a
-            >
-          </div>
-          <h1
-            class="text-[24px] md:text-[4.3vw] md:text-[#1E1F21] md:max-w-[60vw] mx-auto font-semibold sm:leading-tight mb-4 md:mb-10 tracking-[-1.2px] font-roboto-sans"
-          >
-            <span class="block sm:inlin"> Because Service Is the </span>
-            <span
-              class="text-[#1558BC] bg-[linear-gradient(90deg,#e0ebfc,transparent)]"
-              >New Frontline of Growth</span
-            >
-          </h1>
+        <div class="flex justify-center mb-9 md:mb-12">
           <p
-            class="text-[16px] md:text-[1.35vw] text-[#616161] mb-6 md:mb-13 md:max-w-[60vw] mx-auto font-roboto-sans"
+            class="custom-gradient-desc text-center text-white md:text-[28px] md:font-medium leading-7 md:leading-9 tracking-[0.024px] max-w-[900px]"
           >
-            GladMinds is the AI-powered Service OS that unifies customers,
-            partners, and field engineers — delivering faster service, better
-            experiences, and measurable business outcomes.
+            AI-driven Service OS built for industrial enterprises to accelerate
+            service flow, reduce turnaround time, and transform aftersales.
           </p>
-          <button
-            class="md:inline-block py-3 px-5 bg-[#1868DB] text-[16px] md:text-[20px] text-white font-bold rounded-full hover:bg-blue-700 transition duration-300 font-roboto-sans w-full md:w-auto"
-          >
-            Explore the Platform
-          </button>
-
-          <!-- <hr class="md:hidden my-4 mt-8" style="color: #cfe1fd" /> -->
-          <!-- Dashboard Section -->
-          <div class="mt-8 md:mt-16 flex flex-col items-center">
-            <!-- Dashboard Navigation -->
-            <nav
-              class="flex justify-center items-center relative w-full max-w-6xl md:mb-8"
-            >
-              <div
-                class="flex space-x-6 mx-[-16px] md:mx-auto justify-between items-center md:rounded-full md:bg-gray-50 pt-2 pb-1 md:py-4 w-fit dashboard-nav-items-container relative overflow-hidden shadow-[0_1px_5.7px_0_rgba(53,125,232,0.15)] border-b border-t md:border border-[#CFE1FD]"
-              >
-                <button
-                  id="prevDashboard"
-                  class="hidden md:inline-block w-[56px] h-[56px] min-w-[56px] left-0 p-3 md:ml-2 rounded-full bg-white shadow-lg hover:text-blue-600 z-10 focus:outline-none border cursor-pointer"
-                  style="border-color: #b7b9be"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="28"
-                    viewBox="0 0 18 28"
-                    fill="none"
-                    class="mx-auto"
-                  >
-                    <path
-                      d="M14 0L17.29 3.29L6.60337 14L17.29 24.71L14 28L4.00074e-05 14L14 0Z"
-                      fill="#B7B9BE"
-                    />
-                  </svg>
-                </button>
-                <div class="px-4 flex overflow-auto hide-scrollbar">
-                  <div
-                    id="dashboardNavItemsWrapper"
-                    class="flex flex-nowrap transition-transform duration-300 ease-out mx-auto hide-scrollbar"
-                  >
-                    <a
-                      href="#"
-                      class="dashboard-nav-item text-blue-600 font-semibold border-b-2 border-blue-600 pb-2 flex-shrink-0 text-[14px] md:text-lg"
-                      data-image="dashboard.svg"
-                      data-mobile-image="module_tab/dashboard_mobile.png"
-                      >My Dashboard</a
-                    >
-                    <a
-                      href="#"
-                      class="dashboard-nav-item text-gray-600 hover:text-blue-600 flex-shrink-0 text-[14px] md:text-lg"
-                      data-image="module_tab/product.png"
-                      data-mobile-image="module_tab/product_mobile.png"
-                      >Product Information</a
-                    >
-                    <a
-                      href="#"
-                      class="dashboard-nav-item text-gray-600 hover:text-blue-600 flex-shrink-0 text-[14px] md:text-lg"
-                      data-image="module_tab/stock_management.png"
-                      data-mobile-image="module_tab/stock_management_mobile.png"
-                      >Stock Management</a
-                    >
-                    <a
-                      href="#"
-                      class="dashboard-nav-item text-gray-600 hover:text-blue-600 flex-shrink-0 text-[14px] md:text-lg"
-                      data-image="module_tab/engineer_inventory.png"
-                      data-mobile-image="module_tab/engineer_inventory_mobile.png"
-                      >Engineering Inventory</a
-                    >
-                  </div>
-                </div>
-                <button
-                  id="nextDashboard"
-                  class="bsolute w-[56px] h-[56px] min-w-[56px] right-0 p-3 mr-2 rounded-full bg-white shadow-lg hover:text-blue-600 z-10 focus:outline-none border cursor-pointer"
-                  style="border-color: #b7b9be"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="28"
-                    viewBox="0 0 18 28"
-                    fill="none"
-                    class="mx-auto"
-                  >
-                    <path
-                      d="M4 28L0.71 24.71L11.3966 14L0.71 3.29L4 0L18 14L4 28Z"
-                      fill="#B7B9BE"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </nav>
-
-            <!-- Dashboard Image -->
-            <div class="mt-8 relative w-full min-h-[170px] md:max-w-[65vw]">
-              <img
-                id="dashboardImage"
-                src="assets/dashboard.svg"
-                alt="Dashboard Mockup"
-                class="mx-auto rounded-lg border border-3 md:border-8 border-[#E9F2FE] w-full transition-opacity duration-300 ease-in-out"
-              />
-            </div>
-
-            <!-- Desktop/Mobile Switch -->
-            <div
-              class="mb-10 md:mb-0 mt-8 flex justify-center space-x-2 p-1 bg-gray-100 rounded-full border border-gray-200 shadow-[0_4px_4px_0_rgba(0,0,0,0.14)]"
-            >
-              <button
-                id="desktopView"
-                class="px-8 py-2 rounded-full bg-blue-600 text-white font-semibold text-base focus:outline-none"
-              >
-                Desktop
-              </button>
-              <button
-                id="mobileView"
-                class="px-8 py-2 rounded-full text-gray-600 font-semibold text-base hover:bg-gray-200 focus:outline-none"
-              >
-                Mobile
-              </button>
-            </div>
-          </div>
         </div>
-      </section>
 
-      <!-- New Section: Because Service Is The New Frontline Of Growth -->
-      <section id="features" class="py-10 md:mt-20 bg-gray-50">
-        <div
-          class="container mx-auto px-4 md:px-20 md:px-0 flex flex-col md:flex-row md:items-center justify-between md:gap-20"
-        >
-          <div class="mobile-view lg:w-1/2 md:hidden">
-            <div
-              class="px-4 py-2 mb-3 font-roboto-sans text-[#1558BC] text-[12px] border border-1 border-[#4688EC] rounded-full w-fit bg-[#E9F2FE]"
-            >
-              The more it connects, the smarter it gets.
-            </div>
-            <h2
-              class="font-roboto-sans text-[24px] font-bold leading-[32px] tracking-[-0.48px] mb-4"
-            >
-              Our Secret Sauce: <br /><span class="text-[#1558BC]"
-                >Platform DNA + Network Effect
-              </span>
-            </h2>
-          </div>
-          <div class="lg:w-1/2 text-left">
-            <p
-              class="text-[#616161] md:text-[24px] mb-[1vw] leading-[1.4] font-roboto-sans"
-            >
-              Every GladMinds feature is built around one idea — the Installed
-              Base Record: Product + Customer + Location. This single source of
-              truth connects OEMs, dealers, service providers, and customers in
-              one digital loop.
-            </p>
-            <a
-              href="#"
-              class="hidden md:inline-block py-3 px-4 bg-[#1868DB] text-[1.2vw] text-white font-bold rounded-full hover:bg-blue-700 transition duration-300 font-reddit-sans"
-            >
-              Explore How It Works
-            </a>
-            <img
-              src="assets/frontline_growth.svg"
-              alt="Building Mockup"
-              class="rounded-lg mt-12 w-full h-auto"
-            />
-          </div>
-          <div class="lg:w-1/2">
-            <div
-              class="hidden md:inline-block px-4 py-2 mb-5 font-roboto-sans text-[#1558BC] text-[14px] md:text-[16px] border border-1 border-[#4688EC] rounded-full w-fit bg-[#E9F2FE]"
-            >
-              The more it connects, the smarter it gets.
-            </div>
-            <br />
-            <h2
-              class="hidden md:inline font-roboto-sans text-[2vw] font-bold text-[4vw] leading-[1.3] tracking-[-1.12px]"
-            >
-              Our Secret Sauce: <br /><span class="text-[#1558BC]">
-                Platform DNA + Network Effect
-              </span>
-            </h2>
-            <ul class="space-y-6 mt-4 md:mt-13">
-              <li class="flex items-star">
-                <span
-                  class="tilted-elipse flex-shrink-0 flex items-center justify-center text-[52px] md:text-[72px] text-[#1558BC] font-semibold mr-4 md:mr-12 font-reddit-sans z-1"
-                  >01</span
-                >
-                <div class="content-center">
-                  <h3
-                    class="md:text-[24px] text-[#1976D2] font-roboto-sans font-bold leading-[1.2] mb-2"
-                  >
-                    Product-Centric Platform:
-                  </h3>
-                  <p
-                    class="text-[14px] md:text-[18px] text-[#6B6B6B] font-poppins font-normal leading-[1.8]"
-                  >
-                    Unified asset visibility across brands and lifecycles.
-                  </p>
-                </div>
-              </li>
-              <li class="flex items-star">
-                <span
-                  class="tilted-elipse flex-shrink-0 flex items-center justify-center text-[52px] md:text-[72px] text-[#1558BC] font-semibold mr-4 md:mr-12 font-reddit-sans z-1"
-                  >02</span
-                >
-                <div class="content-center">
-                  <h3
-                    class="md:text-[24px] text-[#1976D2] font-roboto-sans font-bold leading-[1.2] mb-2"
-                  >
-                    Multi-OEM Connect:
-                  </h3>
-                  <p
-                    class="md:text-[14px] md:text-[18px] text-[#6B6B6B] font-roboto-sans font-normal leading-[1.8]"
-                  >
-                    One network that bridges multiple OEMs and service partners.
-                  </p>
-                </div>
-              </li>
-              <li class="flex items-star">
-                <span
-                  class="tilted-elipse flex-shrink-0 flex items-center justify-center text-[52px] md:text-[72px] text-[#1558BC] font-semibold mr-4 md:mr-12 font-reddit-sans z-1"
-                  >03</span
-                >
-                <div class="content-center">
-                  <h3
-                    class="md:text-[24px] text-[#1976D2] font-roboto-sans font-bold leading-[1.2] mb-2"
-                  >
-                    Outcome-Based Intelligence:
-                  </h3>
-                  <p
-                    class="text-[14px] md:text-[18px] text-[#6B6B6B] font-roboto-sans font-normal leading-[1.8]"
-                  >
-                    AI recommendations for service, spares, and upgrades.
-                  </p>
-                </div>
-              </li>
-              <li class="flex items-star">
-                <span
-                  class="tilted-elipse flex-shrink-0 flex items-center justify-center text-[52px] md:text-[72px] text-[#1558BC] font-semibold mr-4 md:mr-12 font-reddit-sans z-1"
-                  >04</span
-                >
-                <div class="content-center">
-                  <h3
-                    class="md:text-[24px] text-[#1976D2] font-roboto-sans font-bold leading-[1.2] mb-2"
-                  >
-                    Trust & Traceability:
-                  </h3>
-                  <p
-                    class="text-[14px] md:text-[18px] text-[#6B6B6B] font-roboto-sans font-normal leading-[1.8]"
-                  >
-                    Verified service records and certified parts at every
-                    touchpoint.
-                  </p>
-                </div>
-              </li>
-              <li class="flex">
-                <span
-                  class="tilted-elipse flex-shrink-0 flex items-center justify-center text-[52px] md:text-[72px] text-[#1558BC] font-semibold mr-4 md:mr-12 font-reddit-sans z-1"
-                  >05</span
-                >
-                <div class="content-center">
-                  <h3
-                    class="md:text-[24px] text-[#1976D2] font-roboto-sans font-bold leading-[1.2] mb-2"
-                  >
-                    Platform Flywheel:
-                  </h3>
-                  <p
-                    class="text-[14px] :text-[18px] text-[#6B6B6B] font-roboto-sans font-normal leading-[1.8]"
-                  >
-                    Every new connection adds data → insight → value — creating
-                    a self-reinforcing growth loop.
-                  </p>
-                </div>
-              </li>
-            </ul>
-          </div>
+        <div class="text-center mb-6 md:mb-9">
           <a
             href="#"
-            class="mobile-only mt-8 inline-block md:hidden py-3 bg-[#1868DB] text-white text-center font-bold rounded-full hover:bg-blue-700 transition duration-300 font-reddit-sans"
+            class="block md:inline-block btn-primary-gradient text-white text-[20px] leading-8 py-[6px] px-4 rounded-full"
           >
-            Explore How It Works
+            Get Started
           </a>
         </div>
-      </section>
 
-      <!-- Features Section 2 -->
-      <section id="features-ab" class="py-6 md:py-20">
-        <div class="container mx-auto px-4 md:px-6 text-center">
-          <div class="main-wrapper md:max-w-[60vw] md:mx-auto">
-            <h2
-              class="text-[#1E1F21] text-[24px] md:text-[56px] font-roboto-sans font-bold leading-[1.3] tracking-[-1.12px] mx-auto mb-4 md:mb-10 text-left md:text-center"
-            >
-              Transforming Every <br />
-              <span class="text-[#1558BC]"> Interaction Into Delight </span>
-            </h2>
-            <p
-              class="md:text-[18px] text-[#00000099] text-left md:text-center leading-[1.8] font-roboto-sans mb-8 md:mb-10"
-            >
-              GladMinds helps OEMs stay connected long after the sale. <br />
-              From predictive service alerts to transparent warranty status,
-              customers enjoy faster support, verified parts, and digital
-              service records — all in one place.
-            </p>
-            <div class="mb-10 md:mb-20">
-              <a
-                href="#"
-                class="px-5 py-3 bg-[#1868DB] md:text-[20px] text-white w-full font-bold rounded-full hover:bg-blue-700 transition duration-300 inline-block md:inline font-roboto-sans"
+        <div class="pb-5 md:mb-16">
+          <p
+            class="custom-gradient-desc text-[12px] text-white text-center md:text-[16px] md:font-medium leading-5 tracking-[0.048px] md:tracking-regular"
+          >
+            From the shop floor to the service lane — GladMinds connects
+            machines, people, and decisions into one intelligent ecosystem.
+          </p>
+        </div>
+
+        <div class="relative flex justify-center">
+          <div
+            class=" border border-l-5 border-t-5 border-r-5 rounded-tl-[20px] rounded-tr-[20px] border-[#F4DFFF1A] w-fit px-4 pt-4"
+          >
+            <div class="flex justify-cente md:mt-[-28px] mt-[-6px]  absolute top-0 left-1/2 -translate-x-1/2">
+              <img src="assets/home/bg/blur_bg.svg" alt="Blur background" />
+            </div>
+            <div class="flex justify-center">
+              <div
+                class="text-[8px] md:text-[25px] bg-[#0C0725] w-fit font-lekton-sans text-white leading-[10px] md:leading-9 md:px-9 md:py-1 mb-4 rounded-[8px] border border-[#0C0725]"
               >
-                Discover After-Buy Intelligence
+                gladminds.co/dashboard
+              </div>
+            </div>
+            <div class="w-fit">
+              <img src="assets/home/header_bottom.svg" alt="Header bottom" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container mx-auto pt-15 md:pt-20 px-2 pb-6 md:pb-20">
+        <p
+          class="text-center text-[#1976D2] md:text-[28px] font-medium leading-7 md:leading-9 tracking-[0.028px] md:tracking-regular mb-1 md:mb-6"
+        >
+          Why GladMinds?
+        </p>
+
+        <h3
+          class="text-center text-[24px] md:text-[48px] text-[#1E1F21] font-medium md:font-bold md:leading-12 leading-8 mb-3 md:mb-7"
+        >
+          Because service is the new <br />
+          frontline of growth
+        </h3>
+
+        <div class="flex justify-center">
+          <p
+            class="text-center md:text-[24px] leading-7 md:leading-8 tracking-[0.024px] px-2 mb-6 md:mb-20 max-w-[1224px]"
+          >
+            Industrial enterprises are transforming, from selling machines to
+            delivering uptime. GladMinds enables this shift with a unified AI
+            platform.
+          </p>
+        </div>
+
+        <div
+          class="grid-container flex flex-col justify-center items-center gap-4 md:gap-6"
+        >
+          <div
+            class="top-layout-wrapper flex flex-col md:flex-row flex-wra gap-4 md:gap-6"
+          >
+            <div
+              class="p-4 md:p-6 flex flex-col gap-8 border border-[#CBD5E1] rounded-[16px] relative md:pr-20 justify-between"
+            >
+              <div class="absolute right-4 top-4">
+                <img src="assets/home/vector-1.svg" alt="vector-1" />
+              </div>
+              <div>
+                <img
+                  src="assets/home/ai_with_bg.svg"
+                  alt="AI Visibility"
+                  class="mb-5"
+                />
+                <h3
+                  class="mb-3 md:text-[24px] font-bold leading-7 md:leading-8"
+                >
+                  AI Visibility
+                </h3>
+                <p
+                  class="md:text-[20px] text-[#00000099] leading-7 md:leading-8 tracking-[0.024px] md:tracking-[0.05px] relative z-1 max-w-[700px]"
+                >
+                  Real-time view of every asset and action. Transform opaque
+                  field operations into clear, data-driven decisions.
+                </p>
+              </div>
+
+              <div>
+                <img src="assets/home//system_health.svg" alt="System Health" />
+              </div>
+            </div>
+            <!--  -->
+            <div class="wrapper flex flex-col gap-4 md:gap-6">
+              <div class="p-4 md:p-6 border border-[#CBD5E1] rounded-[16px]">
+                <img
+                  src="assets/home/smart_sync.svg"
+                  alt="Smart Sync"
+                  class="mb-5"
+                />
+                <h3
+                  class="mb-3 mb-3 md:text-[24px] font-bold leading-7 md:leading-8"
+                >
+                  Smart Sync
+                </h3>
+                <p
+                  class="md:text-[20px] text-[#00000099] leading-7 md:leading-8 tracking-[0.024px] md:tracking-[0.05px] max-w-[340px]"
+                >
+                  OEMs, dealers, and technicians working as one unified team.
+                </p>
+              </div>
+              <div class="p-4 md:p-6 border border-[#CBD5E1] rounded-[16px]">
+                <img
+                  src="assets/home/predictive_insight.svg"
+                  alt="Predictive Insight"
+                  class="mb-5"
+                />
+                <h3
+                  class="mb-3 mb-3 md:text-[24px] font-bold leading-7 md:leading-8"
+                >
+                  Predictive Insight
+                </h3>
+                <p
+                  class="md:text-[20px] text-[#00000099] leading-7 md:leading-8 tracking-[0.024px] md:tracking-[0.05px] max-w-[340px]"
+                >
+                  See failures before they occur. Pre-empt downtime actively.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bottom-2-cardds-wrapper flex flex-wrap md:flex-nowrap gap-4 md:gap-6"
+          >
+            <div class="p-4 md:p-6 border border-[#CBD5E1] rounded-[16px]">
+              <img
+                src="assets/home/faster_turn_around.svg"
+                alt="Faster Turnaround"
+                class="mb-5"
+              />
+              <h3
+                class="mb-3 mb-3 md:text-[24px] font-bold leading-7 md:leading-8"
+              >
+                Faster Turnaround
+              </h3>
+              <p
+                class="md:text-[20px] text-[#00000099] leading-7 md:leading-8 tracking-[0.024px] md:tracking-[0.05px] max-w-[400px]"
+              >
+                AI-led tasking and collaboration for speedier resolutions.
+              </p>
+            </div>
+            <div class="p-4 md:p-6 border border-[#CBD5E1] rounded-[16px]">
+              <img
+                src="assets/home/data_impact.svg"
+                alt="Data to Impact"
+                class="mb-5"
+              />
+              <h3
+                class="mb-3 mb-3 md:text-[24px] font-bold leading-7 md:leading-8"
+              >
+                From Data to Impact
+              </h3>
+              <p
+                class="md:text-[20px] text-[#00000099] leading-7 md:leading-8 tracking-[0.024px] md:tracking-[0.05px]"
+              >
+                Service that performs — and proves it with measurable business
+                outcomes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#F4FAFE]">
+      <div
+        class="container mx-auto pt-15 md:pt-20 px-2 pb-6 md:pb-20 flex flex-col md:flex-row gap-4 md:gap-10"
+      >
+        <div class="main-left-div">
+          <div class="mb-4 mb-5">
+            <a
+              href="#"
+              class="text-[14px] text-[#1558BC] px-4 py-2 border border-[#4688EC] bg-[#E9F2FE] rounded-lg md:rounded-full font-bold md:font-regular leading-[22px] md:leading-[28px] tracking-[0.014px] md:tracking-[0.024px]"
+              >After-Sell Suite</a
+            >
+          </div>
+          <h3
+            class="text-[24px] md:text-[48px] font-medium md:font-bold leading-8 md:leading-12 text-[#424242] mb-4 md:mb-7"
+          >
+            Where after-sales becomes always-on service
+          </h3>
+          <div
+            class="md:text-[24px] text-[#616161] leading-7 md:leading-8 tracking-[0.024px] tracking-regular mb-4 md:mb-10"
+          >
+            GladMinds redefines aftersales with an AI-powered Service OS that
+            manages every aspect of post-sale operations, from technician
+            dispatch to predictive maintenance, ensuring uptime, efficiency, and
+            customer satisfaction.
+          </div>
+
+          <div class="md:fle justify-cente">
+            <div
+              class="hidden block md:inline-flex text-white flex justify-center rounded-md gap-2 h-13 px-6 bg-[#3F51B5] mb-4 md:mb-0"
+            >
+              <a href="#" target="_blank" class="content-center">
+                <div class="flex gap-2 text-white font-bold">
+                  REQUEST A DEMO
+                  <span>
+                    <img
+                      src="assets/icons/chevron_right_light.svg"
+                      alt="Right arrow"
+                  /></span>
+                </div>
               </a>
             </div>
           </div>
-          <div class="flex flex-wrap gap-4 md:gap-8 justify-between">
-            <div
-              class="p-2 rounded-lg w-[calc(50%-8px)] md:[w-fit] md:max-w-[280px]"
-            >
-              <div class="relative flex justify-between mb-4">
-                <div class="z-99 md:p-2">
-                  <img src="assets/truck.svg" class="mb-6 z-10" alt="truck" />
-                  <p
-                    class="text-[#6B6B6B] text-[14px] md:text-[18px] font-roboto-sans font-normal leading-[1.5] text-left"
-                  >
-                    Personalized service journeys
-                  </p>
-                </div>
-                <div
-                  class="absolute right-0 top-0 text-[#F0F1F2] text-[124px] md:text-[200px] font-reddit-sans font-extrabold leading-[0.75]"
-                >
-                  1
-                </div>
-              </div>
-            </div>
-            <div
-              class="p-2 rounded-lg w-[calc(50%-8px)] md:[w-fit] md:max-w-[280px]"
-            >
-              <div class="relative flex justify-between mb-4">
-                <div class="z-99 md:p-2">
-                  <img
-                    src="assets/mobile_with_plug.svg"
-                    class="mb-6 z-10"
-                    alt="mobile"
-                  />
-                  <p
-                    class="text-[#6B6B6B] text-[14px] md:text-[18px] font-roboto-sans font-normal leading-[1.5] text-left"
-                  >
-                    Predictive notifications before failures
-                  </p>
-                </div>
-                <div
-                  class="absolute right-0 top-0 text-[124px] text-[#F0F1F2] md:text-[200px] font-reddit-sans font-extrabold leading-[0.75]"
-                >
-                  2
-                </div>
-              </div>
-            </div>
-            <div
-              class="p-2 rounded-lg w-[calc(50%-8px)] md:[w-fit] md:max-w-[280px]"
-            >
-              <div class="relative flex justify-between mb-4">
-                <div class="z-99 md:p-2">
-                  <img
-                    src="assets/intelligence.svg"
-                    class="mb-6 z-10"
-                    alt="truck"
-                  />
-                  <p
-                    class="text-[#6B6B6B] text-[14px] md:text-[18px] font-roboto-sans font-normal leading-[1.5] text-left"
-                  >
-                    Transparent warranty and AMC tracking
-                  </p>
-                </div>
-                <div
-                  class="absolute right-0 top-0 text-[#F0F1F2] text-[124px] md:text-[200px] font-reddit-sans font-extrabold leading-[0.75]"
-                >
-                  3
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="p-2 rounded-lg w-[calc(50%-8px)] md:[w-fit] max-w-[280px]"
-            >
-              <div class="relative flex justify-between mb-4">
-                <div class="z-99 md:p-2">
-                  <img
-                    src="assets/check_shield.svg"
-                    class="mb-6 z-10"
-                    alt="check_shield"
-                  />
-                  <p
-                    class="text-[#6B6B6B] text-[14px] md:text-[18px] font-roboto-sans font-normal leading-[1.5] text-left"
-                  >
-                    Real-time feedback and support visibility
-                  </p>
-                </div>
-                <div
-                  class="absolute right-0 top-0 text-[#F0F1F2] text-[124px] md:text-[200px] font-reddit-sans font-extrabold leading-[0.75]"
-                >
-                  4
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
 
-      <!-- Customer Experience Section -->
-      <section
-        id="feature-dealer"
-        class="relative pt-8 pb-4 md:pb-[150px] bg-[#E9F2FE] overflow-hidden"
-      >
-        <div class="container mx-auto px-6 relative z-10">
-          <div class="mx-auto text-left lg:text-left">
-            <h2
-              class="font-roboto-sans text-[24px] md:text-[48px] font-semibold text-[#1A202C] leading-tight mb-4"
+        <div class="main-right-div">
+          <div class="grid grid-cols-2 gap-4 md:gap-6">
+            <!-- Card 1 -->
+            <div
+              class="rounded-[12px] border border-[#0000001A] bg-[#FFFFFF] p-4 md:p-6"
             >
-              Empowering <br />
-              <span class="text-[#1558BC]">
-                Dealers and Service Partners to Perform</span
+              <h4
+                class="md:text-[24px] text-[#000000DE] font-bold leading-7 md:leading-8 tracking-[0.024px] md:tracking-regular mb-3"
               >
-            </h2>
-            <p
-              class="text-md md:text-lg text-[#6B6B6B] font-roboto-sans leading-relaxed md:mb-8 max-w-[900px]"
-            >
-              GladMinds connects multi-brand dealers, distributors, and
-              independent networks under one system — ensuring seamless
-              coordination between OEMs, technicians, and customers.
-            </p>
-            <button
-              class="hidden md:inline-block py-3 px-5 bg-[#1868DB] text-[16px] md:text-[20px] text-white font-bold rounded-full hover:bg-blue-700 transition duration-300 font-reddit-sans w-full md:w-auto"
-            >
-              Explore After-Sell Suite
-            </button>
-          </div>
-          <div class="mt-7 md:mt-0 relative space-y-3 md: space-y-0">
-            <img
-              class="w-full hidden md:block"
-              src="assets/background/curve_line.svg"
-              alt="Curve line"
-            />
+                Smart Dispatch
+              </h4>
+              <p
+                class="text-[#00000099] md:text-[20px] leading-7 md:leading-8 tracking-[0.024px] md:tracking-[0.05px]"
+              >
+                Assign the right technician, instantly, based on skill and
+                location.
+              </p>
+            </div>
+
+            <!-- Card 2 -->
             <div
-              class="font-roboto-sans text-[14px] md:text-[24px] text-[#0D47A1] leading-[1.55] grid md:grid-cols-4 gap-4"
+              class="rounded-[12px] border border-[#0000001A] bg-[#FFFFFF] p-4 md:p-6"
             >
-              <div>
-                <div
-                  class="md:ml-0 md:mt-[-1vw] p-3 md:p-0 bg-white md:bg-transparent rounded-[12px] md:rounded-0"
-                >
-                  <p class="">Unified dashboards for multi-OEM operations</p>
-                </div>
-              </div>
-              <div>
-                <div
-                  class="md:mt-[2vw] p-3 md:p-0 bg-white md:bg-transparent rounded-[12px] md:rounded-0"
-                >
-                  <p>Faster AMC renewals and service scheduling</p>
-                </div>
-              </div>
-              <div>
-                <div
-                  class="md:right-[22%] md:mt-[-90px] p-3 md:p-0 bg-white md:bg-transparent rounded-[12px] md:rounded-0"
-                >
-                  <p>Integrated spare-parts management</p>
-                </div>
-              </div>
-              <div class="fle justify-en">
-                <div
-                  class="md:right-0 md:mt-[-150px] p-3 md:p-0 bg-white md:bg-transparent rounded-[12px] md:rounded-0"
-                >
-                  <p>End-to-end performance analytics</p>
-                </div>
-              </div>
+              <h4
+                class="md:text-[24px] text-[#000000DE] font-bold leading-7 md:leading-8 tracking-[0.024px] md:tracking-regular mb-3"
+              >
+                Technician App
+              </h4>
+              <p
+                class="text-[#00000099] md:text-[20px] leading-7 md:leading-8 tracking-[0.024px] md:tracking-[0.05px]"
+              >
+                Digital tools, offline sync, and rewards for the field
+                workforce.
+              </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              class="rounded-[12px] border border-[#0000001A] bg-[#FFFFFF] p-4 md:p-6"
+            >
+              <h4
+                class="md:text-[24px] text-[#000000DE] font-bold leading-7 md:leading-8 tracking-[0.024px] md:tracking-regular mb-3"
+              >
+                Parts Intelligence
+              </h4>
+              <p
+                class="text-[#00000099] md:text-[20px] leading-7 md:leading-8 tracking-[0.024px] md:tracking-[0.05px]"
+              >
+                Predict demand and cut downtime by ensuring inventory
+                availability.
+              </p>
+            </div>
+
+            <!-- Card 4 -->
+            <div
+              class="rounded-[12px] border border-[#0000001A] bg-[#FFFFFF] p-4 md:p-6"
+            >
+              <h4
+                class="md:text-[24px] text-[#000000DE] font-bold leading-7 md:leading-8 tracking-[0.024px] md:tracking-regular mb-3"
+              >
+                Warranty & Quality
+              </h4>
+              <p
+                class="text-[#00000099] md:text-[20px] leading-7 md:leading-8 tracking-[0.024px] md:tracking-[0.05px]"
+              >
+                Link field data to faster fixes and automated warranty
+                processing.
+              </p>
             </div>
           </div>
-          <button
-            class="md:hidden mt-10 md:mt-0 py-3 px-4 bg-[#1868DB] text-[16px] md:text-[1.4vw] text-white font-bold rounded-full hover:bg-blue-700 transition duration-300 font-reddit-sans w-full md:w-auto"
-          >
-            Discover After-Buy Intelligence
-          </button>
         </div>
-      </section>
 
-      <!-- New Section Before FAQ -->
-      <section class="py-6 md:py-20 bg-[#1558BC] text-center font-roboto-sans">
-        <div class="container mx-auto px-6">
-          <a
-            href="#"
-            class="px-8 py-3 bg-white text-[#1868DB] font-semibold rounded-[24px] md:rounded-full hover:bg-gray-200 transition duration-300 inline-block w-full md:w-fit"
-          >
-            Empowered people. Predictable performance.
-          </a>
-
-          <h2
-            class="mt-6 mb-10 font-bold leading-[1.2] text-[#E3F2FD] text-[24px] md:text-[48px]"
-          >
-            Field Engineers Who Fix Faster, Learn Faster
-          </h2>
-          <p
-            class="text-[#E3F2FD] text-left md:text-center md:text-[24px] font-normal leading-[1.5] md:leading-[40px] tracking-[-0.48px]"
-          >
-            Through the GladMinds Technician App, engineers receive real-time
-            job assignments, digital manuals, and offline sync — ensuring every
-            service call is accurate, traceable, and rewarding.
-          </p>
-
+        <div class="md:flex justify-cente">
           <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-start my-10 md:my-12 gap-6 md:gap-14"
+            class="block md:hidden text-white flex justify-center rounded-md gap-2 h-13 px-6 bg-[#3F51B5] mb-4 md:mb-0"
           >
-            <!-- Block 1 -->
-            <div class="flex items-center gap-5">
-              <img
-                src="assets/truck_2.svg"
-                class="h-12 w-auto md:h-auto md:w-auto"
-                alt="truck"
-              />
-              <p
-                class="text-[#CFE1FD] text-[16px] text-left font-medium leading-[24px] tracking-[-0.48px]"
-              >
-                AI-based job allocation
-              </p>
-            </div>
-
-            <div class="flex items-center gap-5">
-              <img
-                src="assets/truck_2.svg"
-                class="h-12 w-auto md:h-auto md:w-auto"
-                alt="truck"
-              />
-              <p
-                class="text-[#CFE1FD] text-[16px] text-left text-wrap font-medium leading-[24px] tracking-[-0.48px]"
-              >
-                Instant access to parts and warranty data
-              </p>
-            </div>
-
-            <div class="flex items-center gap-5">
-              <img
-                src="assets/truck_2.svg"
-                class="h-12 w-auto md:h-auto md:w-auto"
-                alt="truck"
-              />
-              <p
-                class="text-[#CFE1FD] text-[16px] text-left font-medium leading-[24px] tracking-[-0.48px]"
-              >
-                Step-by-step guidance and digital checklists
-              </p>
-            </div>
-            <!-- Block-4 -->
-            <div class="flex items-center gap-5">
-              <img
-                src="assets/truck_2.svg"
-                class="h-12 w-auto md:h-auto md:w-auto"
-                alt="truck"
-              />
-              <p
-                class="text-[#CFE1FD] text-[16px] text-left font-medium leading-[24px] tracking-[-0.48px]"
-              >
-                Built-in incentives and feedback loops
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FAQ Section -->
-      <!-- <section class="py-66 md:py-20 bg-gray-50">
-        <div class="container mx-auto px-4 md:px-6 text-center max-w-5xl">
-          <div>
-            <h2
-              class="mb-4 md:mb-6 font-reddit-sans text-[24px] md:text-[56px] font-semibold leading-[1.4] tracking-[-1.12px] text-left md:text-center"
-            >
-              Got Questions? <br /><span class="text-[#1558BC]"
-                >We've Got Answers.</span
-              >
-            </h2>
-            <p
-              class="text-lg text-[#444444] font-dm-sans text-[16px] md:text-[18px] leading-[1.8] mx-auto md:mb-12 text-left md:text-center"
-            >
-              We have these in the form of drop down for each answer
-            </p>
-          </div>
-          <div class="mx-auto mt-8 md:mt-10">
- 
-            <div
-              class="border border-[#0000001A] rounded-[10px] mb-4 overflow-hidden"
-            >
-              <button
-                class="flex justify-between items-center w-full p-4 text-left md:text-[18px] md:text-lg focus:outline-none hover:bg-gray-100 transition-colors duration-300 font-dm-sans text-[#3B3D42] cursor-pointer"
-                onclick="toggleAccordion(this)"
-              >
-                What is the GladMinds Service OS?
-                <svg
-                  class="w-5 h-5 transition-transform duration-300 transform"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="#717182"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 9l-7 7-7-7"
-                  ></path>
-                </svg>
-              </button>
-              <div
-                class="max-h-0 overflow-hidden transition-max-height duration-500 ease-in-out"
-              >
-                <div
-                  class="p-4 text-[14px] md:text-[16px] text-left border-t border-gray-200 font-dm-sans"
-                >
-                  You can reset your password by clicking on the "Forgot
-                  Password" link on the login page. Follow the instructions sent
-                  to your email address.
-                </div>
+            <a href="#" target="_blank" class="content-center">
+              <div class="flex gap-2 text-white font-bold">
+                REQUEST A DEMO
+                <span>
+                  <img
+                    src="assets/icons/chevron_right_light.svg"
+                    alt="Right arrow"
+                /></span>
               </div>
-            </div>
-          </div>
-          <div>
-            <a
-              href="#"
-              class="px-8 py-3 mt-4 md:mt-10 bg-[#1868DB] md:text-[20px] text-white w-full md:w-fit font-bold rounded-full hover:bg-blue-700 transition duration-300 inline-block font-reddit-sans"
-            >
-              View All FAQs
             </a>
           </div>
         </div>
-      </section> -->
+      </div>
+    </section>
 
-      <!-- Testimonials Section: Trusted By Industry Leaders -->
-
-      <!-- <section class="pt-4 pb-10 md:py-20 bg-white">
-        <div class="container mx-auto px-4 md:px-6 text-center">
-          <h2
-            class="mb-4 md:mb-6 font-reddit-sans text-[24px] md:text-[56px] text-left md:text-center font-semibold leading-[1.4] tracking-[-0.48px] md:tracking-[-1.12px]"
-          >
-            Trusted By <br /><span class="text-[#1558BC]"
-              >Industry Leaders</span
-            >
-          </h2>
-          <p
-            class="text-lg text-[#444444] font-dm-sans text-[16px] md:text-[18px] leading-[1.8] mx-auto mb-4 text-left md:text-center"
-          >
-            From global OEMs to regional dealers – partners across industries
-            trust GladMinds to transform <br />
-            their service ecosystem.
-          </p>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div
-              class="p-8 bg-white rounded-[45px] shadow-lg border border-gray-200 text-left flex flex-col justify-between"
-            >
-              <div>
-                <div class="flex mb-4">
-                  <img src="assets/rating.svg" alt="rating" />
-                </div>
-                <p
-                  class="font-dm-sans md:text-[18px] text-[#2F2A2A] leading-[1.5] mb-8"
-                >
-                  GladMinds helped us reduce warranty claims by 30% within six
-                  months.
-                </p>
-              </div>
-              <div class="flex items-center">
-                <div
-                  class="w-12 h-12 bg-[#2F2A2A] rounded-full flex items-center justify-center font-semibold bg-[#2F2A2A] text-[#EBEFF8] mr-4"
-                >
-                  RW
-                </div>
-                <div>
-                  <p
-                    class="text-[#2F2A2A] text-[18px] font-bold font-reddit-sans leading-[1.5]"
-                  >
-                    Rahul Das
-                  </p>
-                  <p class="text-[18px] leading-[1.5] text-[#302A2A99]">
-                    Industry Leader
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="p-8 bg-white rounded-[45px] shadow-lg border border-gray-200 text-left flex flex-col justify-between"
-            >
-              <div>
-                <div class="flex mb-4">
-                  <img src="assets/rating.svg" alt="rating" />
-                </div>
-                <p
-                  class="font-dm-sans md:text-[18px] text-[#2F2A2A] leading-[1.5] mb-8"
-                >
-                  The AI dispatch module improved our field efficiency and
-                  customer satisfaction scores dramatically.
-                </p>
-              </div>
-              <div class="flex items-center">
-                <div
-                  class="w-12 h-12 bg-[#2F2A2A] rounded-full flex items-center justify-center font-semibold text-[#EBEFF8] mr-4"
-                >
-                  RD
-                </div>
-                <div>
-                  <p
-                    class="text-[#2F2A2A] text-[18px] font-bold font-reddit-sans leading-[1.5]"
-                  >
-                    Rahul Das
-                  </p>
-                  <p class="text-[18px] leading-[1.5] text-[#302A2A99]">
-                    Industry Leader
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="p-8 bg-white rounded-[45px] shadow-lg border border-gray-200 text-left flex flex-col justify-between"
-            >
-              <div class="">
-                <div class="flex mb-4">
-                  <img src="assets/rating.svg" alt="rating" />
-                </div>
-                <p
-                  class="font-dm-sans md:text-[18px] text-[#2F2A2A] leading-[1.5] mb-8"
-                >
-                  It's not just a platform — it's a mindset shift for service
-                  excellence.
-                </p>
-              </div>
-              <div class="flex items-center">
-                <div
-                  class="w-12 h-12 bg-[#2F2A2A] rounded-full flex items-center justify-center font-semibold bg-[#2F2A2A] text-[#EBEFF8] mr-4"
-                >
-                  RD
-                </div>
-                <div>
-                  <p class="font-semibold text-gray-900">Rahul Das</p>
-                  <p class="text-gray-600 text-sm">Industry Leader</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <a
-            href="#"
-            class="px-8 py-3 mb-6 bg-[#1868DB] text-[#fff] md:text-[1.5vw] font-[700] w-full md:w-[16vw] rounded-full font-reddit-sans content-center hover:bg-blue-700 transition duration-300"
-          >
-            See More Success Stories
-          </a>
-        </div>
-      </section> -->
-      <!-- ROI Section -->
-      <section
-        id="#roi-section"
-        class="py-6 md:p-20 bg-[#F8F8F8] text-center font-roboto-sans"
-      >
-        <div class="container mx-auto px-6">
-          <div class="header-wrapper">
-            <div
-              class="mb-10 font-roboto-sans text-[24px] md:text-[48px] font-bold leading-[1.3] text-left md:text-center"
-            >
-              <h2 class="text-[#1E1F21]">Reducing Turnaround Time.</h2>
-              <h2 class="text-[#1558BC]">Improving NPS. Driving ROI.</h2>
-            </div>
-
-            <p
-              class="font-roboto-sans text-[16px] md:text-[24px] text-[#00000099] leading-[1.5] text-left md:text-center"
-            >
-              Every service event is tracked, measured, and improved — making
-              growth repeatable and predictable.
-            </p>
-            <div class="my-10">
-              <div class="text-left">
-                <p
-                  class="font-roboto-sans text-[16px] md:text-[24px] text-[#0D47A1] leading-[1.5] text-left md:text-left font-semibold"
-                >
-                  GladMinds turns data into performance:
-                </p>
-              </div>
-            </div>
-
-            <!-- ROI Performance Cards -->
-            <div class="my-10 flex flex-col md:flex-row gap-4 md:gap-6">
-              <!-- Card 1 - Blue Background (Full Width on Mobile, 1/3 on Desktop) -->
-              <div
-                class="bg-[linear-gradient(147deg,#1570EF_19.58%,#293056_106.92%)] rounded-[12px] p-6 md:p-8 md:flex-1 md:max-w-[380px] text-left"
-              >
-                <div class="flex items-baseline gap-2 mb-2 md:mb-3">
-                  <span
-                    class="text-white font-roboto-sans font-bold text-[34px] md:text-[48px] font-bold leading-none"
-                  >
-                    ↓ 30 %</span
-                  >
-                </div>
-                <p
-                  class="text-[#E3F2FD] font-roboto-sans text-[16px] md:text-[24px] leading-[1.4] md:leading-[1.5]"
-                >
-                  Reduction in service turnaround time (TAT)
-                </p>
-              </div>
-
-              <!-- Card 2 - White Background with Border -->
-              <div
-                class="bg-[#F5FAFF] border-2 border-[#1868DB] rounded-[12px] p-4 md:p-8 md:flex-1 md:max-w-[380px] text-left"
-              >
-                <div class="flex items-baseline gap-1 md:gap-2 mb-2 md:mb-3">
-                  <span
-                    class="text-[#212121] font-roboto-sans font-bold text-[34px] md:text-[48px] font-bold leading-none"
-                    >↑ 25 %
-                  </span>
-                </div>
-                <p
-                  class="text-[#616161] font-roboto-sans text-[16px] md:text-[24px] leading-[1.4] md:leading-[1.5]"
-                >
-                  Improvement in customer satisfaction (NPS)
-                </p>
-              </div>
-
-              <!-- Card 3 - White Background with Border -->
-              <div
-                class="bg-[#F5FAFF] border-2 border-[#1868DB] rounded-[12px] p-4 md:p-8 md:flex-1 md:max-w-[380px] text-left"
-              >
-                <div class="flex items-baseline gap-1 md:gap-2 mb-2 md:mb-3">
-                  <span
-                    class="text-[#212121] font-roboto-sans font-bold text-[34px] md:text-[48px] font-bold leading-none"
-                    >↑ 40 %</span
-                  >
-                </div>
-                <p
-                  class="text-[#616161] font-roboto-sans text-[16px] md:text-[24px] leading-[1.4] md:leading-[1.5]"
-                >
-                  Productivity gain for field teams
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <button
-                class="blcok md:inline-block py-3 px-5 bg-[#1868DB] text-[16px] md:text-[20px] text-white font-bold rounded-full hover:bg-blue-700 transition duration-300 font-reddit-sans w-full md:w-auto"
-              >
-                Calculate Your ROI
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+    <section>
       <!--  -->
-      <section
-        class="py-6 md:py-20 bg-[#1558BC] text-center font-roboto-sans"
-        style="
-          background-image: url('assets/background/field_engineers.svg');
-          background-position: center;
-        "
-      >
-        <div class="container mx-auto px-6">
-          <a
-            href="#"
-            class="px-2 md:px-8 py-3 bg-white text-[#1868DB] rounded-[24px] md:rounded-full hover:bg-gray-200 transition duration-300 inline-block w-full md:w-fit"
-          >
-            Turning every product sold into a lifelong digital relationship.
-          </a>
-          <h3
-            class="mt-6 font-bold leading-[1.2] text-[#FAFAFA] text-[24px] md:text-[48px]"
-          >
-            Field Engineers Who Fix Faster, Learn Faster
-          </h3>
-
-          <p class="my-10 text-[#F5F5F5] md:text-[24px] leading-[1.3]">
-            GladMinds doesn’t just digitize aftersales — it powers the data
-            rails for every machine after it leaves the factory. We’re building
-            a world where every asset is known, serviced, and performing —
-            sustainably and profitably.
-          </p>
-
-          <a
-            href="#"
-            class="px-8 py-3 bg-[#1868DB] md:text-[20px] text-white w-full md:w-fit font-bold rounded-full hover:bg-blue-700 transition duration-300 inline-block font-reddit-sans"
-          >
-            Request a Demo
-          </a>
+      <div class="container mx-auto pt-15 md:pt-20 px-2 pb-6 md:pt-20">
+        <div class="top-content-wrapper flex justify-between md:mb-10 mb-7">
+          <!-- Left -->
+          <div class="max-w-[680px]">
+            <h3
+              class="text-[24px] md:text-[48px] font-medium md:font-bold leading-8 md:leading-12 text-[#424242] mb-4 md:mb-7"
+            >
+              Powering the Customer Experience Beyond Purchase
+            </h3>
+            <div
+              class="md:text-[24px] text-[#616161] leading-7 md:leading-8 tracking-[0.024px] tracking-regular mb-4 md:mb-0"
+            >
+              GladMinds connects OEMs directly with their customers through
+              intelligent service and engagement layers.
+            </div>
+          </div>
+          <!-- Right -->
+          <div class="content-end">
+            <div
+              class="hidden block md:inline-flex text-white flex justify-center rounded-md gap-2 h-13 px-6 bg-[#3F51B5] mb-4 md:mb-0"
+            >
+              <a href="#" target="_blank" class="content-center">
+                <div class="flex gap-2 text-white font-bold">
+                  Discover After-Buy Intelligence
+                  <span class="content-center">
+                    <img
+                      src="assets/icons/chevron_right_light.svg"
+                      alt="Right arrow"
+                  /></span>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
-      </section>
-
-      <!-- Why Gladminds -->
-      <section class="py-6 md:p-20 bg-[#F8F8F8] text-center font-roboto-sans">
-        <div class="container mx-auto px-6">
-          <h3
-            class="leading-[1.2] text-[24px] md:text-[48px] font-medium md:font-bold text-left md:text-center"
+        <div
+          class="bottom-content-wrapper grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6"
+        >
+          <div
+            class="rounded-[12px] border border-[#0000001A] bg-[#FFFFFF] p-4 md:p-6 flex flex-col justify-between"
           >
-            Why GladMinds? Because It Works.
-          </h3>
-
-          <p
-            class="text-[#444444] leading-[1.3] text-left md:text-center py-6 md:py-10 md:text-[24px]"
-          >
-            Join OEMs, dealers, and enterprises transforming their service
-            operations with the world’s first AI-driven Service OS.
-          </p>
-
-          <a
-            href="#"
-            class="px-8 py-3 bg-[#1868DB] md:text-[20px] text-white w-full md:w-fit font-bold rounded-full hover:bg-blue-700 transition duration-300 inline-block font-reddit-sans"
-          >
-            Request a Demo
-          </a>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer Section -->
-    <footer class="bg-[#1C2B42] text-[#A0A2A7] py-8 md:py-20 px-4 md:px-6">
-      <div
-        class="container mx-auto flex flex-col md:flex-row md:justify-between flex-wrap md:gap-12 gap-8"
-      >
-        <div class="flex flex-col items-start min-w-[250px]">
-          <img
-            src="assets/gm_logo_dark_mode.svg"
-            alt="GladMinds Logo"
-            class="h-10 mb-4"
-          />
-          <p
-            class="text-[14px] md:text-[16px] md:text-md text-[#E9F2FE] font-reddit-sans mb-9"
-          >
-            AI-Driven Service OS Built For Industrial Enterprises
-          </p>
-          <a
-            href="#"
-            class="px-8 py-3 bg-[#EBEFF8] text-[#1868DB] text-[16px] md:text-[1.2vw] font-bold rounded-full text-center hover:bg-gray-200 transition duration-300 inline-block font-reddit-sans w-full md:w-fit"
-          >
-            Request a Demo
-          </a>
-        </div>
-        <div class="min-w-[150px]">
-          <h3 class="text-white text-md md:text-lg mb-4 font-arimo-sans">
-            Quick Links
-          </h3>
-          <ul class="space-y-3">
-            <li class="mb-4">
-              <a
-                href="#"
-                class="text-[#E9F2FE] hover:text-white text-sm md:text-[16px] font-dm-sans"
-                >Solutions</a
+            <div>
+              <h4
+                class="md:text-[24px] text-[#000000DE] font-bold leading-7 md:leading-8 tracking-[0.024px] md:tracking-regular mb-3"
               >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-[#E9F2FE] hover:text-white text-sm md:text-[16px] font-dm-sans"
-                >Industries</a
+                Customer Connect Apps
+              </h4>
+              <p
+                class="text-[#00000099] md:text-[20px] leading-7 md:leading-8 tracking-[0.024px] md:tracking-[0.05px] mb-4 md:mb-5"
               >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-[#E9F2FE] hover:text-white text-sm md:text-[16px] font-dm-sans"
-                >Partners</a
+                Personalized dashboards for service history, maintenance
+                schedules, and support.
+              </p>
+            </div>
+            <div class="flex justify-center">
+              <img
+                src="assets/customer_connects_app.svg"
+                alt="Customer Connects"
+              />
+            </div>
+          </div>
+          <div
+            class="rounded-[12px] border border-[#0000001A] bg-[#FFFFFF] p-4 md:p-6 flex flex-col justify-between"
+          >
+            <div>
+              <h4
+                class="md:text-[24px] text-[#000000DE] font-bold leading-7 md:leading-8 tracking-[0.024px] md:tracking-regular mb-3"
               >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-[#E9F2FE] hover:text-white text-sm font-dm-sans"
-                >Contact</a
+                Predictive Service Alerts
+              </h4>
+              <p
+                class="text-[#00000099] md:text-[20px] leading-7 md:leading-8 tracking-[0.024px] md:tracking-[0.05px] mb-4 md:mb-5"
               >
-            </li>
-          </ul>
-        </div>
-        <div class="min-w-[150px]">
-          <h3 class="text-white text-lg mb-4 font-arimo-sans">Follow-Us On</h3>
-          <div class="flex space-x-4">
-            <a href="#" class="text-[#A0A2A7] hover:text-white">
-              <img src="assets/facebook_icon.svg" alt="facebook" />
-            </a>
-            <a href="#" class="text-[#A0A2A7] hover:text-white">
-              <img src="assets/insta_icon.svg" alt="instagram" />
-            </a>
-            <a href="#" class="text-[#A0A2A7] hover:text-white">
-              <img src="assets/youtube.svg" alt="youtube" />
-            </a>
+                Notify customers before a breakdown occurs.
+              </p>
+            </div>
+            <div class="flex justify-center">
+              <img
+                src="assets/predective_service.svg"
+                alt="Predictive Service Alerts"
+              />
+            </div>
+          </div>
+          <div
+            class="rounded-[12px] border border-[#0000001A] bg-[#FFFFFF] p-4 md:p-6 flex flex-col justify-between"
+          >
+            <div>
+              <h4
+                class="md:text-[24px] text-[#000000DE] font-bold leading-7 md:leading-8 tracking-[0.024px] md:tracking-regular mb-3"
+              >
+                Feedback & Analytics
+              </h4>
+              <p
+                class="text-[#00000099] md:text-[20px] leading-7 md:leading-8 tracking-[0.024px] md:tracking-[0.05px] mb-4 md:mb-5"
+              >
+                Turn customer insights into continuous improvement.
+              </p>
+            </div>
+            <div class="flex justify-center">
+              <img
+                src="assets/feedback_and_analytics.svg"
+                alt="Feedback & Analytics"
+              />
+            </div>
           </div>
         </div>
       </div>
-
-      <hr class="my-8" style="color: #ffffff1a" />
       <div
-        class="md:mt-20 text-center text-white font-dm-sans text-[12px] md:text-[16px]"
+        class="container mx-auto pt-15 md:pt-20 px-2 pb-6 md:pb-20 flex flex-col md:flex-row justify-between mb-14 md:mb-20"
       >
-        &copy; <span id="current-year"></span> GladMinds. All rights reserved. |
-        <a href="#" class="hover:text-white">Privacy Policy</a> |
-        <a href="#" class="hover:text-white">Terms of Service</a>
+        <div class="max-w-[670px]">
+          <h3
+            class="text-[#424242] text-[24px] md:text-[48px] font-medium md:font-bold leading-8 md:leading-[50px] md:max-w-[800px] mb-4 md:mb-7"
+          >
+            Defect Tracking to Design Improvement
+          </h3>
+          <div class="md:hidden mb-4 md:mb-0 content-center">
+            <img
+              src="assets/digital_world.svg"
+              alt="Digital World"
+              class="rounded-[24px]"
+            />
+          </div>
+          <div class="md:flex mb-4 md:mb-10">
+            <p class="text-[24px] text-[#616161] font-medium leading-[32px]">
+              GladMinds’ QMS enables OEMs to monitor, analyze, and act on
+              quality issues faster than ever. By connecting field data, service
+              reports, and parts performance, it transforms every incident into
+              actionable intelligence.
+            </p>
+          </div>
+
+          <div class="mb-7 md:mb-10">
+            <div class="space-y-4 md:space-y-6">
+              <div class="flex items-start gap-3">
+                <img
+                  src="assets/icons/check_circle.svg"
+                  alt="Check"
+                  class="w-5 h-5 md:w-auto md:h-auto flex-shrink-0 mt-1"
+                />
+                <p
+                  class="text-[16px] md:text-[24px] text-[#616161] leading-7 md:leading-8 tracking-[0.024px]"
+                >
+                  What products are in use
+                </p>
+              </div>
+              <div class="flex items-start gap-3">
+                <img
+                  src="assets/icons/check_circle.svg"
+                  alt="Check"
+                  class="w-5 h-5 md:w-auto md:h-auto flex-shrink-0 mt-1"
+                />
+                <p
+                  class="text-[16px] md:text-[24px] text-[#616161] leading-7 md:leading-8 tracking-[0.024px]"
+                >
+                  Where they are installed
+                </p>
+              </div>
+              <div class="flex items-start gap-3">
+                <img
+                  src="assets/icons/check_circle.svg"
+                  alt="Check"
+                  class="w-5 h-5 md:w-auto md:h-auto flex-shrink-0 mt-1"
+                />
+                <p
+                  class="text-[16px] md:text-[24px] text-[#616161] leading-7 md:leading-8 tracking-[0.024px]"
+                >
+                  Who services them
+                </p>
+              </div>
+              <div class="flex items-start gap-3">
+                <img
+                  src="assets/icons/check_circle.svg"
+                  alt="Check"
+                  class="w-5 h-5 md:w-auto md:h-auto flex-shrink-0 mt-1"
+                />
+                <p
+                  class="text-[16px] md:text-[24px] text-[#616161] leading-7 md:leading-8 tracking-[0.024px]"
+                >
+                  When the next service, warranty, or upgrade is due
+                </p>
+              </div>
+              <div class="flex items-start gap-3">
+                <img
+                  src="assets/icons/check_circle.svg"
+                  alt="Check"
+                  class="w-5 h-5 md:w-auto md:h-auto flex-shrink-0 mt-1"
+                />
+                <p
+                  class="text-[16px] md:text-[24px] text-[#616161] leading-7 md:leading-8 tracking-[0.024px]"
+                >
+                  How assets perform over time
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:fle justify-cente">
+            <div
+              class="block md:inline-flex text-white flex justify-center rounded-md gap-2 h-13 px-6 bg-[#3F51B5] mb-4 md:mb-0"
+            >
+              <a href="#" target="_blank" class="content-center">
+                <div class="flex gap-2 text-white font-bold">
+                  Explore Quality Intelligence
+                  <span class="content-center">
+                    <img
+                      src="assets/icons/chevron_right_light.svg"
+                      alt="Right arrow"
+                  /></span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Desktop View -->
+        <div class="hidden md:inline-block content-center">
+          <img
+            src="assets/digital_world.svg"
+            alt="Digital World"
+            class="rounded-[24px]"
+          />
+        </div>
       </div>
-    </footer>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-6 md:py-20 md:py-20 bg-[#F4FAFE]">
+      <div class="container mx-auto px-4 md:px-6 text-center max-w-5xl">
+        <div>
+          <h2
+            class="text-center text-[24px] md:text-[48px] text-[#424242] font-medium md:font-bold md:leading-12 leading-8 mb-3 md:mb-7"
+          >
+            Got Questions? <br /><span class="">We've Got Answers.</span>
+          </h2>
+        </div>
+        <div class="mx-auto mt-8 md:mt-10">
+          <div
+            class="border border-[#0000001A] rounded-md bg-white mb-4 overflow-hidden"
+          >
+            <button
+              class="flex justify-between items-center w-full px-4 md:px-8 py-4 text-left text-[14px] md:text-[24px] font-medium leading-7 md:leading-8 focus:outline-none hover:bg-gray-100 transition-colors duration-300 text-[#616161] cursor-pointer"
+              onclick="toggleAccordion(this)"
+            >
+              What is the GladMinds Service OS?
+              <svg
+                class="w-5 h-5 transition-transform duration-300 transform"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="#717182"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              class="max-h-0 overflow-hidden transition-max-height duration-500 ease-in-out"
+            >
+              <div
+                class="text-[#616161] text-[16px] md:text-[24px] text-left leading-7 md:leading-8 border-t border-gray-200 px-2 py-4 md:px-4 md:mx-4 mx-2"
+              >
+                An AI-powered operating system that unifies service, parts, and
+                quality workflows for industrial enterprises, turning scattered
+                data into unified intelligence.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <a
+            href="#"
+            class="px-8 py-3 mt-4 md:mt-10 bg-[#1868DB] md:text-[20px] text-white w-full md:w-fit font-bold rounded-full hover:bg-blue-700 transition duration-300 inline-block font-reddit-sans"
+          >
+            View All FAQs
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="pt-4 pb-10 md:py-20 bg-white">
+      <div class="container mx-auto px-4 md:px-6 text-center">
+        <div class="flex justify-center">
+          <h3
+            class="text-[#424242] text-center text-[24px] md:text-[48px] font-medium md:font-bold leading-8 md:leading-[50px] md:max-w-[800px] mb-4 md:mb-7"
+          >
+            Trusted By Industry Leaders
+          </h3>
+        </div>
+        <p
+          class="md:text-[24px] text-[#616161] leading-7 md:leading-8 tracking-[0.024px] tracking-regular mb-4 md:mb-10"
+        >
+          From global OEMs to regional dealers – partners across industries
+          trust GladMinds to transform <br />
+          their service ecosystem.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <div
+            class="px-6 py-10 bg-[#F8FAFC] rounded-[16px] shadow-l border border-gray-200 text-left flex flex-col justify-between gap-5"
+          >
+            <div>
+              <p class="md:text-[20px] text-[#00000099] leading-7 md:leading-8">
+                “GladMinds helped us reduce warranty claims by 30% within six
+                months. The visibility we now have is unprecedented.”
+              </p>
+            </div>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-[#2F2A2A] rounded-full flex items-center justify-center font-semibold bg-[#2F2A2A] text-[#EBEFF8] mr-4"
+              >
+                RD
+              </div>
+              <div>
+                <p
+                  class="text-[#000000DE] md:text-[20px] font-medium md:font-bold leading-7 md:leading-8"
+                >
+                  Rahul Das
+                </p>
+                <p
+                  class="text-[14px] md:text-base font-medium md:font-regular leading-[22px] md:leading-7 text-[#00000099]"
+                >
+                  Industry Leader
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="px-6 py-10 bg-[#F8FAFC] rounded-[16px] shadow-l border border-gray-200 text-left flex flex-col justify-between gap-5"
+          >
+            <div>
+              <p class="md:text-[20px] text-[#00000099] leading-7 md:leading-8">
+                “GladMinds helped us reduce warranty claims by 30% within six
+                months. The visibility we now have is unprecedented.”
+              </p>
+            </div>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-[#2F2A2A] rounded-full flex items-center justify-center font-semibold bg-[#2F2A2A] text-[#EBEFF8] mr-4"
+              >
+                RD
+              </div>
+              <div>
+                <p
+                  class="text-[#000000DE] md:text-[20px] font-medium md:font-bold leading-7 md:leading-8"
+                >
+                  Rahul Das
+                </p>
+                <p
+                  class="text-[14px] md:text-base font-medium md:font-regular leading-[22px] md:leading-7 text-[#00000099]"
+                >
+                  Industry Leader
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="px-6 py-10 bg-[#F8FAFC] rounded-[16px] shadow-l border border-gray-200 text-left flex flex-col justify-between gap-5"
+          >
+            <div>
+              <p class="md:text-[20px] text-[#00000099] leading-7 md:leading-8">
+                “GladMinds helped us reduce warranty claims by 30% within six
+                months. The visibility we now have is unprecedented.”
+              </p>
+            </div>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 bg-[#2F2A2A] rounded-full flex items-center justify-center font-semibold bg-[#2F2A2A] text-[#EBEFF8] mr-4"
+              >
+                RD
+              </div>
+              <div>
+                <p
+                  class="text-[#000000DE] md:text-[20px] font-medium md:font-bold leading-7 md:leading-8"
+                >
+                  Rahul Das
+                </p>
+                <p
+                  class="text-[14px] md:text-base font-medium md:font-regular leading-[22px] md:leading-7 text-[#00000099]"
+                >
+                  Industry Leader
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="block md:inline-flex text-white flex justify-center rounded-md gap-2 h-13 px-6 bg-[#3F51B5] mb-4 md:mb-0"
+        >
+          <a href="#" target="_blank" class="content-center">
+            <div class="flex gap-2 text-white font-bold">
+              See More Success Stories
+              <span class="content-center">
+                <img
+                  src="assets/icons/chevron_right_light.svg"
+                  alt="Right arrow"
+              /></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <script src="./src/navigation.js"></script>
     <script>
-      const dashboardNavItems = document.querySelectorAll(
-        ".dashboard-nav-item"
-      );
-      const dashboardImage = document.getElementById("dashboardImage");
-      const desktopViewButton = document.getElementById("desktopView");
-      const mobileViewButton = document.getElementById("mobileView");
-      const prevDashboardButton = document.getElementById("prevDashboard");
-      const nextDashboardButton = document.getElementById("nextDashboard");
-      const dashboardNavContainer = document.querySelector(
-        ".dashboard-nav-items-container"
-      ); // New selector for the container
-      const dashboardNavItemsWrapper = document.getElementById(
-        "dashboardNavItemsWrapper"
-      ); // New selector for the wrapper
-      const headerHamburgerMenu = document.getElementById(
-        "header-hamburger-menu"
-      );
-      const mobileMenu = document.getElementById("mobile-menu");
-
-      let currentActiveIndex = 0;
-      let isDesktopView = true;
-      let firstVisibleItemIndex = 0; // New variable to track the first visible item
-      let itemsPerPage; // This will be calculated dynamically
-      let itemFullWidthForTranslation = 0;
-
-      function calculateItemsPerPage() {
-        if (
-          !dashboardNavItems ||
-          dashboardNavItems.length === 0 ||
-          !dashboardNavContainer ||
-          !dashboardNavItemsWrapper
-        )
-          return;
-
-        const containerStyle = window.getComputedStyle(dashboardNavContainer);
-        const paddingLeft = parseFloat(containerStyle.paddingLeft);
-        const paddingRight = parseFloat(containerStyle.paddingRight);
-        const availableWidthForItems =
-          dashboardNavContainer.offsetWidth - paddingLeft - paddingRight;
-
-        const firstItem = dashboardNavItems[0];
-        if (!firstItem) {
-          itemsPerPage = 1;
-          return;
-        }
-
-        const firstItemRect = firstItem.getBoundingClientRect();
-        const firstItemWidth = firstItemRect.width; // Actual width of the first item
-
-        let itemGap = 0;
-        if (dashboardNavItems.length > 1) {
-          // Get the actual margin-left applied by space-x-6 to the second item
-          const secondItem = dashboardNavItems[1];
-          const secondItemStyle = window.getComputedStyle(secondItem);
-          itemGap = parseFloat(secondItemStyle.marginLeft);
-        }
-
-        itemFullWidthForTranslation = firstItemWidth + itemGap;
-
-        if (itemFullWidthForTranslation === 0) {
-          itemsPerPage = 1;
-        } else {
-          // Calculate how many items fit. Add itemGap to availableWidthForItems
-          // because the *last* item in a visible segment doesn't have an external margin-left affecting its fit.
-          itemsPerPage = Math.max(
-            1,
-            Math.floor(
-              (availableWidthForItems + itemGap) / itemFullWidthForTranslation
-            )
-          );
-        }
-
-        if (currentActiveIndex >= firstVisibleItemIndex + itemsPerPage) {
-          firstVisibleItemIndex = currentActiveIndex - itemsPerPage + 1;
-        } else if (currentActiveIndex < firstVisibleItemIndex) {
-          firstVisibleItemIndex = currentActiveIndex;
-        }
-        if (firstVisibleItemIndex + itemsPerPage > dashboardNavItems.length) {
-          firstVisibleItemIndex = Math.max(
-            0,
-            dashboardNavItems.length - itemsPerPage
-          );
-        }
-      }
-
-      function updateDashboardImage() {
-        const activeNavItem = dashboardNavItems[currentActiveIndex];
-        const newImageUrl = isDesktopView
-          ? activeNavItem.dataset.image
-          : activeNavItem.dataset.mobileImage;
-
-        // Fade out
-        dashboardImage.style.opacity = 0;
-
-        setTimeout(() => {
-          dashboardImage.src = `assets/${newImageUrl}`;
-          // Fade in
-          dashboardImage.style.opacity = 1;
-        }, 300); // Duration of the fade-out transition
-      }
-
-      // Function to center the clicked navigation item
-      function centerNavItem(item) {
-        const itemWidth = item.offsetWidth;
-        const itemOffsetLeft = item.offsetLeft;
-        const wrapperWidth = dashboardNavItemsWrapper.offsetWidth;
-
-        // Calculate scroll position to center the item
-        const scrollLeft = itemOffsetLeft - wrapperWidth / 2 + itemWidth / 2;
-        dashboardNavItemsWrapper.scrollTo({
-          left: scrollLeft,
-          behavior: "smooth",
-        });
-      }
-
-      function updateActiveClass() {
-        dashboardNavItems.forEach((item, index) => {
-          if (index === currentActiveIndex) {
-            item.classList.remove(
-              "text-blue-600",
-              "border-blue-600",
-              "hover:text-blue-600",
-              "font-semibold"
-            ); // Remove existing color and font-weight classes
-            item.classList.add("border-b-2", "pb-2");
-            item.style.color = "#5A60F9"; // Set active tab text color
-            item.style.borderColor = "#5A60F9"; // Set active tab underline color
-            item.style.opacity = "1"; // Active tab is fully opaque
-            item.style.fontWeight = "700"; // Set active tab font-weight to 700
-          } else {
-            item.classList.remove(
-              "text-blue-600",
-              "font-semibold",
-              "border-b-2",
-              "border-blue-600",
-              "pb-2"
-            );
-            item.classList.remove("text-gray-600", "hover:text-blue-600"); // Remove existing color classes
-            item.style.color = "#6B6B6B"; // Set inactive tab color
-            item.style.opacity = "0.6"; // Inactive tabs are semi-transparent
-          }
-        });
-
-        // Only apply translation for desktop view (md breakpoint is 768px), or if itemsPerPage is less than total items
-        if (
-          window.innerWidth >= 768 ||
-          itemsPerPage < dashboardNavItems.length
-        ) {
-          let translateXValue = -(
-            firstVisibleItemIndex * itemFullWidthForTranslation
-          );
-          // If all items fit, reset translation to 0 to center/align them naturally
-          if (itemsPerPage >= dashboardNavItems.length) {
-            translateXValue = 0;
-          }
-
-          dashboardNavItemsWrapper.style.transform = `translateX(${translateXValue}px)`;
-        } else {
-          dashboardNavItemsWrapper.style.transform = `translateX(0)`; // Reset transform for mobile, handled by scrolling
-        }
-
-        updateNavigationButtons();
-      }
-
-      function updateDeviceViewButtons() {
-        if (isDesktopView) {
-          desktopViewButton.classList.add("bg-blue-600", "text-white");
-          desktopViewButton.classList.remove(
-            "text-gray-600",
-            "hover:bg-gray-200"
-          );
-          mobileViewButton.classList.remove("bg-blue-600", "text-white");
-          mobileViewButton.classList.add("text-gray-600", "hover:bg-gray-200");
-        } else {
-          mobileViewButton.classList.add("bg-blue-600", "text-white");
-          mobileViewButton.classList.remove(
-            "text-gray-600",
-            "hover:bg-gray-200"
-          );
-          desktopViewButton.classList.remove("bg-blue-600", "text-white");
-          desktopViewButton.classList.add("text-gray-600", "hover:bg-gray-200");
-        }
-      }
-
-      function updateNavigationButtons() {
-        const isMobile = window.innerWidth < 768; // md breakpoint is 768px
-
-        if (isMobile) {
-          prevDashboardButton.classList.add("hidden");
-          nextDashboardButton.classList.add("hidden");
-        } else {
-          prevDashboardButton.classList.remove("hidden");
-          nextDashboardButton.classList.remove("hidden");
-
-          const canScrollLeft = firstVisibleItemIndex > 0;
-          const canScrollRight =
-            firstVisibleItemIndex + itemsPerPage < dashboardNavItems.length;
-          const canSelectPrevTab = currentActiveIndex > 0;
-          const canSelectNextTab =
-            currentActiveIndex < dashboardNavItems.length - 1;
-
-          prevDashboardButton.disabled = !(
-            canScrollLeft ||
-            (itemsPerPage >= dashboardNavItems.length && canSelectPrevTab)
-          );
-          nextDashboardButton.disabled = !(
-            canScrollRight ||
-            (itemsPerPage >= dashboardNavItems.length && canSelectNextTab)
-          );
-
-          // Visually disable buttons
-          if (prevDashboardButton.disabled) {
-            prevDashboardButton.classList.add(
-              "opacity-50",
-              "cursor-not-allowed"
-            );
-          } else {
-            prevDashboardButton.classList.remove(
-              "opacity-50",
-              "cursor-not-allowed"
-            );
-          }
-          if (nextDashboardButton.disabled) {
-            nextDashboardButton.classList.add(
-              "opacity-50",
-              "cursor-not-allowed"
-            );
-          } else {
-            nextDashboardButton.classList.remove(
-              "opacity-50",
-              "cursor-not-allowed"
-            );
-          }
-        }
-      }
-
-      function applyResponsiveNavigation() {
-        const isMobile = window.innerWidth < 768; // Tailwind's 'md' breakpoint is 768px
-
-        if (isMobile) {
-          dashboardNavItemsWrapper.classList.add(
-            "overflow-x-auto",
-            "snap-x",
-            "snap-mandatory",
-            "scroll-smooth"
-          );
-          dashboardNavItemsWrapper.classList.remove("mx-auto", "md:mx-auto");
-        } else {
-          dashboardNavItemsWrapper.classList.remove(
-            "overflow-x-auto",
-            "snap-x",
-            "snap-mandatory",
-            "scroll-smooth"
-          );
-          dashboardNavItemsWrapper.classList.add("mx-auto"); // Re-add mx-auto for desktop
-        }
-        updateNavigationButtons(); // Update button visibility based on screen size
-      }
-
-      dashboardNavItems.forEach((item, index) => {
-        item.addEventListener("click", (e) => {
-          e.preventDefault();
-          currentActiveIndex = index;
-
-          const isMobile = window.innerWidth < 768;
-          if (isMobile) {
-            centerNavItem(item);
-          } else {
-            // Adjust firstVisibleItemIndex if the clicked item is outside the current view
-            if (index < firstVisibleItemIndex) {
-              firstVisibleItemIndex = index;
-            } else if (index >= firstVisibleItemIndex + itemsPerPage) {
-              firstVisibleItemIndex = index - itemsPerPage + 1;
-            }
-          }
-          updateActiveClass();
-          updateDashboardImage();
-        });
-      });
-
-      desktopViewButton.addEventListener("click", () => {
-        isDesktopView = true;
-        updateDeviceViewButtons();
-        updateDashboardImage();
-      });
-
-      mobileViewButton.addEventListener("click", () => {
-        isDesktopView = false;
-        updateDeviceViewButtons();
-        updateDashboardImage();
-      });
-
-      prevDashboardButton.addEventListener("click", () => {
-        // Only scroll if there's more to scroll to the left
-        if (firstVisibleItemIndex > 0) {
-          firstVisibleItemIndex = Math.max(0, firstVisibleItemIndex - 1);
-        }
-        // Always try to select the previous tab if possible
-        if (currentActiveIndex > 0) {
-          currentActiveIndex = Math.max(0, currentActiveIndex - 1);
-        }
-        // Ensure active item is visible after a potential scroll
-        if (currentActiveIndex < firstVisibleItemIndex) {
-          firstVisibleItemIndex = currentActiveIndex;
-        }
-        updateActiveClass();
-        updateDashboardImage();
-      });
-
-      nextDashboardButton.addEventListener("click", () => {
-        // Only scroll if there's more to scroll to the right
-        if (firstVisibleItemIndex + itemsPerPage < dashboardNavItems.length) {
-          firstVisibleItemIndex = Math.min(
-            dashboardNavItems.length - itemsPerPage,
-            firstVisibleItemIndex + 1
-          );
-        }
-        // Always try to select the next tab if possible
-        if (currentActiveIndex < dashboardNavItems.length - 1) {
-          currentActiveIndex = Math.min(
-            dashboardNavItems.length - 1,
-            currentActiveIndex + 1
-          );
-        }
-        // Ensure active item is visible after a potential scroll
-        if (currentActiveIndex >= firstVisibleItemIndex + itemsPerPage) {
-          firstVisibleItemIndex = currentActiveIndex - itemsPerPage + 1;
-        }
-        updateActiveClass();
-        updateDashboardImage();
-      });
-
-      // Initial setup
-      calculateItemsPerPage(); // Calculate initial itemsPerPage
-      updateActiveClass();
-      updateDashboardImage();
-      updateDeviceViewButtons();
-      // Call responsive navigation setup on load
-      applyResponsiveNavigation();
-
-      headerHamburgerMenu.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-
-      // Mobile Dropdown Toggles
-      const mobileIndustriesToggle = document.getElementById(
-        "mobile-industries-toggle"
-      );
-      const mobileIndustriesDropdown = document.getElementById(
-        "mobile-industries-dropdown"
-      );
-
-      if (mobileIndustriesToggle && mobileIndustriesDropdown) {
-        mobileIndustriesToggle.addEventListener("click", (e) => {
-          e.preventDefault();
-          mobileIndustriesDropdown.classList.toggle("hidden");
-          mobileIndustriesToggle
-            .querySelector("svg")
-            .classList.toggle("rotate-180");
-        });
-      }
-
-      const mobileROIToggle = document.getElementById("mobile-roi-toggle");
-      const mobileROIDropdown = document.getElementById("mobile-roi-dropdown");
-
-      if (mobileROIToggle && mobileROIDropdown) {
-        mobileROIToggle.addEventListener("click", (e) => {
-          e.preventDefault();
-          mobileROIDropdown.classList.toggle("hidden");
-          mobileROIToggle.querySelector("svg").classList.toggle("rotate-180");
-        });
-      }
-
-      const mobileWhyGladmindsToggle = document.getElementById(
-        "mobile-why-gladminds-toggle"
-      );
-      const mobileWhyGladmindsDropdown = document.getElementById(
-        "mobile-why-gladminds-dropdown"
-      );
-
-      if (mobileWhyGladmindsToggle && mobileWhyGladmindsDropdown) {
-        mobileWhyGladmindsToggle.addEventListener("click", (e) => {
-          e.preventDefault();
-          mobileWhyGladmindsDropdown.classList.toggle("hidden");
-          mobileWhyGladmindsToggle
-            .querySelector("svg")
-            .classList.toggle("rotate-180");
-        });
-      }
-
-      const mobileAboutUsToggle = document.getElementById(
-        "mobile-about-us-toggle"
-      );
-      const mobileAboutUsDropdown = document.getElementById(
-        "mobile-about-us-dropdown"
-      );
-
-      if (mobileAboutUsToggle && mobileAboutUsDropdown) {
-        mobileAboutUsToggle.addEventListener("click", (e) => {
-          e.preventDefault();
-          mobileAboutUsDropdown.classList.toggle("hidden");
-          mobileAboutUsToggle
-            .querySelector("svg")
-            .classList.toggle("rotate-180");
-        });
-      }
-
-      const mobileMediaToggle = document.getElementById("mobile-media-toggle");
-      const mobileMediaDropdown = document.getElementById(
-        "mobile-media-dropdown"
-      );
-
-      if (mobileMediaToggle && mobileMediaDropdown) {
-        mobileMediaToggle.addEventListener("click", (e) => {
-          e.preventDefault();
-          mobileMediaDropdown.classList.toggle("hidden");
-          mobileMediaToggle.querySelector("svg").classList.toggle("rotate-180");
-        });
-      }
-
-      // Recalculate and update on window resize
-      window.addEventListener("resize", () => {
-        calculateItemsPerPage();
-        updateActiveClass(); // Re-render visibility based on new itemsPerPage
-        applyResponsiveNavigation(); // Call responsive navigation setup on resize
-      });
-
       function toggleAccordion(button) {
         const content = button.nextElementSibling;
         const svg = button.querySelector("svg");
@@ -2500,19 +837,6 @@
           svg.classList.remove("rotate-180");
         }
       }
-
-      // Close mobile menu when clicking outside
-      document.addEventListener("click", (event) => {
-        if (
-          !mobileMenu.contains(event.target) &&
-          !headerHamburgerMenu.contains(event.target)
-        ) {
-          mobileMenu.classList.add("hidden");
-        }
-      });
-
-      document.getElementById("current-year").textContent =
-        new Date().getFullYear();
     </script>
   </body>
 </html>
