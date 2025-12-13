@@ -610,6 +610,9 @@
   .max-w-\[600px\] {
     max-width: 600px;
   }
+  .max-w-\[620px\] {
+    max-width: 620px;
+  }
   .max-w-\[670px\] {
     max-width: 670px;
   }
@@ -655,6 +658,9 @@
   .min-w-\[250px\] {
     min-width: 250px;
   }
+  .flex-1 {
+    flex: 1;
+  }
   .flex-auto {
     flex: auto;
   }
@@ -663,6 +669,12 @@
   }
   .flex-shrink-0 {
     flex-shrink: 0;
+  }
+  .flex-grow {
+    flex-grow: 1;
+  }
+  .grow {
+    flex-grow: 1;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -1050,9 +1062,6 @@
   .border-\[\#fff\] {
     border-color: #fff;
   }
-  .border-\[E7E7E9\] {
-    border-color: E7E7E9;
-  }
   .border-blue-600 {
     border-color: var(--color-blue-600);
   }
@@ -1095,6 +1104,9 @@
   .bg-\[\#1868DB\] {
     background-color: #1868DB;
   }
+  .bg-\[\#18181B\] {
+    background-color: #18181B;
+  }
   .bg-\[\#E1F5FE\] {
     background-color: #E1F5FE;
   }
@@ -1112,6 +1124,9 @@
   }
   .bg-\[\#F2F2F2\] {
     background-color: #F2F2F2;
+  }
+  .bg-\[\#F4F4F5\] {
+    background-color: #F4F4F5;
   }
   .bg-\[\#F4F4FA\] {
     background-color: #F4F4FA;
@@ -1136,6 +1151,12 @@
   }
   .bg-\[\#FCFCFC\] {
     background-color: #FCFCFC;
+  }
+  .bg-\[\#FD7E33\] {
+    background-color: #FD7E33;
+  }
+  .bg-\[\#FF5F00\] {
+    background-color: #FF5F00;
   }
   .bg-\[\#FFFFFF33\] {
     background-color: #FFFFFF33;
@@ -1408,6 +1429,9 @@
   .text-\[24px\] {
     font-size: 24px;
   }
+  .text-\[28px\] {
+    font-size: 28px;
+  }
   .text-\[34px\] {
     font-size: 34px;
   }
@@ -1557,6 +1581,10 @@
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
   }
+  .tracking-\[-0\.04px\] {
+    --tw-tracking: -0.04px;
+    letter-spacing: -0.04px;
+  }
   .tracking-\[-0\.8px\] {
     --tw-tracking: -0.8px;
     letter-spacing: -0.8px;
@@ -1649,6 +1677,9 @@
   .text-\[\#6B6B6B\] {
     color: #6B6B6B;
   }
+  .text-\[\#8A8A8A\] {
+    color: #8A8A8A;
+  }
   .text-\[\#64B5F6\] {
     color: #64B5F6;
   }
@@ -1672,6 +1703,9 @@
   }
   .text-\[\#18181B\] {
     color: #18181B;
+  }
+  .text-\[\#020202\] {
+    color: #020202;
   }
   .text-\[\#62606D\] {
     color: #62606D;
@@ -1730,8 +1764,14 @@
   .text-\[\#FF5F00\] {
     color: #FF5F00;
   }
+  .text-\[\#FFF1E8\] {
+    color: #FFF1E8;
+  }
   .text-\[\#FFFFFFE5\] {
     color: #FFFFFFE5;
+  }
+  .text-\[\#FFFFFF\] {
+    color: #FFFFFF;
   }
   .text-\[\#fff\] {
     color: #fff;
@@ -2535,9 +2575,19 @@
       gap: calc(var(--spacing) * 14);
     }
   }
+  .md\:gap-15 {
+    @media (width >= 48rem) {
+      gap: calc(var(--spacing) * 15);
+    }
+  }
   .md\:gap-20 {
     @media (width >= 48rem) {
       gap: calc(var(--spacing) * 20);
+    }
+  }
+  .md\:gap-30 {
+    @media (width >= 48rem) {
+      gap: calc(var(--spacing) * 30);
     }
   }
   .md\:gap-\[165px\] {
@@ -2921,9 +2971,19 @@
       font-size: 32px;
     }
   }
+  .md\:text-\[40px\] {
+    @media (width >= 48rem) {
+      font-size: 40px;
+    }
+  }
   .md\:text-\[48px\] {
     @media (width >= 48rem) {
       font-size: 48px;
+    }
+  }
+  .md\:text-\[52px\] {
+    @media (width >= 48rem) {
+      font-size: 52px;
     }
   }
   .md\:text-\[56px\] {
@@ -3076,6 +3136,12 @@
     @media (width >= 48rem) {
       --tw-tracking: -1.12px;
       letter-spacing: -1.12px;
+    }
+  }
+  .md\:tracking-\[-2\.08px\] {
+    @media (width >= 48rem) {
+      --tw-tracking: -2.08px;
+      letter-spacing: -2.08px;
     }
   }
   .md\:tracking-\[-2\.54px\] {
