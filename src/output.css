@@ -3240,6 +3240,11 @@
       color: #555;
     }
   }
+  .md\:text-\[\#FF5F00\] {
+    @media (width >= 48rem) {
+      color: #FF5F00;
+    }
+  }
   .md\:opacity-80 {
     @media (width >= 48rem) {
       opacity: 80%;
