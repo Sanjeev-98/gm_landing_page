@@ -62,24 +62,61 @@
         color: transparent;
         -webkit-text-fill-color: transparent;
       }
+
+      /* Carousel nav styles */
+      .carousel-btn {
+        border-radius: 9999px;
+        background: #ff7f3f;
+        color: #ffffff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        /* font-size: 20px;
+        font-weight: 700; */
+        border: none;
+        box-shadow: 0 8px 16px rgba(255, 127, 63, 0.25);
+        transition: opacity 0.2s ease;
+        cursor: pointer;
+      }
+      .carousel-btn:disabled {
+        opacity: 0.5;
+      }
+      .carousel-dots {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .carousel-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 9999px;
+        background: #d9d9d9;
+        transition: transform 0.2s ease, background 0.2s ease;
+      }
+      .carousel-dot.active {
+        width: 12px;
+        height: 12px;
+        background: #ff7f3f;
+        transform: scale(1.05);
+      }
+
+      /* Partner carousel widths (since current CSS build lacks breakpoints) */
+      #partner-track {
+        gap: 24px;
+      }
+      #partner-track .partner-card {
+        width: 100%;
+        flex-shrink: 0;
+      }
+      @media (min-width: 900px) {
+        #partner-track .partner-card {
+          width: calc(50% - 12px);
+        }
+      }
     </style>
   </head>
   <body class="font-roboto-sans antialiase" data-page="home">
     <div id="navigation-placeholder" class="md:hidden"></div>
-
-    <!-- <section class="bg-[#F4F4F5]">
-        <div class="container mx-auto py-6 md:py-18">
-            <div class="flex md:flex-row flex-col">
-               <div>
-                <a href="#" target="_blank" rel="noopener noreferrer">Content NA</a>
-               </div>
-               <div>
-                
-               </div>
-            </div>
-        </div>
-    </section> -->
-
     <header class="bg-[#FFDBBB] py-6 md:py-18">
       <div class="container mx-auto flex flex-col md:flex-row justify-center">
         <div class="md:w-fit flex justify-center">
@@ -459,8 +496,156 @@
             PARTNERS SAY
           </h3>
 
-          <div class="md:content-end">
-            <a href="#" class="font-public-sans text-[24px] text-white md:text-[#FF5F00] font-semibold leading-8 px-5 py-2 rounded-full bg-[#FF5F00] md:bg-transparent">How it works</a>
+          <div class="md:content-end mt-6 md:mt-0">
+            <a
+              href="#"
+              class="font-public-sans text-[24px] text-white md:text-[#FF5F00] font-semibold leading-8 px-5 py-2 rounded-full bg-[#FF5F00] md:bg-transparent"
+              >How it works</a
+            >
+          </div>
+        </div>
+        <div
+          class="relative w-full mt-10 md:mt-0 overflow-hidden pb-14"
+          id="partner-carousel"
+        >
+          <div
+            id="partner-track"
+            class="flex flex-nowrap gap-6 md:gap-8 mb-3 md:mb-8 px-8 md:px-10"
+            style="transform: translateX(0); will-change: transform"
+          >
+            <div
+              class="-skew-x-10 partner-card flex-shrink-0 w-full md:w-[calc(50%-12px)] bg-[#FAFAFA] shadow-[0_12px_30px_rgba(0,0,0,0.05)] [-skew-x-2] rounded-sm"
+            >
+              <div class="-skew-x-2 p-6 md:p-8 flex flex-col gap-4">
+                <p
+                  class="text-[#4B5563] text-[16px] md:text-[18px] leading-7 md:leading-8"
+                >
+                  "The Feedback Module gave us real visibility into
+                  post-purchase experience we never had before."
+                </p>
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-[#E5E7EB]"></div>
+                  <div>
+                    <p
+                      class="text-[#0F172A] font-semibold text-[14px] md:text-[16px]"
+                    >
+                      David Chen
+                    </p>
+                    <p
+                      class="text-[#6B7280] text-[12px] md:text-[13px] leading-5"
+                    >
+                      Service Director, PowerGrid Solutions
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="-skew-x-10 partner-card flex-shrink-0 w-full md:w-[calc(50%-12px)] bg-[#FAFAFA] shadow-[0_12px_30px_rgba(0,0,0,0.05)] [-skew-x-2] rounded-sm"
+            >
+              <div class="-skew-x-2 p-6 md:p-8 flex flex-col gap-4">
+                <p
+                  class="text-[#4B5563] text-[16px] md:text-[18px] leading-7 md:leading-8"
+                >
+                  "The Feedback Module gave us real visibility into
+                  post-purchase experience we never had before."
+                </p>
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-[#E5E7EB]"></div>
+                  <div>
+                    <p
+                      class="text-[#0F172A] font-semibold text-[14px] md:text-[16px]"
+                    >
+                      David Chen
+                    </p>
+                    <p
+                      class="text-[#6B7280] text-[12px] md:text-[13px] leading-5"
+                    >
+                      Service Director, PowerGrid Solutions
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="-skew-x-10 partner-card flex-shrink-0 w-full md:w-[calc(50%-12px)] bg-[#FAFAFA] shadow-[0_12px_30px_rgba(0,0,0,0.05)] [-skew-x-2] rounded-sm"
+            >
+              <div class="-skew-x-2 p-6 md:p-8 flex flex-col gap-4">
+                <p
+                  class="text-[#4B5563] text-[16px] md:text-[18px] leading-7 md:leading-8"
+                >
+                  "The Feedback Module gave us real visibility into
+                  post-purchase experience we never had before."
+                </p>
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-[#E5E7EB]"></div>
+                  <div>
+                    <p
+                      class="text-[#0F172A] font-semibold text-[14px] md:text-[16px]"
+                    >
+                      David Chen
+                    </p>
+                    <p
+                      class="text-[#6B7280] text-[12px] md:text-[13px] leading-5"
+                    >
+                      Service Director, PowerGrid
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="-skew-x-10 partner-card flex-shrink-0 w-full md:w-[calc(50%-12px)] bg-[#FAFAFA] shadow-[0_12px_30px_rgba(0,0,0,0.05)] [-skew-x-2] rounded-sm"
+            >
+              <div class="-skew-x-2 p-6 md:p-8 flex flex-col gap-4">
+                <p
+                  class="text-[#4B5563] text-[16px] md:text-[18px] leading-7 md:leading-8"
+                >
+                  "The Feedback Module gave us real visibility into
+                  post-purchase experience we never had before."
+                </p>
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-[#E5E7EB]"></div>
+                  <div>
+                    <p
+                      class="text-[#0F172A] font-semibold text-[14px] md:text-[16px]"
+                    >
+                      David Backhem
+                    </p>
+                    <p
+                      class="text-[#6B7280] text-[12px] md:text-[13px] leading-5"
+                    >
+                      Service Director, PowerGrid
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="absolute left-1/2 -translate-x-1/2 bottom-3 md:bottom-4 flex items-center gap-6 z-10"
+          >
+            <button
+              id="partner-prev"
+              aria-label="Previous testimonial"
+              class="carousel-btn h-[20px] w-[20px] md:h-[40px] md:w-[40px]"
+            >
+              «
+            </button>
+
+            <div class="carousel-dots" id="partner-dots"></div>
+
+            <button
+              id="partner-next"
+              aria-label="Next testimonial"
+              class="carousel-btn h-[20px] w-[20px] md:h-[40px] md:w-[40px]"
+            >
+              »
+            </button>
           </div>
         </div>
       </div>
@@ -498,6 +683,78 @@
       </div>
     </footer>
 
-    <script></script>
+    <script>
+      (() => {
+        const carousel = document.getElementById("partner-carousel");
+        const track = document.getElementById("partner-track");
+        const prevBtn = document.getElementById("partner-prev");
+        const nextBtn = document.getElementById("partner-next");
+        const dotsContainer = document.getElementById("partner-dots");
+        if (!carousel || !track || !prevBtn || !nextBtn || !dotsContainer)
+          return;
+
+        let cards = [];
+        let cardWidth = 0;
+        let gap = 0;
+        let maxIndex = 0;
+        let currentIndex = 0;
+        let dots = [];
+
+        const setActiveDots = () => {
+          dots.forEach((dot, i) => {
+            dot.classList.toggle("active", i === currentIndex);
+          });
+        };
+
+        const buildDots = () => {
+          dotsContainer.innerHTML = "";
+          dots = [];
+          const count = maxIndex + 1 || 1;
+          for (let i = 0; i < count; i++) {
+            const dot = document.createElement("button");
+            dot.type = "button";
+            dot.className =
+              "carousel-dot" + (i === currentIndex ? " active" : "");
+            dot.addEventListener("click", () => goTo(i));
+            dotsContainer.appendChild(dot);
+            dots.push(dot);
+          }
+        };
+
+        const goTo = (index, smooth = true) => {
+          const clamped = Math.max(0, Math.min(maxIndex, index));
+          currentIndex = clamped;
+          track.style.transition = smooth ? "transform 0.4s ease" : "none";
+          track.style.transform = `translateX(-${clamped * cardWidth}px)`;
+          prevBtn.disabled = clamped === 0;
+          nextBtn.disabled = clamped === maxIndex;
+          prevBtn.classList.toggle("opacity-50", prevBtn.disabled);
+          nextBtn.classList.toggle("opacity-50", nextBtn.disabled);
+          setActiveDots();
+        };
+
+        const recalc = () => {
+          cards = Array.from(track.children);
+          if (!cards.length) return;
+          const style = getComputedStyle(track);
+          gap = parseFloat(style.columnGap || style.gap || "0") || 24;
+          const rect = cards[0].getBoundingClientRect();
+          cardWidth = rect.width + gap;
+          const visible = Math.max(
+            1,
+            Math.floor((carousel.clientWidth + gap) / cardWidth)
+          );
+          maxIndex = Math.max(0, cards.length - visible);
+          currentIndex = Math.min(currentIndex, maxIndex);
+          buildDots();
+          goTo(currentIndex, false);
+        };
+
+        prevBtn.addEventListener("click", () => goTo(currentIndex - 1));
+        nextBtn.addEventListener("click", () => goTo(currentIndex + 1));
+        window.addEventListener("resize", recalc);
+        recalc();
+      })();
+    </script>
   </body>
 </html>
