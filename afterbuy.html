@@ -55,11 +55,18 @@
           ),
           #0400c8;
       }
+      .text-gradient-orange {
+        background: linear-gradient(90deg, #f87216 0%, #99210b 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+      }
     </style>
   </head>
   <body class="font-roboto-sans antialiase" data-page="home">
     <div id="navigation-placeholder" class="md:hidden"></div>
-    
+
     <!-- <section class="bg-[#F4F4F5]">
         <div class="container mx-auto py-6 md:py-18">
             <div class="flex md:flex-row flex-col">
@@ -72,6 +79,74 @@
             </div>
         </div>
     </section> -->
+
+    <header class="bg-[#FFDBBB] py-6 md:py-18">
+      <div class="container mx-auto flex flex-col md:flex-row justify-center">
+        <div class="md:w-fit flex justify-center">
+          <a
+            href="#"
+            rel="noopener noreferrer"
+            class="h-fit bg-white text-[#EE6915] p-2 rounded-md mb-4 md:mb-0"
+          >
+            Need Content
+          </a>
+        </div>
+        <div>
+          <div class="flex justify-center mb-7 md:mb-9">
+            <div
+              class="bg-[#FFFFFF] border border-[#E1CDCA] rounded-full flex justify-center px-4 py-2"
+            >
+              <img
+                src="assets/afterbuy/icons/dot.svg"
+                alt="Dots"
+                class="pr-2"
+              />
+              <p
+                class="text-[#52525B] w-fit font-kantumruy-pro-sans text-[12px] md:text-[16px] leading-5 md:leading-7 tracking-[-0.024px] md:tracking-[-0.032px]"
+              >
+                Post-Purchase Intelligence
+              </p>
+            </div>
+          </div>
+
+          <div class="uppercase">
+            <p
+              class="text-center text-[24px] md:text-[64px] font-bold leading-9 md:leading-22 tracking-[-0.96px] md:tracking-[-2.56px] mb-10 md:mb-12"
+            >
+              Powering the <br />
+              <span class="text-gradient-orange">Customer Experience</span>
+              <br />
+              Beyond Purchase
+            </p>
+          </div>
+
+          <div class="flex justify-center mb-10 md:mb-12">
+            <p
+              class="text-[#62606D] text-center md:text-[20px] leading-6 md:leading-8 max-w-[730px]"
+            >
+              GladMinds connects OEMs directly with their customers, creating
+              intelligent service touchpoints that build loyalty, trust, and
+              lifetime value.
+            </p>
+          </div>
+
+          <div class="flex justify-center">
+            <div class="-skew-x-12 bg-[#FF5F00] text-white w-fit p-4">
+              Discover After-Buy Intelligence >>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-fit flex justify-center md:items-end md:mb-20">
+          <a
+            href="#"
+            rel="noopener noreferrer"
+            class="h-fit bg-white text-[#EE6915] p-2 rounded-md mt-4 md:mt-0"
+          >
+            Need Content
+          </a>
+        </div>
+      </div>
+    </header>
 
     <section class="bg-[#FCFCFC]">
       <div class="container mx-auto py-6 md:py-18 text-center px-2 md:px-4">
@@ -369,7 +444,9 @@
     </section>
 
     <section class="bg-[#18181B]">
-      <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto py-6 md:py-18 px-2 md:px-4">
+      <div
+        class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto py-6 md:py-18 px-2 md:px-4"
+      >
         <div class="flex-">
           <h3
             class="text-white text-[20px] md:text-[64px] font-bold leading-6 md:leading-18 tracking-[-0.8px] md:tracking-[-2.54px]"
