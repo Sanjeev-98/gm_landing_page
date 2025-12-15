@@ -687,10 +687,6 @@
   .rotate-180 {
     rotate: 180deg;
   }
-  .-skew-x-2 {
-    --tw-skew-x: skewX(calc(2deg * -1));
-    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-  }
   .-skew-x-10 {
     --tw-skew-x: skewX(calc(10deg * -1));
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
