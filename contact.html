@@ -259,22 +259,43 @@
                   </div>
                 </div>
 
-                <!-- Industry -->
+                <!-- Industry (Custom Combobox) -->
                 <div>
                   <label
                     class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
                   >
                     INDUSTRY
                   </label>
-                  <select class="custom-select">
-                    <option value="" disabled hidden>Select Warehouse</option>
-                    <option value="manufacturing">Manufacturing</option>
-                    <option value="automotive">Automotive</option>
-                    <option value="electronics">Electronics</option>
-                  </select>
+                  <div class="combobox" data-name="industry">
+                    <input
+                      type="text"
+                      class="combobox-input"
+                      placeholder="Select Industry"
+                      aria-label="Industry"
+                      role="combobox"
+                      aria-expanded="false"
+                      aria-autocomplete="list"
+                      aria-controls="cb-industry-list"
+                    />
+                    <ul
+                      class="combobox-list"
+                      id="cb-industry-list"
+                      role="listbox"
+                      hidden
+                    >
+                      <li role="option" data-value="manufacturing">
+                        Manufacturing
+                      </li>
+                      <li role="option" data-value="automotive">Automotive</li>
+                      <li role="option" data-value="electronics">
+                        Electronics
+                      </li>
+                    </ul>
+                    <input type="hidden" name="industry" />
+                  </div>
                 </div>
 
-                <!-- Number of Assets / Equipment -->
+                <!-- Number of Assets / Equipment (Custom Combobox) -->
                 <div>
                   <label
                     class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
@@ -282,29 +303,64 @@
                     NUMBER OF ASSETS / EQUIPMENT
                     <span class="text-red-500">*</span>
                   </label>
-                  <select class="custom-select" required>
-                    <option value="" disabled hidden>Select Warehouse</option>
-                    <option value="1-10">1-10</option>
-                    <option value="11-50">11-50</option>
-                    <option value="51-100">51-100</option>
-                    <option value="100+">100+</option>
-                  </select>
+                  <div class="combobox" data-name="assets">
+                    <input
+                      type="text"
+                      class="combobox-input"
+                      placeholder="Select Number of Assets"
+                      aria-label="Number of Assets"
+                      role="combobox"
+                      aria-expanded="false"
+                      aria-autocomplete="list"
+                      aria-controls="cb-assets-list"
+                      required
+                    />
+                    <ul
+                      class="combobox-list"
+                      id="cb-assets-list"
+                      role="listbox"
+                      hidden
+                    >
+                      <li role="option" data-value="1-10">1-10</li>
+                      <li role="option" data-value="11-50">11-50</li>
+                      <li role="option" data-value="51-100">51-100</li>
+                      <li role="option" data-value="100+">100+</li>
+                    </ul>
+                    <input type="hidden" name="assets" />
+                  </div>
                 </div>
 
-                <!-- Geographies of Operation -->
+                <!-- Geographies of Operation (Custom Combobox) -->
                 <div>
                   <label
                     class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
                   >
                     GEOGRAPHIES OF OPERATION
                   </label>
-                  <select class="custom-select">
-                    <option value="" disabled hidden>Select Warehouse</option>
-                    <option value="asia">Asia</option>
-                    <option value="europe">Europe</option>
-                    <option value="americas">Americas</option>
-                    <option value="global">Global</option>
-                  </select>
+                  <div class="combobox" data-name="geography">
+                    <input
+                      type="text"
+                      class="combobox-input"
+                      placeholder="Select Geography"
+                      aria-label="Geography"
+                      role="combobox"
+                      aria-expanded="false"
+                      aria-autocomplete="list"
+                      aria-controls="cb-geo-list"
+                    />
+                    <ul
+                      class="combobox-list"
+                      id="cb-geo-list"
+                      role="listbox"
+                      hidden
+                    >
+                      <li role="option" data-value="asia">Asia</li>
+                      <li role="option" data-value="europe">Europe</li>
+                      <li role="option" data-value="americas">Americas</li>
+                      <li role="option" data-value="global">Global</li>
+                    </ul>
+                    <input type="hidden" name="geography" />
+                  </div>
                 </div>
               </div>
 
