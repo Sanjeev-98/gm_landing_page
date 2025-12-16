@@ -1,0 +1,103 @@
+.combobox {
+  position: relative;
+}
+.combobox-input {
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 11px 62px 11px 14px;
+  font-size: 15px;
+  color: #212121;
+  line-height: 1.5;
+}
+.combobox-input:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.08);
+}
+.combobox-list {
+  position: absolute;
+  z-index: 20;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  max-height: 220px;
+  overflow: auto;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 4px;
+}
+.combobox-list[hidden] {
+  display: none;
+}
+.combobox-list li {
+  list-style: none;
+  padding: 8px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #212121;
+}
+.combobox-list li[aria-selected="true"],
+.combobox-list li.is-active {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+.combobox-empty {
+  padding: 8px 10px;
+  color: #757575;
+}
+/* Clear button */
+.combobox-clear {
+  position: absolute;
+  right: 36px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  color: #757575;
+  border-radius: 12px;
+  cursor: pointer;
+  display: none;
+}
+.combobox-clear:hover {
+  background: #f2f2f2;
+  color: #424242;
+}
+.combobox.has-value .combobox-clear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Toggle (chevron) button */
+.combobox-toggle {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  color: #757575;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.combobox-toggle:hover {
+  background: #f2f2f2;
+  color: #424242;
+}
+.combobox-toggle .material-icons {
+  font-size: 20px;
+  line-height: 1;
+  transition: transform 0.15s ease;
+}
+.combobox.is-open .combobox-toggle .material-icons {
+  transform: rotate(180deg);
+}

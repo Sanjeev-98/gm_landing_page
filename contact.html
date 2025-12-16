@@ -20,6 +20,11 @@
     />
     <link href="src/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="./src/navigation.css" />
+    <link rel="stylesheet" href="./src/combobox.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <style>
       .font-inter-sans {
         font-family: "Inter", "Sans-serif", sans-serif;
@@ -204,19 +209,54 @@
                   />
                 </div>
 
-                <!-- Job Title -->
+                <!-- Job Title (Custom Combobox) -->
                 <div>
                   <label
                     class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
                   >
                     JOB TITLE
                   </label>
-                  <select class="custom-select">
-                    <option value="" disabled hidden>Select Warehouse</option>
-                    <option value="manager">Manager</option>
-                    <option value="director">Director</option>
-                    <option value="executive">Executive</option>
-                  </select>
+                  <div class="combobox" data-name="job_title">
+                    <input
+                      type="text"
+                      class="combobox-input"
+                      placeholder="Select Job Title"
+                      aria-label="Job Title"
+                      role="combobox"
+                      aria-expanded="false"
+                      aria-autocomplete="list"
+                      aria-controls="cb-job-title-list"
+                    />
+                    <ul
+                      class="combobox-list"
+                      id="cb-job-title-list"
+                      role="listbox"
+                      hidden
+                    >
+                      <li
+                        role="option"
+                        id="cb-job-title-opt-1"
+                        data-value="manager"
+                      >
+                        Manager
+                      </li>
+                      <li
+                        role="option"
+                        id="cb-job-title-opt-2"
+                        data-value="director"
+                      >
+                        Director
+                      </li>
+                      <li
+                        role="option"
+                        id="cb-job-title-opt-3"
+                        data-value="executive"
+                      >
+                        Executive
+                      </li>
+                    </ul>
+                    <input type="hidden" name="job_title" />
+                  </div>
                 </div>
 
                 <!-- Industry -->
@@ -415,5 +455,6 @@
     </main>
 
     <script src="./src/navigation.js"></script>
+    <script src="./src/combobox.js"></script>
   </body>
 </html>
