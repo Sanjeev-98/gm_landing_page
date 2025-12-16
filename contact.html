@@ -111,9 +111,9 @@
     <header></header>
 
     <main>
-      <section>
+      <section class="bg-[#04042F]">
         <div
-          class="p-3 md:px-8 md:py-4 container mx-auto bg-[#04042F] py-12 flex flex-col md:flex-row md:gap-8"
+          class="p-3 md:px-8 md:py-4 container mx-auto py-12 flex flex-col md:flex-row md:gap-8"
         >
           <div class="max-w-[340px] content-center">
             <h1
@@ -165,6 +165,7 @@
                     name="full_name"
                     placeholder="Warehouse"
                     class="w-full border border-[#BDBDBD] rounded-lg px-4 py-3 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
+                    required
                   />
                 </div>
 
@@ -179,7 +180,10 @@
                     type="email"
                     name="email"
                     placeholder="Warehouse"
+                    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                    title="Please enter a valid email address"
                     class="w-full border border-[#BDBDBD] rounded-lg px-4 py-3 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
+                    required
                   />
                 </div>
 
@@ -294,6 +298,9 @@
                       <li role="option" data-value="electronics">
                         Electronics
                       </li>
+                      <li role="option" data-value="construction">
+                        Construction
+                      </li>
                     </ul>
                     <input type="hidden" name="industry" />
                   </div>
@@ -384,27 +391,15 @@
                 </label>
               </div>
 
-              <button
-                type="submit"
-                class="mt-4 inline-flex items-center gap-3 bg-[#4656B0] text-white font-semibold text-[12px] tracking-[0.4px] uppercase px-6 py-3 rounded-md hover:bg-[#3b4aa0] transition"
-              >
-                Submit
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="flex-shrink-0"
+              <div>
+                <button
+                  type="submit"
+                  class="block flex justify-center mt-4 items-center gap-3 bg-[#4656B0] text-white font-semibold text-[12px] tracking-[0.4px] uppercase px-6 py-3 rounded-md hover:bg-[#3b4aa0] transition md:w-[350px] w-full"
                 >
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </button>
+                  Submit
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </button>
+              </div>
             </form>
           </div>
         </div>
