@@ -1,0 +1,10 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Patch afterbuy carousel alignment",
+			"type": "shell",
+			"command": "powershell -NoProfile -Command \n($p='d:\\GladMinds\\gm_landing_page\\afterbuy.html');\n$c=[IO.File]::ReadAllText($p);\n$c=$c -replace 'style=\"transform: translateX\\(0\\); will-change: transform;\"','style=\"position: relative; transform: translateX(0); will-change: transform;\"';\n$c=$c -replace 'track\\.style\\.transform = `translateX\\(-\\$\\{clamped \\* cardWidth\\}px\\)`;','const target = cards[clamped]; const offset = target ? target.offsetLeft : (clamped*cardWidth); track.style.transform = `translateX(-${offset}px)`;';\n[IO.File]::WriteAllText($p,$c,[Text.UTF8Encoding]::new($false))"
+		}
+	]
+}

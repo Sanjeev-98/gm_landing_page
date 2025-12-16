@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GladMinds - Powering the customer experience beyond Purchase</title>
+    <meta
+      name="description"
+      content="GladMinds helps turn downtime into uptime with always-on service and enhanced customer experience."
+    />
+    <meta
+      name="keywords"
+      content="GladMinds, uptime, downtime, customer experience, after-sales service, afterbuy, industry leaders"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="src/output.css" rel="stylesheet" />
+    <style>
+      .font-inter-sans {
+        font-family: "Inter", "Sans-serif", sans-serif;
+      }
+      .font-roboto-sans {
+        font-family: "Roboto", "Sans-serif", sans-serif;
+      }
+      .kantumruy-pro-sans {
+        font-family: "Kantumruy Pro", "Sans-serif", sans-serif;
+      }
+      .font-public-sans {
+        font-family: "Public Sans", "Sans-serif", sans-serif;
+      }
+      .main-header-text-gradiant {
+        background: linear-gradient(90deg, #0400c8 0%, #cecdff 70%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .custom-gradient-desc {
+        background: linear-gradient(
+          90deg,
+          #231233 -20%,
+          #f8ebff 40%,
+          #231233 130%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .btn-primary-gradient {
+        background: radial-gradient(
+            41.38% 44.27% at 47.7% 50%,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.1) 50%,
+            rgba(255, 255, 255, 0.2) 100%
+          ),
+          #0400c8;
+      }
+      .text-gradient-orange {
+        background: linear-gradient(90deg, #f87216 0%, #99210b 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Carousel nav styles */
+      .carousel-btn {
+        border-radius: 9999px;
+        background: #ff7f3f;
+        color: #ffffff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        /* font-size: 20px;
+        font-weight: 700; */
+        border: none;
+        box-shadow: 0 8px 16px rgba(255, 127, 63, 0.25);
+        transition: opacity 0.2s ease;
+        cursor: pointer;
+      }
+      .carousel-btn:disabled {
+        opacity: 0.5;
+      }
+      .carousel-dots {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .carousel-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 9999px;
+        background: #d9d9d9;
+        transition: transform 0.2s ease, background 0.2s ease;
+      }
+      .carousel-dot.active {
+        width: 12px;
+        height: 12px;
+        background: #ff7f3f;
+        transform: scale(1.05);
+      }
+
+      /* Partner carousel widths (since current CSS build lacks breakpoints) */
+      #partner-track {
+        gap: 24px;
+      }
+      #partner-track .partner-card {
+        width: 100%;
+        flex-shrink: 0;
+      }
+      @media (min-width: 900px) {
+        #partner-track .partner-card {
+          width: calc(50% - 12px);
+        }
+      }
+    </style>
+  </head>
+  <body class="font-roboto-sans antialiase" data-page="home">
+    <div id="navigation-placeholder" class="md:hidden"></div>
+    <header class="bg-[#FFDBBB] py-6 md:py-18">
+      <div class="container mx-auto flex flex-col md:flex-row justify-center">
+        <div class="md:w-fit flex justify-center">
+          <a
+            href="#"
+            rel="noopener noreferrer"
+            class="h-fit bg-white text-[#EE6915] p-2 rounded-md mb-4 md:mb-0"
+          >
+            Need Content
+          </a>
+        </div>
+        <div>
+          <div class="flex justify-center mb-7 md:mb-9">
+            <div
+              class="bg-[#FFFFFF] border border-[#E1CDCA] rounded-full flex justify-center px-4 py-2"
+            >
+              <img
+                src="assets/afterbuy/icons/dot.svg"
+                alt="Dots"
+                class="pr-2"
+              />
+              <p
+                class="text-[#52525B] w-fit font-kantumruy-pro-sans text-[12px] md:text-[16px] leading-5 md:leading-7 tracking-[-0.024px] md:tracking-[-0.032px]"
+              >
+                Post-Purchase Intelligence
+              </p>
+            </div>
+          </div>
+
+          <div class="uppercase">
+            <p
+              class="text-center text-[24px] md:text-[64px] font-bold leading-9 md:leading-22 tracking-[-0.96px] md:tracking-[-2.56px] mb-10 md:mb-12"
+            >
+              Powering the <br />
+              <span class="text-gradient-orange">Customer Experience</span>
+              <br />
+              Beyond Purchase
+            </p>
+          </div>
+
+          <div class="flex justify-center mb-10 md:mb-12">
+            <p
+              class="font-public-sans text-[#62606D] text-center md:text-[20px] leading-6 md:leading-8 max-w-[730px]"
+            >
+              GladMinds connects OEMs directly with their customers, creating
+              intelligent service touchpoints that build loyalty, trust, and
+              lifetime value.
+            </p>
+          </div>
+
+          <div class="flex justify-center">
+            <div
+              class="-skew-x-12 bg-[#FF5F00] text-white w-fit p-4 flex gap-4"
+            >
+              Discover AfterBuy Intelligence
+              <img
+                src="assets/afterbuy/icons/chevron_arrow_right.svg"
+                alt="right arrow"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="md:w-fit flex justify-center md:items-end md:mb-20">
+          <a
+            href="#"
+            rel="noopener noreferrer"
+            class="h-fit bg-white text-[#EE6915] p-2 rounded-md mt-4 md:mt-0"
+          >
+            Need Content
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-[#FCFCFC]">
+      <div class="container mx-auto py-6 md:py-18 text-center px-2 md:px-4">
+        <p
+          class="kantumruy-pro-sans text-[#FF5F00] md:text-[20px] font-medium leading-6 md:leading-7 tracking-[-0.32px] md:tracking-[-0.04px] mb-2 md:mb-4"
+        >
+          [ The Shift ]
+        </p>
+        <h3
+          class="text-[#18181B] text-[20px] md:text-[64px] font-bold leading-6 md:leading-18 tracking-[-0.8px] md:tracking-[-2.54px] mb-4 md:mb-12"
+        >
+          SELLING THE PRODUCT IS <br />
+          JUST THE BEGINNING
+        </h3>
+        <div class="flex justify-center">
+          <p
+            class="font-public-sans text-[#62606D] md:text-[20px] leading-6 md:leading-8 max-w-[960px]"
+          >
+            In today’s connected world, customer experience doesn’t end at
+            delivery, it begins there. The GladMinds AfterBuy Suite helps
+            enterprises stay engaged post-purchase through predictive alerts,
+            real-time insights, and always-on digital support.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container mx-auto py-6 md:py-18 px-2 md:px-4">
+        <h3
+          class="font-public-sans text-[20px] md:text-[64px] font-bold leading-6 md:leading-18 tracking-[-0.8px] md:tracking-[-2.54px] mb-4 md:mb-6"
+        >
+          TURN EVERY <br />
+          INTERACTION INTO
+          <span class="text-[#FF5F00]"> INSIGHT </span>
+        </h3>
+        <p
+          class="text-[#62606D] md:text-[20px] leading-6 md:leading-8 max-w-[960px] mb-7 md:mb-10"
+        >
+          The AfterBuy Suite enables a continuous feedback loop between OEMs and
+          customers, powered by data, personalization, and AI-driven foresight.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 md:gap-6 mb-4 md:mb-6">
+          <div
+            class="bg-[#FAFAFA] border border-[#FEC39F] rounded rounded-[32px] border p-4 p-8 flex-auto"
+          >
+            <img
+              src="assets/afterbuy/icons/mobile.svg"
+              alt="Afterbuy Insight"
+              class="mb-4 mb-8"
+            />
+            <p
+              class="font-inter-sans text-[#4C4A57] text-[20px] md:text-[28px] font-semibold leading-9 mb-1 md:mb-3"
+            >
+              Customer Connect App
+            </p>
+            <div class="flex mb-7">
+              <p
+                class="font-public-sans text-[#62606D] md:text-[20px] leading-6 md:leading-8 max-w-[382px]"
+              >
+                A single window for service history, maintenance schedules, and
+                real-time updates.
+              </p>
+            </div>
+            <div class="flex gap-2">
+              <img src="assets/afterbuy/ios.svg" alt="IOS" />
+              <img src="assets/afterbuy/android.svg" alt="Android" />
+            </div>
+          </div>
+
+          <div
+            class="bg-[#FAFAFA] border border-[#E7E7E9] rounded rounded-[32px] p-4 p-8 md:max-w-[400px] flex flex-col justify-between"
+          >
+            <div>
+              <img
+                src="assets/afterbuy/icons/graph.svg"
+                alt="graph"
+                class="mb-4 mb-8"
+              />
+            </div>
+            <div>
+              <p
+                class="font-inter-sans text-[#4C4A57] text-[20px] md:text-[28px] font-semibold leading-9 mb-1 md:mb-3"
+              >
+                Predictive Service Alerts
+              </p>
+              <div class="flex">
+                <p
+                  class="font-public-sans text-[#62606D] md:text-[20px] leading-6 md:leading-8 max-w-[382px]"
+                >
+                  Notify customers before a breakdown occurs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-4 md:gap-6">
+          <div
+            class="bg-[#FAFAFA] border border-[#E7E7E9] rounded rounded-[32px] p-4 p-8 md:max-w-[400px] flex flex-col justify-between"
+          >
+            <div>
+              <img
+                src="assets/afterbuy/icons/graph.svg"
+                alt="graph"
+                class="mb-4 mb-8"
+              />
+            </div>
+            <div>
+              <p
+                class="font-inter-sans text-[#4C4A57] text-[20px] md:text-[28px] font-semibold leading-9 mb-1 md:mb-3"
+              >
+                Digital Campaigns & Engagement
+              </p>
+              <div class="flex">
+                <p
+                  class="font-public-sans text-[#62606D] md:text-[20px] leading-6 md:leading-8 max-w-[382px]"
+                >
+                  Deliver contextual offers, reminders, and product education.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#FAFAFA] border border-[#E7E7E9] rounded rounded-[32px] border p-4 p-8 flex-auto"
+          >
+            <img
+              src="assets/afterbuy/icons/mobile.svg"
+              alt="Afterbuy Insight"
+              class="mb-4 mb-8"
+            />
+            <div class="flex md:flex-row flex-col items-end">
+              <div>
+                <p
+                  class="font-inter-sans text-[#4C4A57] text-[20px] md:text-[28px] font-semibold leading-9 mb-1 md:mb-3"
+                >
+                  Feedback <br />
+                  & Analytics
+                </p>
+                <div class="flex mb-2">
+                  <p
+                    class="font-public-sans text-[#62606D] md:text-[20px] leading-6 md:leading-8 max-w-[382px]"
+                  >
+                    Capture insights, measure satisfaction, and drive continuous
+                    improvement.
+                  </p>
+                </div>
+              </div>
+              <div>
+                <img src="assets/afterbuy/graph_skeleton.svg" alt="graph" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#F4F4F5]">
+      <div class="container mx-auto py-6 md:py-18 px-2 md:px-4">
+        <h3
+          class="text-center text-[20px] md:text-[64px] font-bold leading-6 md:leading-18 tracking-[-0.8px] md:tracking-[-2.54px] mb-4 md:mb-6"
+        >
+          FROM OWNERSHIP TO <br />
+          <span class="text-[#8A8A8A]"> ADVOCACY </span>
+        </h3>
+        <div class="flex justify-center mb-4 md:mb-6">
+          <p
+            class="font-public-sans text-center text-[#62606D] md:text-[20px] leading-6 md:leading-8 max-w-[960px]"
+          >
+            GladMinds turns every customer touchpoint into a growth opportunity.
+            AI analyzes usage data, predicts needs, and automates personalized
+            communication.
+          </p>
+        </div>
+        <div>
+          <img
+            src="assets/afterbuy/ownership_advocacy_desktop.svg"
+            alt="ownership_advocacy_desktop"
+            class="hidden md:inline-block"
+          />
+          <img
+            src="assets/afterbuy/ownership_advocacy_mobile.svg"
+            alt="ownership_advocacy_mobile"
+            class="md:hidden inline-block"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#FF5F00]">
+      <div class="container mx-auto py-6 md:py-18 px-2 md:px-4">
+        <div class="flex flex-col justify-between md:flex-row gap-8 md:gap-15">
+          <div>
+            <h4
+              class="text-[#fff] text-[20px] md:text-[52px] font-bold leading-6 md:leading-18 tracking-[-0.8px] md:tracking-[-2.54px] mb-4 md:mb-8"
+            >
+              BEYOND SATISFACTION <br />
+              - MEASURABLE <span class="text-[#18181B]">IMPACT</span>
+            </h4>
+            <p
+              class="font-public-sans text-[#FFF1E8] md:text-[20px] leading-6 md:leading-8 mb-4 md:mb-8 max-w-[620px]"
+            >
+              With AfterBuy Intelligence, enterprises don’t just serve
+              customers, they understand them, anticipate them, and grow with
+              them.
+            </p>
+
+            <div>
+              <a
+                href="#"
+                class="bg-[#FFFFFF] text-[20px] text-[#FF5F00] font-semibold leading-8 tracking-[-0.04px] py-2 px-4 rounded-[44px]"
+              >
+                Calculate Your ROI
+              </a>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-8 flex-auto">
+            <div
+              class="flex justify-between md:gap-30 bg-[#FD7E33] p-4 rounded-[16px]"
+            >
+              <div>
+                <p
+                  class="text-[20px] text-[#FFFFFF] md:text-[52px] font-bold leading-6 md:leading-18 tracking-[-0.8px] md:tracking-[-2.54px]"
+                >
+                  35
+                  <span
+                    class="text-[#18181B] text-[28px] md:text-[40px] font-bold md:font-bold leading-9 md:leading-18 tracking-[-1.12px] md:tracking-[-2.08px]"
+                  >
+                    %
+                  </span>
+                </p>
+              </div>
+              <div
+                class="text-[#FFFFFF] font-public-sans font-semibold md:text-[20px] leading-6 content-center"
+              >
+                <p>
+                  Increase <br />
+                  in repeat service
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex justify-between md:gap-30 bg-[#FD7E33] p-4 rounded-[16px]"
+            >
+              <div>
+                <p
+                  class="text-[20px] text-[#FFFFFF] md:text-[52px] font-bold leading-6 md:leading-18 tracking-[-0.8px] md:tracking-[-2.54px]"
+                >
+                  20
+                  <span
+                    class="text-[#18181B] text-[28px] md:text-[40px] font-bold md:font-bold leading-9 md:leading-18 tracking-[-1.12px] md:tracking-[-2.08px]"
+                  >
+                    %
+                  </span>
+                </p>
+              </div>
+              <div
+                class="text-[#FFFFFF] font-public-sans font-semibold md:text-[20px] leading-6 content-center"
+              >
+                <p>
+                  Boost in customer <br />
+                  lifetime value
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex justify-between md:gap-30 bg-[#FD7E33] p-4 rounded-[16px]"
+            >
+              <div>
+                <p
+                  class="text-[20px] text-[#FFFFFF] md:text-[52px] font-bold leading-6 md:leading-18 tracking-[-0.8px] md:tracking-[-2.54px]"
+                >
+                  3
+                  <span
+                    class="text-[#18181B] text-[28px] md:text-[40px] leading-9 md:leading-18 tracking-[-1.12px] md:tracking-[-2.08px]"
+                  >
+                    x
+                  </span>
+                </p>
+              </div>
+              <div
+                class="text-[#FFFFFF] font-public-sans font-semibold md:text-[20px] leading-6 content-center"
+              >
+                <p>
+                  Faster feedback <br />
+                  closure loops
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#F4F4F5]">
+      <div class="container mx-auto py-6 md:py-18 px-2 md:px-4">
+        <div class="flex flex-col md:flex-row md:justify-between">
+          <h3
+            class="font-verdana-sans justify-center md:justify-left text-[20px] md:text-[64px] font-bold leading-6 md:leading-18 tracking-[-0.8px] md:tracking-[-2.54px]"
+          >
+            WHAT OUR <br />
+            PARTNERS SAY
+          </h3>
+
+          <div class="md:content-end mt-6 md:mt-0">
+            <a
+              href="#"
+              class="font-public-sans text-[24px] text-white md:text-[#FF5F00] font-semibold leading-8 px-5 py-2 rounded-full bg-[#FF5F00] md:bg-transparent"
+              >How it works</a
+            >
+          </div>
+        </div>
+        <div
+          class="relative w-full mt-10 md:mt-0 overflow-hidden pb-14 md:px-8"
+          id="partner-carousel"
+        >
+          <div
+            id="partner-track"
+            class="flex flex-nowrap gap-6 md:gap-8 mb-3 md:mb-8 px-8 md:px-10"
+            style="transform: translateX(0); will-change: transform"
+          >
+            <div
+              class="-skew-x-10 partner-card flex-shrink-0 w-full md:w-[calc(50%-12px)] bg-[#FAFAFA] shadow-[0_12px_30px_rgba(0,0,0,0.05)] rounded-sm"
+            >
+              <div class="p-6 md:p-8 flex flex-col gap-10">
+                <p
+                  class="font-public-sans text-[#4B5563] text-[16px] md:text-[18px] leading-7 md:leading-8"
+                >
+                  "The Feedback Module gave us real visibility into
+                  post-purchase experience we never had before."
+                </p>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-full bg-[#E5E7EB] flex-shrink-0"
+                  ></div>
+                  <div>
+                    <p
+                      class="text-[#0F172A] font-semibold text-[14px] md:text-[16px]"
+                    >
+                      David Chen
+                    </p>
+                    <p
+                      class="text-[#6B7280] text-[12px] md:text-[13px] leading-5"
+                    >
+                      Service Director, PowerGrid Solutions
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="-skew-x-10 partner-card flex-shrink-0 w-full md:w-[calc(50%-12px)] bg-[#FAFAFA] shadow-[0_12px_30px_rgba(0,0,0,0.05)] rounded-sm"
+            >
+              <div class="p-6 md:p-8 flex flex-col gap-4">
+                <p
+                  class="font-public-sans text-[#4B5563] text-[16px] md:text-[18px] leading-7 md:leading-8"
+                >
+                  "The Feedback Module gave us real visibility into
+                  post-purchase experience we never had before."
+                </p>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-full bg-[#E5E7EB] flex-shrink-0"
+                  ></div>
+                  <div>
+                    <p
+                      class="text-[#0F172A] font-semibold text-[14px] md:text-[16px]"
+                    >
+                      David Chen
+                    </p>
+                    <p
+                      class="text-[#6B7280] text-[12px] md:text-[13px] leading-5"
+                    >
+                      Service Director, PowerGrid Solutions
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="-skew-x-10 partner-card flex-shrink-0 w-full md:w-[calc(50%-12px)] bg-[#FAFAFA] shadow-[0_12px_30px_rgba(0,0,0,0.05)] rounded-sm"
+            >
+              <div class="p-6 md:p-8 flex flex-col gap-4">
+                <p
+                  class="font-public-sans text-[#4B5563] text-[16px] md:text-[18px] leading-7 md:leading-8"
+                >
+                  "The Feedback Module gave us real visibility into
+                  post-purchase experience we never had before."
+                </p>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-full bg-[#E5E7EB] flex-shrink-0"
+                  ></div>
+                  <div>
+                    <p
+                      class="text-[#0F172A] font-semibold text-[14px] md:text-[16px]"
+                    >
+                      David Chen
+                    </p>
+                    <p
+                      class="text-[#6B7280] text-[12px] md:text-[13px] leading-5"
+                    >
+                      Service Director, PowerGrid
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="-skew-x-10 partner-card flex-shrink-0 w-full md:w-[calc(50%-12px)] bg-[#FAFAFA] shadow-[0_12px_30px_rgba(0,0,0,0.05)] rounded-sm"
+            >
+              <div class="p-6 md:p-8 flex flex-col gap-4">
+                <p
+                  class="font-public-sans text-[#4B5563] text-[16px] md:text-[18px] leading-7 md:leading-8"
+                >
+                  "The Feedback Module gave us real visibility into
+                  post-purchase experience we never had before."
+                </p>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-full bg-[#E5E7EB] flex-shrink-0"
+                  ></div>
+                  <div>
+                    <p
+                      class="text-[#0F172A] font-semibold text-[14px] md:text-[16px]"
+                    >
+                      David Backhem
+                    </p>
+                    <p
+                      class="text-[#6B7280] text-[12px] md:text-[13px] leading-5"
+                    >
+                      Service Director, PowerGrid
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="absolute left-1/2 -translate-x-1/2 bottom-3 md:bottom-4 flex items-center gap-6 z-10"
+          >
+            <button
+              id="partner-prev"
+              aria-label="Previous testimonial"
+              class="carousel-btn h-[20px] w-[20px] md:h-[40px] md:w-[40px]"
+            >
+              «
+            </button>
+
+            <div class="carousel-dots" id="partner-dots"></div>
+
+            <button
+              id="partner-next"
+              aria-label="Next testimonial"
+              class="carousel-btn h-[20px] w-[20px] md:h-[40px] md:w-[40px]"
+            >
+              »
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-[#18181B]">
+      <div
+        class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto py-6 md:py-18 px-2 md:px-4"
+      >
+        <div class="flex-">
+          <h3
+            class="text-white text-[20px] md:text-[64px] font-bold leading-6 md:leading-18 tracking-[-0.8px] md:tracking-[-2.54px]"
+          >
+            BUILD <br />
+            RELATIONSHIPS <br />
+            THAT OUTLAST <br />
+            <span class="text-[#FF5F00]"> MACHINES.</span>
+          </h3>
+        </div>
+
+        <div class="content-center">
+          <p class="md:text-[20px] leading-6 md:leading-8 text-[#FFF1E8] mb-6">
+            Discover how GladMinds AfterBuy Intelligence helps you deliver
+            connected, predictive, and human-centered service experiences.
+          </p>
+          <div>
+            <a
+              href="#"
+              class="bg-[#FFFFFF] font-inter-sans text-[20px] text-[#020202] font-semibold leading-8 tracking-[-0.04px] py-2 px-4 rounded-[44px]"
+            >
+              Request a Demo
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (() => {
+        const carousel = document.getElementById("partner-carousel");
+        const track = document.getElementById("partner-track");
+        const prevBtn = document.getElementById("partner-prev");
+        const nextBtn = document.getElementById("partner-next");
+        const dotsContainer = document.getElementById("partner-dots");
+        if (!carousel || !track || !prevBtn || !nextBtn || !dotsContainer)
+          return;
+
+        let cards = [];
+        let cardWidth = 0;
+        let gap = 0;
+        let maxIndex = 0;
+        let currentIndex = 0;
+        let dots = [];
+
+        const setActiveDots = () => {
+          dots.forEach((dot, i) => {
+            dot.classList.toggle("active", i === currentIndex);
+          });
+        };
+
+        const buildDots = () => {
+          dotsContainer.innerHTML = "";
+          dots = [];
+          const count = maxIndex + 1 || 1;
+          for (let i = 0; i < count; i++) {
+            const dot = document.createElement("button");
+            dot.type = "button";
+            dot.className =
+              "carousel-dot" + (i === currentIndex ? " active" : "");
+            dot.addEventListener("click", () => goTo(i));
+            dotsContainer.appendChild(dot);
+            dots.push(dot);
+          }
+        };
+
+        const goTo = (index, smooth = true) => {
+          const clamped = Math.max(0, Math.min(maxIndex, index));
+          currentIndex = clamped;
+          track.style.transition = smooth ? "transform 0.4s ease" : "none";
+          const target = cards[clamped];
+          const offset = target ? target.offsetLeft : clamped * cardWidth;
+          track.style.transform = `translateX(-${offset}px)`;
+          prevBtn.disabled = clamped === 0;
+          nextBtn.disabled = clamped === maxIndex;
+          prevBtn.classList.toggle("opacity-50", prevBtn.disabled);
+          nextBtn.classList.toggle("opacity-50", nextBtn.disabled);
+          setActiveDots();
+        };
+
+        const recalc = () => {
+          cards = Array.from(track.children);
+          if (!cards.length) return;
+          const style = getComputedStyle(track);
+          gap = parseFloat(style.columnGap || style.gap || "0") || 24;
+          const rect = cards[0].getBoundingClientRect();
+          cardWidth = rect.width + gap;
+          const visible = Math.max(
+            1,
+            Math.floor((carousel.clientWidth + gap) / cardWidth)
+          );
+          maxIndex = Math.max(0, cards.length - visible);
+          currentIndex = Math.min(currentIndex, maxIndex);
+          buildDots();
+          goTo(currentIndex, false);
+        };
+
+        prevBtn.addEventListener("click", () => goTo(currentIndex - 1));
+        nextBtn.addEventListener("click", () => goTo(currentIndex + 1));
+        window.addEventListener("resize", recalc);
+        recalc();
+      })();
+    </script>
+  </body>
+</html>
