@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GladMinds - Turning Downtime into Uptime</title>
+    <meta
+      name="description"
+      content="GladMinds helps turn downtime into uptime with always-on service and enhanced customer experience."
+    />
+    <meta
+      name="keywords"
+      content="GladMinds, uptime, downtime, customer experience, after-sales service, industry leaders"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lekton:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="src/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/navigation.css" />
+    <link rel="stylesheet" href="./src/combobox.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <style>
+      .font-inter-sans {
+        font-family: "Inter", "Sans-serif", sans-serif;
+      }
+      .font-roboto-sans {
+        font-family: "Roboto", "Sans-serif", sans-serif;
+      }
+      .font-lekton-sans {
+        font-family: "Lekton", monospace;
+      }
+      .heder-gradient-text {
+        background: linear-gradient(
+          90deg,
+          #0400c8 -20%,
+          #cecdff 40%,
+          #0400c8 130%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .btn-primary-gradient {
+        background: radial-gradient(
+            41.38% 44.27% at 47.7% 50%,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.1) 50%,
+            rgba(255, 255, 255, 0.2) 100%
+          ),
+          #0400c8;
+      }
+
+      /* Custom Select Dropdown */
+      .custom-select-wrapper {
+        position: relative;
+      }
+      .custom-select {
+        appearance: none;
+        width: 100%;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+        padding: 11px 40px 11px 14px;
+        background-color: #ffffff;
+        font-size: 15px;
+        color: #212121;
+        cursor: pointer;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23757575' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 14px center;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease;
+        font-weight: 400;
+        line-height: 1.5;
+      }
+      .custom-select:hover {
+        border-color: #bdbdbd;
+      }
+      .custom-select:focus {
+        outline: none;
+        border-color: #1976d2;
+        box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.08);
+      }
+      .custom-select option {
+        /* padding: 12px 14px;
+        background-color: #ffffff;
+        color: #212121;
+        font-size: 15px;
+        line-height: 1.6;
+        font-weight: 400; */
+      }
+      .custom-select option:hover {
+        background-color: #f5f5f5;
+      }
+      .custom-select option:checked {
+        background-color: #e3f2fd;
+        color: #1976d2;
+        font-weight: 400;
+      }
+      .custom-select option[disabled] {
+        color: #9e9e9e;
+      }
+    </style>
+  </head>
+  <body class="font-roboto-sans antialiase" data-page="contact">
+    <div id="navigation-placeholder"></div>
+    <header></header>
+
+    <main>
+      <section class="bg-[#04042F]">
+        <div
+          class="p-3 md:px-8 md:py-4 container mx-auto py-12 flex flex-col md:flex-row md:gap-8"
+        >
+          <div class="max-w-[340px] content-center">
+            <h1
+              class="font-inter-sans heder-gradient-text text-[40px] font-medium bg-clip-text text-transparent leading-[52px] mb-12"
+            >
+              Talk to an OEM <br />
+              Solutions Experts
+            </h1>
+
+            <p
+              class="font-roboto-sans font-medium leading-7 text-[#FFFFFF] tracking-[0.024px]"
+            >
+              Discover how our OEM platform can be tailored to your product and
+              business goals. From seamless integrations and white-label
+              customization to scalable deployment and dedicated onboarding, our
+              team is here to support you at every step.
+            </p>
+          </div>
+          <div class="bg-[#ffffff] rounded-lg p-3 md:p-10">
+            <p
+              class="text-[#1976D2] font-roboto-sans font-medium text-[24px] leading-[32px] mb-3 md:mb-6"
+            >
+              Contact Us
+            </p>
+
+            <h4
+              class="text-[24px] text-[#424242] md:text-[34px] font-roboto-sans font-medium leading-8 md:leading-10 md:tracking-[0.085px] mb-3 md:mb-6"
+            >
+              Transform your aftermarket services with AI-driven intelligence.
+            </h4>
+            <p
+              class="text-[#616161] md:text-[20px] leading-7 md:leading-8 tracking-[0.024px] md:tracking-[0.05px]"
+            >
+              Join the league of Fortune 500 OEMs leveraging GladMinds to
+              predict failures, optimize assets, and deliver superior customer
+              experiences.
+            </p>
+            <form id="contact-form" class="mt-6 md:mt-8 space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Full Name -->
+                <div>
+                  <label
+                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                  >
+                    FULL NAME
+                  </label>
+                  <input
+                    type="text"
+                    name="full_name"
+                    placeholder="Warehouse"
+                    class="w-full border border-[#BDBDBD] rounded-lg px-4 py-3 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
+                    required
+                  />
+                </div>
+
+                <!-- Official Email ID -->
+                <div>
+                  <label
+                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                  >
+                    OFFICIAL EMAIL ID
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Warehouse"
+                    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                    title="Please enter a valid email address"
+                    class="w-full border border-[#BDBDBD] rounded-lg px-4 py-3 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
+                    required
+                  />
+                </div>
+
+                <!-- Mobile Number -->
+                <div>
+                  <label
+                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                  >
+                    MOBILE NUMBER
+                  </label>
+                  <input
+                    type="tel"
+                    name="mobile"
+                    placeholder="Warehouse"
+                    class="w-full border border-[#BDBDBD] rounded-lg px-4 py-3 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
+                  />
+                </div>
+
+                <!-- Company Name -->
+                <div>
+                  <label
+                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                  >
+                    COMPANY NAME
+                  </label>
+                  <input
+                    type="text"
+                    name="company_name"
+                    placeholder="Warehouse"
+                    class="w-full border border-[#BDBDBD] rounded-lg px-4 py-3 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
+                  />
+                </div>
+
+                <!-- Job Title (Custom Combobox) -->
+                <div>
+                  <label
+                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                  >
+                    JOB TITLE
+                  </label>
+                  <div class="combobox" data-name="job_title">
+                    <input
+                      type="text"
+                      class="combobox-input"
+                      placeholder="Select Job Title"
+                      aria-label="Job Title"
+                      role="combobox"
+                      aria-expanded="false"
+                      aria-autocomplete="list"
+                      aria-controls="cb-job-title-list"
+                    />
+                    <ul
+                      class="combobox-list"
+                      id="cb-job-title-list"
+                      role="listbox"
+                      hidden
+                    >
+                      <li
+                        role="option"
+                        id="cb-job-title-opt-1"
+                        data-value="manager"
+                      >
+                        Manager
+                      </li>
+                      <li
+                        role="option"
+                        id="cb-job-title-opt-2"
+                        data-value="director"
+                      >
+                        Director
+                      </li>
+                      <li
+                        role="option"
+                        id="cb-job-title-opt-3"
+                        data-value="executive"
+                      >
+                        Executive
+                      </li>
+                    </ul>
+                    <input type="hidden" name="job_title" />
+                  </div>
+                </div>
+
+                <!-- Industry (Custom Combobox) -->
+                <div>
+                  <label
+                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                  >
+                    INDUSTRY
+                  </label>
+                  <div class="combobox" data-name="industry">
+                    <input
+                      type="text"
+                      class="combobox-input"
+                      placeholder="Select Industry"
+                      aria-label="Industry"
+                      role="combobox"
+                      aria-expanded="false"
+                      aria-autocomplete="list"
+                      aria-controls="cb-industry-list"
+                    />
+                    <ul
+                      class="combobox-list"
+                      id="cb-industry-list"
+                      role="listbox"
+                      hidden
+                    >
+                      <li role="option" data-value="manufacturing">
+                        Manufacturing
+                      </li>
+                      <li role="option" data-value="automotive">Automotive</li>
+                      <li role="option" data-value="electronics">
+                        Electronics
+                      </li>
+                      <li role="option" data-value="construction">
+                        Construction
+                      </li>
+                    </ul>
+                    <input type="hidden" name="industry" />
+                  </div>
+                </div>
+
+                <!-- Number of Assets / Equipment (Custom Combobox) -->
+                <div>
+                  <label
+                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                  >
+                    NUMBER OF ASSETS / EQUIPMENT
+                    <span class="text-red-500">*</span>
+                  </label>
+                  <div class="combobox" data-name="assets">
+                    <input
+                      type="text"
+                      class="combobox-input"
+                      placeholder="Select Number of Assets"
+                      aria-label="Number of Assets"
+                      role="combobox"
+                      aria-expanded="false"
+                      aria-autocomplete="list"
+                      aria-controls="cb-assets-list"
+                      required
+                    />
+                    <ul
+                      class="combobox-list"
+                      id="cb-assets-list"
+                      role="listbox"
+                      hidden
+                    >
+                      <li role="option" data-value="1-10">1-10</li>
+                      <li role="option" data-value="11-50">11-50</li>
+                      <li role="option" data-value="51-100">51-100</li>
+                      <li role="option" data-value="100+">100+</li>
+                    </ul>
+                    <input type="hidden" name="assets" />
+                  </div>
+                </div>
+
+                <!-- Geographies of Operation (Custom Combobox) -->
+                <div>
+                  <label
+                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                  >
+                    GEOGRAPHIES OF OPERATION
+                  </label>
+                  <div class="combobox" data-name="geography">
+                    <input
+                      type="text"
+                      class="combobox-input"
+                      placeholder="Select Geography"
+                      aria-label="Geography"
+                      role="combobox"
+                      aria-expanded="false"
+                      aria-autocomplete="list"
+                      aria-controls="cb-geo-list"
+                    />
+                    <ul
+                      class="combobox-list"
+                      id="cb-geo-list"
+                      role="listbox"
+                      hidden
+                    >
+                      <li role="option" data-value="asia">Asia</li>
+                      <li role="option" data-value="europe">Europe</li>
+                      <li role="option" data-value="americas">Americas</li>
+                      <li role="option" data-value="global">Global</li>
+                    </ul>
+                    <input type="hidden" name="geography" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6 flex items-start gap-3">
+                <input
+                  id="consent-updates"
+                  type="checkbox"
+                  class="mt-1 h-4 w-4 border border-[#9E9E9E] rounded-sm accent-[#4656B0]"
+                  required
+                />
+                <label
+                  for="consent-updates"
+                  class="text-[#616161] text-sm leading-6"
+                >
+                  I agree to be contacted by GladMinds regarding product updates
+                  and solutions.
+                </label>
+              </div>
+
+              <div>
+                <button
+                  type="submit"
+                  class="block flex justify-center mt-4 items-center gap-3 bg-[#4656B0] text-white font-semibold text-[12px] tracking-[0.4px] uppercase px-6 py-3 rounded-md hover:bg-[#3b4aa0] transition md:w-[350px] w-full"
+                >
+                  Submit
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Info Section -->
+      <section class="bg-[#F9FBFC] py-12 md:py-20">
+        <div class="container mx-auto px-4 md:px-8 max-w-5xl">
+          <p class="text-[#616161] text-sm md:text-base mb-3">Contact Info</p>
+          <h2
+            class="text-[#424242] text-3xl md:text-4xl font-bold mb-8 md:mb-12"
+          >
+            We are always happy to<br />assist you
+          </h2>
+
+          <!-- Office Location - Full Width -->
+          <div class="bg-[#E8EAF6] border border-[#90CAF9] rounded-lg p-3 mb-4">
+            <div class="flex items-start gap-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM7 9C7 6.24 9.24 4 12 4C14.76 4 17 6.24 17 9C17 11.88 14.12 16.19 12 18.88C9.92 16.21 7 11.85 7 9Z"
+                  fill="#3F51B5"
+                />
+                <path
+                  d="M12 11.5C13.3807 11.5 14.5 10.3807 14.5 9C14.5 7.61929 13.3807 6.5 12 6.5C10.6193 6.5 9.5 7.61929 9.5 9C9.5 10.3807 10.6193 11.5 12 11.5Z"
+                  fill="#3F51B5"
+                />
+              </svg>
+              <div>
+                <h3
+                  class="text-[#1A237E] font-semibold text-base md:text-lg mb-1"
+                >
+                  Our Office Location
+                </h3>
+                <p class="text-[#3949AB] text-sm md:text-base">
+                  Global HQ: Bengaluru, India
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Email and Phone - Side by Side -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Email -->
+            <div class="bg-[#E8EAF6] border border-[#90CAF9] rounded-lg p-3">
+              <div class="flex items-start gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6ZM20 6L12 11L4 6H20ZM20 18H4V8L12 13L20 8V18Z"
+                    fill="#3F51B5"
+                  />
+                </svg>
+                <div>
+                  <h3
+                    class="text-[#3949AB] font-semibold text-base md:text-lg mb-1"
+                  >
+                    Email
+                  </h3>
+                  <p class="text-[#3949AB] text-sm md:text-base">
+                    enterprise@gladminds.co
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="bg-[#E8EAF6] border border-[#90CAF9] rounded-lg p-3">
+              <div class="flex items-start gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6.54 5C6.6 5.89 6.75 6.76 6.99 7.59L5.79 8.79C5.38 7.59 5.12 6.32 5.03 5H6.54ZM16.4 17.02C17.25 17.26 18.12 17.41 19 17.47V18.96C17.68 18.87 16.41 18.61 15.2 18.21L16.4 17.02ZM7.5 3H4C3.45 3 3 3.45 3 4C3 13.39 10.61 21 20 21C20.55 21 21 20.55 21 20V16.51C21 15.96 20.55 15.51 20 15.51C18.76 15.51 17.55 15.31 16.43 14.94C16.33 14.9 16.22 14.89 16.12 14.89C15.86 14.89 15.61 14.99 15.41 15.18L13.21 17.38C10.38 15.93 8.06 13.62 6.62 10.79L8.82 8.59C9.1 8.31 9.18 7.92 9.07 7.57C8.7 6.45 8.5 5.25 8.5 4C8.5 3.45 8.05 3 7.5 3Z"
+                    fill="#3F51B5"
+                  />
+                </svg>
+                <div>
+                  <h3
+                    class="text-[#3949AB] font-semibold text-base md:text-lg mb-1"
+                  >
+                    Phone Number
+                  </h3>
+                  <p class="text-[#3949AB] text-sm md:text-base">
+                    +91- 80 4123 4567
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./src/navigation.js"></script>
+    <script src="./src/combobox.js"></script>
+    <script src="./src/contact_form.js"></script>
+  </body>
+</html>
