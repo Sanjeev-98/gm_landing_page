@@ -19,13 +19,13 @@
         --text-muted: #4b5563;
       }
       body {
-        font-family: "Roboto", system-ui, -apple-system, Segoe UI, Roboto,
+        /* font-family: "Roboto", system-ui, -apple-system, Segoe UI, Roboto,
           Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
         background-color: #ffffff;
         margin: 0;
         min-height: 100vh;
         display: grid;
-        place-items: center;
+        place-items: center; */
       }
       .wrap {
         text-align: center;
@@ -38,14 +38,12 @@
         display: block;
       }
       h1 {
-        color: var(--text-dark);
         font-size: 28px;
         line-height: 1.2;
         margin: 8px 0 6px;
         font-weight: 700;
       }
       p {
-        color: var(--text-muted);
         font-size: 16px;
         margin: 0;
       }
@@ -62,41 +60,347 @@
       .btn:hover {
         background: #3b4aa0;
       }
+      .close-btn {
+        position: fixed;
+        top: 16px;
+        right: 16px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        transition: background 0.2s ease;
+      }
+      .close-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
     </style>
   </head>
   <body>
-    <main class="wrap">
+    <button
+      class="close-btn"
+      onclick="window.location.href='contact.html'"
+      aria-label="Close"
+    >
       <svg
-        class="icon"
-        viewBox="0 0 120 120"
         xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
+        fill="none"
       >
-        <circle
-          cx="60"
-          cy="60"
-          r="50"
-          fill="none"
-          stroke="var(--green-light)"
-          stroke-width="10"
-        />
         <path
-          d="M40 62 L55 77 L82 50"
-          fill="none"
-          stroke="var(--green)"
-          stroke-width="10"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          d="M16.0003 2.66666C23.3737 2.66666 29.3337 8.62666 29.3337 16C29.3337 23.3733 23.3737 29.3333 16.0003 29.3333C8.62699 29.3333 2.66699 23.3733 2.66699 16C2.66699 8.62666 8.62699 2.66666 16.0003 2.66666ZM20.787 9.33333L16.0003 14.12L11.2137 9.33333L9.33366 11.2133L14.1203 16L9.33366 20.7867L11.2137 22.6667L16.0003 17.88L20.787 22.6667L22.667 20.7867L17.8803 16L22.667 11.2133L20.787 9.33333Z"
+          fill="#DBD9FB"
         />
       </svg>
-      <h1>Thank you!</h1>
-      <p>
-        Your message has reached our team. They will connect with you very
-        shortly..
+    </button>
+    <!-- <main class="px-0"> -->
+    <section class="bg-[#080530] wrap">
+      <img
+        class="icon"
+        src="assets/contact/icons/success_check.svg"
+        alt="Success checkmark"
+      />
+      <h1 class="text-[#fff] mb-2">Thank you for contacting us.</h1>
+      <p class="text-[#FFFFFF]">
+        We appreciate your interest in GladMinds. A member of our team is
+        reviewing your inquiry and will be in touch shortly to discuss how we<br />
+        can help "Simplify Life" for your business
       </p>
-      <a class="btn" href="contact.html" aria-label="Back to contact form">
-        Back to Contact
-      </a>
+    </section>
+    <!-- Contact page content copied from contact.html -->
+    <main>
+      <section class="bg-[#F9FBFC]">
+        <div
+          class="p-3 md:px-8 md:py-4 container mx-auto py-12 flex flex-col md:flex-row md:gap-8 justify-center"
+        >
+          <div class="font-medium leading-6 max-w-[590px] content-center">
+            <div
+              class="font-medium leading-6 w-min whitespace-nowrap flex text-[#000000DE] gap-2 mb-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="26"
+                height="18"
+                viewBox="0 0 26 18"
+                fill="none"
+              >
+                <path
+                  d="M0 7.99309H5.279C5.7176 7.99309 6.10501 7.70729 6.23446 7.28824L7.95921 1.70485C8.2507 0.76125 9.58815 0.766401 9.87236 1.71221L14.0323 15.556C14.313 16.49 15.628 16.5108 15.9381 15.5861L18.2558 8.67513C18.3925 8.26767 18.7742 7.99309 19.2039 7.99309H25.1841"
+                  stroke="#1D8DC3"
+                  stroke-width="2"
+                />
+              </svg>
+              OEM Intelligence
+            </div>
+            <h1
+              class="font-roboto-sans text-[40px] md:text-[72px] font-[800] bg-clip-text text-transparent leading-[1.2] mb-12"
+            >
+              <span class="text-[#181818]"> Talk to an OEM </span> <br />
+              <span class="heder-gradient-text">Solutions Experts</span>
+            </h1>
+
+            <div class="flex gap-4">
+              <div
+                class="hidden md:inline-block w-4 bg-gradient-to-b from-[#57BDEA] to-[#375BEB]"
+              ></div>
+              <p
+                class="font-roboto-sans font-medium leading-7 text-[#474747] tracking-[0.024px]"
+              >
+                Discover how our OEM platform can be tailored to your product
+                and business goals. From seamless integrations and white-label
+                customization to scalable deployment and dedicated onboarding,
+                our team is here to support you at every step.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-[#ffffff] px-3 md:px-10 relative shadow-lg mt-4 md:mt-0 py-4 md:py-20"
+          >
+            <div
+              class="h-12 w-12 border-t-2 border-l-2 border-t-[#0891B2] border-l-[#0891B2] absolute top-0 left-0"
+            ></div>
+            <div
+              class="h-12 w-12 border-t-2 border-r-2 border-t-[#0891B2] border-r-[#0891B2] absolute top-0 right-0"
+            ></div>
+            <div
+              class="h-12 w-12 border-l-2 border-b-2 border-l-[#0891B2] border-b-[#0891B2] absolute bottom-0 left-0"
+            ></div>
+            <div
+              class="h-12 w-12 border-r-2 border-b-2 border-r-[#0891B2] border-b-[#0891B2] absolute bottom-0 right-0"
+            ></div>
+
+            <div class="flex gap-4 mb-3 md:mb-6">
+              <h4
+                class="text-[24px] text-[#424242] md:text-[34px] font-roboto-sans font-medium leading-8 md:leading-10 md:tracking-[0.085px]"
+              >
+                Transform your aftermarket <br />
+                services with AI-driven intelligence.
+              </h4>
+              <div class="flex items-end">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="64"
+                  height="16"
+                  viewBox="0 0 64 16"
+                  fill="none"
+                >
+                  <path d="M64 0L58.1768 16H0L5.82324 0H64Z" fill="#3F51B5" />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="64"
+                  height="16"
+                  viewBox="0 0 64 16"
+                  fill="none"
+                >
+                  <path d="M64 0L58.1768 16H0L5.82324 0H64Z" fill="#C4C7C7" />
+                </svg>
+              </div>
+            </div>
+            <form id="contact-form" class="mt-6 md:mt-8 space-y-6">
+              <a href="contact.html">
+                <div class="grid grid-cols-1 gap-6">
+                  <!-- Full Name -->
+                  <div>
+                    <label
+                      class="block text-[#00000099] text-[14px] font-bold mb-1 leading-5 tracking-[0.175px]"
+                    >
+                      FULL NAME
+                    </label>
+                    <input
+                      type="text"
+                      name="full_name"
+                      placeholder="Enter Full Name"
+                      class="w-full border border-[#BDBDBD] rounded-[4px] px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
+                      required
+                    />
+                  </div>
+
+                  <!-- Official Email ID -->
+                  <div>
+                    <label
+                      class="block text-[#00000099] text-[14px] font-bold mb-1 leading-5 tracking-[0.175px]"
+                    >
+                      OFFICIAL EMAIL ID
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Enter Official Email ID"
+                      pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                      title="Please enter a valid email address"
+                      class="w-full border border-[#BDBDBD] rounded-[4px] px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
+                      required
+                    />
+                  </div>
+
+                  <!-- Mobile Number -->
+                  <div>
+                    <label
+                      class="block text-[#00000099] text-[14px] font-bold mb-1 leading-5 tracking-[0.175px]"
+                    >
+                      MOBILE NUMBER
+                    </label>
+                    <input
+                      type="tel"
+                      name="mobile"
+                      placeholder="Enter Mobile Number"
+                      class="w-full border border-[#BDBDBD] rounded-[4px] px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
+                    />
+                  </div>
+
+                  <!-- Company Name -->
+                  <div>
+                    <label
+                      class="block text-[#00000099] text-[14px] font-bold mb-1 leading-5 tracking-[0.175px]"
+                    >
+                      COMPANY NAME
+                    </label>
+                    <input
+                      type="text"
+                      name="company_name"
+                      placeholder="Enter Company Name"
+                      class="w-full border border-[#BDBDBD] rounded-[4px] px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <button
+                    type="submit"
+                    class="block flex justify-center mt-4 items-center gap-3 bg-[#4656B0] text-white font-semibold text-[12px] tracking-[0.4px] uppercase px-6 py-3 rounded-md hover:bg-[#3b4aa0] transition w-full"
+                  >
+                    PROCEED
+                    <!-- <i class="material-icons">keyboard_arrow_right</i> -->
+                  </button>
+                </div>
+              </a>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Info Section -->
+      <section class="bg-[#F9FBFC] py-12 md:py-20">
+        <div class="container mx-auto px-4 md:px-8 max-w-5xl">
+          <p class="text-[#616161] text-sm md:text-base mb-3">Contact Info</p>
+          <h2
+            class="text-[#424242] font-roboto-sans text-3xl md:text-4xl font-bold mb-8 md:mb-12"
+          >
+            We are always happy to<br />assist you
+          </h2>
+
+          <!-- Office Location - Full Width -->
+          <div class="bg-[#E8EAF6] border border-[#90CAF9] rounded-lg p-3 mb-4">
+            <div class="flex items-start gap-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM7 9C7 6.24 9.24 4 12 4C14.76 4 17 6.24 17 9C17 11.88 14.12 16.19 12 18.88C9.92 16.21 7 11.85 7 9Z"
+                  fill="#3F51B5"
+                />
+                <path
+                  d="M12 11.5C13.3807 11.5 14.5 10.3807 14.5 9C14.5 7.61929 13.3807 6.5 12 6.5C10.6193 6.5 9.5 7.61929 9.5 9C9.5 10.3807 10.6193 11.5 12 11.5Z"
+                  fill="#3F51B5"
+                />
+              </svg>
+              <div>
+                <h3
+                  class="text-[#1A237E] font-semibold text-base md:text-lg mb-1"
+                >
+                  Our Office Location
+                </h3>
+                <p class="text-[#3949AB] text-sm md:text-base">
+                  Global HQ: Bengaluru, India
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Email and Phone - Side by Side -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Email -->
+            <div class="bg-[#E8EAF6] border border-[#90CAF9] rounded-lg p-3">
+              <div class="flex items-start gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6ZM20 6L12 11L4 6H20ZM20 18H4V8L12 13L20 8V18Z"
+                    fill="#3F51B5"
+                  />
+                </svg>
+                <div>
+                  <h3
+                    class="text-[#3949AB] font-semibold text-base md:text-lg mb-1"
+                  >
+                    Email
+                  </h3>
+                  <p class="text-[#3949AB] text-sm md:text-base">
+                    enterprise@gladminds.co
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="bg-[#E8EAF6] border border-[#90CAF9] rounded-lg p-3">
+              <div class="flex items-start gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6.54 5C6.6 5.89 6.75 6.76 6.99 7.59L5.79 8.79C5.38 7.59 5.12 6.32 5.03 5H6.54ZM16.4 17.02C17.25 17.26 18.12 17.41 19 17.47V18.96C17.68 18.87 16.41 18.61 15.2 18.21L16.4 17.02ZM7.5 3H4C3.45 3 3 3.45 3 4C3 13.39 10.61 21 20 21C20.55 21 21 20.55 21 20V16.51C21 15.96 20.55 15.51 20 15.51C18.76 15.51 17.55 15.31 16.43 14.94C16.33 14.9 16.22 14.89 16.12 14.89C15.86 14.89 15.61 14.99 15.41 15.18L13.21 17.38C10.38 15.93 8.06 13.62 6.62 10.79L8.82 8.59C9.1 8.31 9.18 7.92 9.07 7.57C8.7 6.45 8.5 5.25 8.5 4C8.5 3.45 8.05 3 7.5 3Z"
+                    fill="#3F51B5"
+                  />
+                </svg>
+                <div>
+                  <h3
+                    class="text-[#3949AB] font-semibold text-base md:text-lg mb-1"
+                  >
+                    Phone Number
+                  </h3>
+                  <p class="text-[#3949AB] text-sm md:text-base">
+                    +91- 80 4123 4567
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <script src="./src/navigation.js"></script>
+    <script>
+      // Redirect to contact.html when clicking the proceed button
+      const proceedBtn = document.querySelector(
+        '#contact-form button[type="submit"]'
+      );
+      if (proceedBtn) {
+        proceedBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.location.href = "contact.html";
+        });
+      }
+    </script>
   </body>
 </html>

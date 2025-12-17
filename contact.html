@@ -36,12 +36,7 @@
         font-family: "Lekton", monospace;
       }
       .heder-gradient-text {
-        background: linear-gradient(
-          90deg,
-          #0400c8 -20%,
-          #cecdff 40%,
-          #0400c8 130%
-        );
+        background: linear-gradient(90deg, #1b8fc1 0%, #375beb 100%);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -111,60 +106,115 @@
     <header></header>
 
     <main>
-      <section class="bg-[#04042F]">
+      <section class="bg-[#F9FBFC]">
         <div
-          class="p-3 md:px-8 md:py-4 container mx-auto py-12 flex flex-col md:flex-row md:gap-8"
+          class="p-3 md:px-8 md:py-4 container mx-auto py-12 flex flex-col md:flex-row md:gap-8 justify-center"
         >
-          <div class="max-w-[340px] content-center">
-            <h1
-              class="font-inter-sans heder-gradient-text text-[40px] font-medium bg-clip-text text-transparent leading-[52px] mb-12"
+          <div class="font-medium leading-6 max-w-[590px] content-center">
+            <div
+              class="font-medium leading-6 w-min whitespace-nowrap flex text-[#000000DE] gap-2 mb-2"
             >
-              Talk to an OEM <br />
-              Solutions Experts
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="26"
+                height="18"
+                viewBox="0 0 26 18"
+                fill="none"
+              >
+                <path
+                  d="M0 7.99309H5.279C5.7176 7.99309 6.10501 7.70729 6.23446 7.28824L7.95921 1.70485C8.2507 0.76125 9.58815 0.766401 9.87236 1.71221L14.0323 15.556C14.313 16.49 15.628 16.5108 15.9381 15.5861L18.2558 8.67513C18.3925 8.26767 18.7742 7.99309 19.2039 7.99309H25.1841"
+                  stroke="#1D8DC3"
+                  stroke-width="2"
+                />
+              </svg>
+              OEM Intelligence
+            </div>
+            <h1
+              class="font-roboto-sans text-[40px] md:text-[72px] font-[800] bg-clip-text text-transparent leading-[1.2] mb-12"
+            >
+              <span class="text-[#181818]"> Talk to an OEM </span> <br />
+              <span class="heder-gradient-text">Solutions Experts</span>
             </h1>
 
-            <p
-              class="font-roboto-sans font-medium leading-7 text-[#FFFFFF] tracking-[0.024px]"
-            >
-              Discover how our OEM platform can be tailored to your product and
-              business goals. From seamless integrations and white-label
-              customization to scalable deployment and dedicated onboarding, our
-              team is here to support you at every step.
-            </p>
+            <div class="flex gap-4">
+              <div
+                class="hidden md:inline-block w-4 bg-gradient-to-b from-[#57BDEA] to-[#375BEB]"
+              ></div>
+              <p
+                class="font-roboto-sans font-medium leading-7 text-[#474747] tracking-[0.024px]"
+              >
+                Discover how our OEM platform can be tailored to your product
+                and business goals. From seamless integrations and white-label
+                customization to scalable deployment and dedicated onboarding,
+                our team is here to support you at every step.
+              </p>
+            </div>
           </div>
-          <div class="bg-[#ffffff] rounded-lg p-3 md:p-10">
-            <p
-              class="text-[#1976D2] font-roboto-sans font-medium text-[24px] leading-[32px] mb-3 md:mb-6"
-            >
-              Contact Us
-            </p>
+          <div
+            class="bg-[#ffffff] px-3 md:px-10 relative shadow-lg mt-4 md:mt-0 py-4 md:py-20"
+          >
+            <div
+              class="h-12 w-12 border-t-2 border-l-2 border-t-[#0891B2] border-l-[#0891B2] absolute top-0 left-0"
+            ></div>
+            <div
+              class="h-12 w-12 border-t-2 border-r-2 border-t-[#0891B2] border-r-[#0891B2] absolute top-0 right-0"
+            ></div>
+            <div
+              class="h-12 w-12 border-l-2 border-b-2 border-l-[#0891B2] border-b-[#0891B2] absolute bottom-0 left-0"
+            ></div>
+            <div
+              class="h-12 w-12 border-r-2 border-b-2 border-r-[#0891B2] border-b-[#0891B2] absolute bottom-0 right-0"
+            ></div>
 
-            <h4
-              class="text-[24px] text-[#424242] md:text-[34px] font-roboto-sans font-medium leading-8 md:leading-10 md:tracking-[0.085px] mb-3 md:mb-6"
-            >
-              Transform your aftermarket services with AI-driven intelligence.
-            </h4>
-            <p
+            <div class="flex gap-4 mb-3 md:mb-6">
+              <h4
+                class="text-[24px] text-[#424242] md:text-[34px] font-roboto-sans font-medium leading-8 md:leading-10 md:tracking-[0.085px]"
+              >
+                Transform your aftermarket <br />
+                services with AI-driven intelligence.
+              </h4>
+              <div class="flex items-end">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="64"
+                  height="16"
+                  viewBox="0 0 64 16"
+                  fill="none"
+                >
+                  <path d="M64 0L58.1768 16H0L5.82324 0H64Z" fill="#3F51B5" />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="64"
+                  height="16"
+                  viewBox="0 0 64 16"
+                  fill="none"
+                >
+                  <path d="M64 0L58.1768 16H0L5.82324 0H64Z" fill="#C4C7C7" />
+                </svg>
+              </div>
+            </div>
+            <!-- <p
               class="text-[#616161] md:text-[20px] leading-7 md:leading-8 tracking-[0.024px] md:tracking-[0.05px]"
             >
               Join the league of Fortune 500 OEMs leveraging GladMinds to
               predict failures, optimize assets, and deliver superior customer
               experiences.
-            </p>
+            </p> -->
             <form id="contact-form" class="mt-6 md:mt-8 space-y-6">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="grid grid-cols-1 gap-6">
                 <!-- Full Name -->
                 <div>
                   <label
-                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                    class="block text-[#00000099] text-[14px] font-bold mb-1 leading-5 tracking-[0.175px]"
                   >
                     FULL NAME
                   </label>
                   <input
                     type="text"
                     name="full_name"
-                    placeholder="Warehouse"
-                    class="w-full border border-[#BDBDBD] rounded-lg px-4 py-3 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
+                    placeholder="Enter Full Name"
+                    class="w-full border border-[#BDBDBD] rounded-[4px] px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
                     required
                   />
                 </div>
@@ -172,17 +222,17 @@
                 <!-- Official Email ID -->
                 <div>
                   <label
-                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                    class="block text-[#00000099] text-[14px] font-bold mb-1 leading-5 tracking-[0.175px]"
                   >
                     OFFICIAL EMAIL ID
                   </label>
                   <input
                     type="email"
                     name="email"
-                    placeholder="Warehouse"
+                    placeholder="Enter Official Email ID"
                     pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
                     title="Please enter a valid email address"
-                    class="w-full border border-[#BDBDBD] rounded-lg px-4 py-3 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
+                    class="w-full border border-[#BDBDBD] rounded-[4px] px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
                     required
                   />
                 </div>
@@ -190,37 +240,37 @@
                 <!-- Mobile Number -->
                 <div>
                   <label
-                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                    class="block text-[#00000099] text-[14px] font-bold mb-1 leading-5 tracking-[0.175px]"
                   >
                     MOBILE NUMBER
                   </label>
                   <input
                     type="tel"
                     name="mobile"
-                    placeholder="Warehouse"
-                    class="w-full border border-[#BDBDBD] rounded-lg px-4 py-3 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
+                    placeholder="Enter Mobile Number"
+                    class="w-full border border-[#BDBDBD] rounded-[4px] px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
                   />
                 </div>
 
                 <!-- Company Name -->
                 <div>
                   <label
-                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                    class="block text-[#00000099] text-[14px] font-bold mb-1 leading-5 tracking-[0.175px]"
                   >
                     COMPANY NAME
                   </label>
                   <input
                     type="text"
                     name="company_name"
-                    placeholder="Warehouse"
-                    class="w-full border border-[#BDBDBD] rounded-lg px-4 py-3 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
+                    placeholder="Enter Company Name"
+                    class="w-full border border-[#BDBDBD] rounded-[4px] px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
                   />
                 </div>
 
                 <!-- Job Title (Custom Combobox) -->
                 <div>
                   <label
-                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                    class="block text-[#00000099] text-[14px] font-bold mb-1 leading-5 tracking-[0.175px]"
                   >
                     JOB TITLE
                   </label>
@@ -270,7 +320,7 @@
                 <!-- Industry (Custom Combobox) -->
                 <div>
                   <label
-                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                    class="block text-[#00000099] text-[14px] font-bold mb-1 leading-5 tracking-[0.175px]"
                   >
                     INDUSTRY
                   </label>
@@ -309,7 +359,7 @@
                 <!-- Number of Assets / Equipment (Custom Combobox) -->
                 <div>
                   <label
-                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                    class="block text-[#00000099] text-[14px] font-bold mb-1 leading-5 tracking-[0.175px]"
                   >
                     NUMBER OF ASSETS / EQUIPMENT
                     <span class="text-red-500">*</span>
@@ -344,7 +394,7 @@
                 <!-- Geographies of Operation (Custom Combobox) -->
                 <div>
                   <label
-                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                    class="block text-[#00000099] text-[14px] font-bold mb-1 leading-5 tracking-[0.175px]"
                   >
                     GEOGRAPHIES OF OPERATION
                   </label>
@@ -379,7 +429,7 @@
                 <input
                   id="consent-updates"
                   type="checkbox"
-                  class="mt-1 h-4 w-4 border border-[#9E9E9E] rounded-sm accent-[#4656B0]"
+                  class="mt-1 h-4 w-4 border border-[#9E9E9E] rounded-[4px] accent-[#4656B0]"
                   required
                 />
                 <label
@@ -394,9 +444,9 @@
               <div>
                 <button
                   type="submit"
-                  class="block flex justify-center mt-4 items-center gap-3 bg-[#4656B0] text-white font-semibold text-[12px] tracking-[0.4px] uppercase px-6 py-3 rounded-md hover:bg-[#3b4aa0] transition md:w-[350px] w-full"
+                  class="block flex justify-center mt-4 items-center gap-3 bg-[#4656B0] text-white font-semibold text-[12px] tracking-[0.4px] uppercase px-6 py-3 rounded-md hover:bg-[#3b4aa0] transition w-full"
                 >
-                  Submit
+                  PROCEED
                   <i class="material-icons">keyboard_arrow_right</i>
                 </button>
               </div>
@@ -410,7 +460,7 @@
         <div class="container mx-auto px-4 md:px-8 max-w-5xl">
           <p class="text-[#616161] text-sm md:text-base mb-3">Contact Info</p>
           <h2
-            class="text-[#424242] text-3xl md:text-4xl font-bold mb-8 md:mb-12"
+            class="text-[#424242] font-roboto-sans text-3xl md:text-4xl font-bold mb-8 md:mb-12"
           >
             We are always happy to<br />assist you
           </h2>

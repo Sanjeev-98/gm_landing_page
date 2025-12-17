@@ -4,11 +4,11 @@
 .combobox-input {
   width: 100%;
   border: 1px solid #e0e0e0;
-  border-radius: 6px;
-  padding: 11px 62px 11px 14px;
+  border-radius: 4px; /* rounded-sm */
+  padding: 4px 62px 4px 14px; /* py-1 equivalent */
   font-size: 15px;
   color: #212121;
-  line-height: 1.5;
+  line-height: 1.25rem; /* leading-5 */
 }
 .combobox-input:focus {
   outline: none;
