@@ -36,12 +36,7 @@
         font-family: "Lekton", monospace;
       }
       .heder-gradient-text {
-        background: linear-gradient(
-          90deg,
-          #0400c8 -20%,
-          #cecdff 40%,
-          #0400c8 130%
-        );
+        background: linear-gradient(90deg, #1b8fc1 0%, #375beb 100%);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -111,20 +106,38 @@
     <header></header>
 
     <main>
-      <section class="bg-[#04042F]">
+      <section class="bg-[#F9FBFC]">
         <div
-          class="p-3 md:px-8 md:py-4 container mx-auto py-12 flex flex-col md:flex-row md:gap-8"
+          class="p-3 md:px-8 md:py-4 container mx-auto py-12 flex flex-col md:flex-row md:gap-8 justify-center"
         >
-          <div class="max-w-[340px] content-center">
-            <h1
-              class="font-inter-sans heder-gradient-text text-[40px] font-medium bg-clip-text text-transparent leading-[52px] mb-12"
+          <div class="font-medium leading-6 max-w-[590px] content-center">
+            <div
+              class="font-medium leading-6 w-min whitespace-nowrap flex text-[#000000DE]"
             >
-              Talk to an OEM <br />
-              Solutions Experts
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="26"
+                height="18"
+                viewBox="0 0 26 18"
+                fill="none"
+              >
+                <path
+                  d="M0 7.99309H5.279C5.7176 7.99309 6.10501 7.70729 6.23446 7.28824L7.95921 1.70485C8.2507 0.76125 9.58815 0.766401 9.87236 1.71221L14.0323 15.556C14.313 16.49 15.628 16.5108 15.9381 15.5861L18.2558 8.67513C18.3925 8.26767 18.7742 7.99309 19.2039 7.99309H25.1841"
+                  stroke="#1D8DC3"
+                  stroke-width="2"
+                />
+              </svg>
+              OEM Intelligence
+            </div>
+            <h1
+              class="font-roboto-sans text-[40px] md:text-[72px] font-[800] bg-clip-text text-transparent leading-[1.2] mb-12"
+            >
+              <span class="text-[#181818]"> Talk to an OEM </span> <br />
+              <span class="heder-gradient-text">Solutions Experts</span>
             </h1>
 
             <p
-              class="font-roboto-sans font-medium leading-7 text-[#FFFFFF] tracking-[0.024px]"
+              class="font-roboto-sans font-medium leading-7 text-[#474747] tracking-[0.024px]"
             >
               Discover how our OEM platform can be tailored to your product and
               business goals. From seamless integrations and white-label
@@ -151,18 +164,41 @@
               Contact Us
             </p>
 
-            <h4
-              class="text-[24px] text-[#424242] md:text-[34px] font-roboto-sans font-medium leading-8 md:leading-10 md:tracking-[0.085px] mb-3 md:mb-6"
-            >
-              Transform your aftermarket services with AI-driven intelligence.
-            </h4>
-            <p
+            <div class="flex gap-4 mb-3 md:mb-6">
+              <h4
+                class="text-[24px] text-[#424242] md:text-[34px] font-roboto-sans font-medium leading-8 md:leading-10 md:tracking-[0.085px]"
+              >
+                Transform your aftermarket <br />
+                services with AI-driven intelligence.
+              </h4>
+              <div class="flex items-end">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="64"
+                  height="16"
+                  viewBox="0 0 64 16"
+                  fill="none"
+                >
+                  <path d="M64 0L58.1768 16H0L5.82324 0H64Z" fill="#3F51B5" />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="64"
+                  height="16"
+                  viewBox="0 0 64 16"
+                  fill="none"
+                >
+                  <path d="M64 0L58.1768 16H0L5.82324 0H64Z" fill="#C4C7C7" />
+                </svg>
+              </div>
+            </div>
+            <!-- <p
               class="text-[#616161] md:text-[20px] leading-7 md:leading-8 tracking-[0.024px] md:tracking-[0.05px]"
             >
               Join the league of Fortune 500 OEMs leveraging GladMinds to
               predict failures, optimize assets, and deliver superior customer
               experiences.
-            </p>
+            </p> -->
             <form id="contact-form" class="mt-6 md:mt-8 space-y-6">
               <div class="grid grid-cols-1 gap-6">
                 <!-- Full Name -->
@@ -176,7 +212,7 @@
                     type="text"
                     name="full_name"
                     placeholder="Warehouse"
-                    class="w-full border border-[#BDBDBD] rounded-sm px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
+                    class="w-full border border-[#BDBDBD] rounded-[4px] px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
                     required
                   />
                 </div>
@@ -194,7 +230,7 @@
                     placeholder="Warehouse"
                     pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
                     title="Please enter a valid email address"
-                    class="w-full border border-[#BDBDBD] rounded-sm px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
+                    class="w-full border border-[#BDBDBD] rounded-[4px] px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
                     required
                   />
                 </div>
@@ -210,7 +246,7 @@
                     type="tel"
                     name="mobile"
                     placeholder="Warehouse"
-                    class="w-full border border-[#BDBDBD] rounded-sm px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
+                    class="w-full border border-[#BDBDBD] rounded-[4px] px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
                   />
                 </div>
 
@@ -225,7 +261,7 @@
                     type="text"
                     name="company_name"
                     placeholder="Warehouse"
-                    class="w-full border border-[#BDBDBD] rounded-sm px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
+                    class="w-full border border-[#BDBDBD] rounded-[4px] px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
                   />
                 </div>
 
@@ -391,7 +427,7 @@
                 <input
                   id="consent-updates"
                   type="checkbox"
-                  class="mt-1 h-4 w-4 border border-[#9E9E9E] rounded-sm accent-[#4656B0]"
+                  class="mt-1 h-4 w-4 border border-[#9E9E9E] rounded-[4px] accent-[#4656B0]"
                   required
                 />
                 <label
