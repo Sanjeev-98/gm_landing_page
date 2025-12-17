@@ -112,7 +112,7 @@
         >
           <div class="font-medium leading-6 max-w-[590px] content-center">
             <div
-              class="font-medium leading-6 w-min whitespace-nowrap flex text-[#000000DE]"
+              class="font-medium leading-6 w-min whitespace-nowrap flex text-[#000000DE] gap-2 mb-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -136,16 +136,23 @@
               <span class="heder-gradient-text">Solutions Experts</span>
             </h1>
 
-            <p
-              class="font-roboto-sans font-medium leading-7 text-[#474747] tracking-[0.024px]"
-            >
-              Discover how our OEM platform can be tailored to your product and
-              business goals. From seamless integrations and white-label
-              customization to scalable deployment and dedicated onboarding, our
-              team is here to support you at every step.
-            </p>
+            <div class="flex gap-4">
+              <div
+                class="hidden md:inline-block w-4 bg-gradient-to-b from-[#57BDEA] to-[#375BEB]"
+              ></div>
+              <p
+                class="font-roboto-sans font-medium leading-7 text-[#474747] tracking-[0.024px]"
+              >
+                Discover how our OEM platform can be tailored to your product
+                and business goals. From seamless integrations and white-label
+                customization to scalable deployment and dedicated onboarding,
+                our team is here to support you at every step.
+              </p>
+            </div>
           </div>
-          <div class="bg-[#ffffff] p-3 md:p-10 relative">
+          <div
+            class="bg-[#ffffff] px-3 md:px-10 relative shadow-lg mt-4 md:mt-0 py-4 md:py-20"
+          >
             <div
               class="h-12 w-12 border-t-2 border-l-2 border-t-[#0891B2] border-l-[#0891B2] absolute top-0 left-0"
             ></div>
@@ -158,11 +165,6 @@
             <div
               class="h-12 w-12 border-r-2 border-b-2 border-r-[#0891B2] border-b-[#0891B2] absolute bottom-0 right-0"
             ></div>
-            <p
-              class="text-[#1976D2] font-roboto-sans font-medium text-[24px] leading-[32px] mb-3 md:mb-6"
-            >
-              Contact Us
-            </p>
 
             <div class="flex gap-4 mb-3 md:mb-6">
               <h4
@@ -211,7 +213,7 @@
                   <input
                     type="text"
                     name="full_name"
-                    placeholder="Warehouse"
+                    placeholder="Enter Full Name"
                     class="w-full border border-[#BDBDBD] rounded-[4px] px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
                     required
                   />
@@ -227,7 +229,7 @@
                   <input
                     type="email"
                     name="email"
-                    placeholder="Warehouse"
+                    placeholder="Enter Official Email ID"
                     pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
                     title="Please enter a valid email address"
                     class="w-full border border-[#BDBDBD] rounded-[4px] px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
@@ -245,7 +247,7 @@
                   <input
                     type="tel"
                     name="mobile"
-                    placeholder="Warehouse"
+                    placeholder="Enter Mobile Number"
                     class="w-full border border-[#BDBDBD] rounded-[4px] px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
                   />
                 </div>
@@ -260,7 +262,7 @@
                   <input
                     type="text"
                     name="company_name"
-                    placeholder="Warehouse"
+                    placeholder="Enter Company Name"
                     class="w-full border border-[#BDBDBD] rounded-[4px] px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
                   />
                 </div>
@@ -458,7 +460,7 @@
         <div class="container mx-auto px-4 md:px-8 max-w-5xl">
           <p class="text-[#616161] text-sm md:text-base mb-3">Contact Info</p>
           <h2
-            class="text-[#424242] text-3xl md:text-4xl font-bold mb-8 md:mb-12"
+            class="text-[#424242] font-roboto-sans text-3xl md:text-4xl font-bold mb-8 md:mb-12"
           >
             We are always happy to<br />assist you
           </h2>
