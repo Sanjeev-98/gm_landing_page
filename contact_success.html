@@ -392,11 +392,13 @@
     <script src="./src/navigation.js"></script>
     <script>
       // Redirect to contact.html when clicking the proceed button
-      const proceedBtn = document.querySelector('#contact-form button[type="submit"]');
+      const proceedBtn = document.querySelector(
+        '#contact-form button[type="submit"]'
+      );
       if (proceedBtn) {
-        proceedBtn.addEventListener('click', (e) => {
+        proceedBtn.addEventListener("click", (e) => {
           e.preventDefault();
-          window.location.href = 'contact.html';
+          window.location.href = "contact.html";
         });
       }
     </script>
