@@ -249,6 +249,9 @@
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
+  .left-1 {
+    left: calc(var(--spacing) * 1);
+  }
   .left-1\/2 {
     left: calc(1/2 * 100%);
   }
@@ -456,6 +459,9 @@
   .inline-flex {
     display: inline-flex;
   }
+  .table {
+    display: table;
+  }
   .h-3 {
     height: calc(var(--spacing) * 3);
   }
@@ -548,6 +554,9 @@
   }
   .w-12 {
     width: calc(var(--spacing) * 12);
+  }
+  .w-16 {
+    width: calc(var(--spacing) * 16);
   }
   .w-20 {
     width: calc(var(--spacing) * 20);
@@ -681,8 +690,18 @@
   .flex-shrink-0 {
     flex-shrink: 0;
   }
+  .flex-grow {
+    flex-grow: 1;
+  }
   .grow {
     flex-grow: 1;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .-translate-x-1 {
+    --tw-translate-x: calc(var(--spacing) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .-translate-x-1\/2 {
     --tw-translate-x: calc(calc(1/2 * 100%) * -1);
@@ -975,6 +994,10 @@
     border-top-style: var(--tw-border-style);
     border-top-width: 1px;
   }
+  .border-t-2 {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 2px;
+  }
   .border-t-5 {
     border-top-style: var(--tw-border-style);
     border-top-width: 5px;
@@ -986,6 +1009,10 @@
   .border-r {
     border-right-style: var(--tw-border-style);
     border-right-width: 1px;
+  }
+  .border-r-2 {
+    border-right-style: var(--tw-border-style);
+    border-right-width: 2px;
   }
   .border-r-5 {
     border-right-style: var(--tw-border-style);
@@ -1006,6 +1033,10 @@
   .border-b-\[12px\] {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 12px;
+  }
+  .border-l-2 {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 2px;
   }
   .border-l-5 {
     border-left-style: var(--tw-border-style);
@@ -1091,11 +1122,23 @@
   .border-white {
     border-color: var(--color-white);
   }
+  .border-t-\[\#0891B2\] {
+    border-top-color: #0891B2;
+  }
   .border-r-\[\#29B6F6\] {
     border-right-color: #29B6F6;
   }
+  .border-r-\[\#0891B2\] {
+    border-right-color: #0891B2;
+  }
+  .border-b-\[\#0891B2\] {
+    border-bottom-color: #0891B2;
+  }
   .border-l-\[\#29B6F6\] {
     border-left-color: #29B6F6;
+  }
+  .border-l-\[\#0891B2\] {
+    border-left-color: #0891B2;
   }
   .bg-\[\#0C0725\] {
     background-color: #0C0725;
@@ -1314,6 +1357,9 @@
   }
   .px-10 {
     padding-inline: calc(var(--spacing) * 10);
+  }
+  .py-1 {
+    padding-block: calc(var(--spacing) * 1);
   }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);

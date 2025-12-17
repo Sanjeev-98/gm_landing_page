@@ -132,7 +132,19 @@
               team is here to support you at every step.
             </p>
           </div>
-          <div class="bg-[#ffffff] rounded-lg p-3 md:p-10">
+          <div class="bg-[#ffffff] p-3 md:p-10 relative">
+            <div
+              class="h-12 w-12 border-t-2 border-l-2 border-t-[#0891B2] border-l-[#0891B2] absolute top-0 left-0"
+            ></div>
+            <div
+              class="h-12 w-12 border-t-2 border-r-2 border-t-[#0891B2] border-r-[#0891B2] absolute top-0 right-0"
+            ></div>
+            <div
+              class="h-12 w-12 border-l-2 border-b-2 border-l-[#0891B2] border-b-[#0891B2] absolute bottom-0 left-0"
+            ></div>
+            <div
+              class="h-12 w-12 border-r-2 border-b-2 border-r-[#0891B2] border-b-[#0891B2] absolute bottom-0 right-0"
+            ></div>
             <p
               class="text-[#1976D2] font-roboto-sans font-medium text-[24px] leading-[32px] mb-3 md:mb-6"
             >
@@ -152,11 +164,11 @@
               experiences.
             </p>
             <form id="contact-form" class="mt-6 md:mt-8 space-y-6">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="grid grid-cols-1 gap-6">
                 <!-- Full Name -->
                 <div>
                   <label
-                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                    class="block text-[#00000099] text-[14px] font-bold mb-1 leading-5 tracking-[0.175px]"
                   >
                     FULL NAME
                   </label>
@@ -164,7 +176,7 @@
                     type="text"
                     name="full_name"
                     placeholder="Warehouse"
-                    class="w-full border border-[#BDBDBD] rounded-lg px-4 py-3 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
+                    class="w-full border border-[#BDBDBD] rounded-sm px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
                     required
                   />
                 </div>
@@ -172,7 +184,7 @@
                 <!-- Official Email ID -->
                 <div>
                   <label
-                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                    class="block text-[#00000099] text-[14px] font-bold mb-1 leading-5 tracking-[0.175px]"
                   >
                     OFFICIAL EMAIL ID
                   </label>
@@ -182,7 +194,7 @@
                     placeholder="Warehouse"
                     pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
                     title="Please enter a valid email address"
-                    class="w-full border border-[#BDBDBD] rounded-lg px-4 py-3 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
+                    class="w-full border border-[#BDBDBD] rounded-sm px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
                     required
                   />
                 </div>
@@ -190,7 +202,7 @@
                 <!-- Mobile Number -->
                 <div>
                   <label
-                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                    class="block text-[#00000099] text-[14px] font-bold mb-1 leading-5 tracking-[0.175px]"
                   >
                     MOBILE NUMBER
                   </label>
@@ -198,14 +210,14 @@
                     type="tel"
                     name="mobile"
                     placeholder="Warehouse"
-                    class="w-full border border-[#BDBDBD] rounded-lg px-4 py-3 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
+                    class="w-full border border-[#BDBDBD] rounded-sm px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
                   />
                 </div>
 
                 <!-- Company Name -->
                 <div>
                   <label
-                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                    class="block text-[#00000099] text-[14px] font-bold mb-1 leading-5 tracking-[0.175px]"
                   >
                     COMPANY NAME
                   </label>
@@ -213,14 +225,14 @@
                     type="text"
                     name="company_name"
                     placeholder="Warehouse"
-                    class="w-full border border-[#BDBDBD] rounded-lg px-4 py-3 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
+                    class="w-full border border-[#BDBDBD] rounded-sm px-4 py-1 text-[#616161] focus:outline-none focus:ring-2 focus:ring-[#1976D2]"
                   />
                 </div>
 
                 <!-- Job Title (Custom Combobox) -->
                 <div>
                   <label
-                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                    class="block text-[#00000099] text-[14px] font-bold mb-1 leading-5 tracking-[0.175px]"
                   >
                     JOB TITLE
                   </label>
@@ -270,7 +282,7 @@
                 <!-- Industry (Custom Combobox) -->
                 <div>
                   <label
-                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                    class="block text-[#00000099] text-[14px] font-bold mb-1 leading-5 tracking-[0.175px]"
                   >
                     INDUSTRY
                   </label>
@@ -309,7 +321,7 @@
                 <!-- Number of Assets / Equipment (Custom Combobox) -->
                 <div>
                   <label
-                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                    class="block text-[#00000099] text-[14px] font-bold mb-1 leading-5 tracking-[0.175px]"
                   >
                     NUMBER OF ASSETS / EQUIPMENT
                     <span class="text-red-500">*</span>
@@ -344,7 +356,7 @@
                 <!-- Geographies of Operation (Custom Combobox) -->
                 <div>
                   <label
-                    class="block text-[#424242] font-medium text-[14px] md:text-[16px] mb-2"
+                    class="block text-[#00000099] text-[14px] font-bold mb-1 leading-5 tracking-[0.175px]"
                   >
                     GEOGRAPHIES OF OPERATION
                   </label>
@@ -394,9 +406,9 @@
               <div>
                 <button
                   type="submit"
-                  class="block flex justify-center mt-4 items-center gap-3 bg-[#4656B0] text-white font-semibold text-[12px] tracking-[0.4px] uppercase px-6 py-3 rounded-md hover:bg-[#3b4aa0] transition md:w-[350px] w-full"
+                  class="block flex justify-center mt-4 items-center gap-3 bg-[#4656B0] text-white font-semibold text-[12px] tracking-[0.4px] uppercase px-6 py-3 rounded-md hover:bg-[#3b4aa0] transition w-full"
                 >
-                  Submit
+                  PROCEED
                   <i class="material-icons">keyboard_arrow_right</i>
                 </button>
               </div>
